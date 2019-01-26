@@ -1,0 +1,13 @@
+Unity has a built in Touch property akin to its Input properties.
+A tap and mouse click are very similar with how they can be used, but the syntax varies wildly.
+
+Linked below are references to Unity's documented features which should be studied by anyone wanting to partake in Touch functionality. Every touch the game recognizes is added to a list of touches, this allows for useful functions. For example, you can choose the first touch recorded that frame, or get a count of how many touches occured. An important feature is the ability to return a touch inputs position on screen. This would allow us to create a button system that does not use Unity's built in system. 
+
+A valuable part of Unity's Touch functionality is the built in TouchPhase enum that handles a touch's beginning, middle, and end. These are vital to PianoVs. Using the touch phases we can determine if we need to play a single note shortly as if a piano key was tapped,
+if we need to play a note for an extended period of time as if it was held down, or if the player is performing a "glissando".
+
+
+Some Important References:
+https://docs.unity3d.com/ScriptReference/Touch.html
+https://docs.unity3d.com/ScriptReference/Touch-phase.html
+https://docs.unity3d.com/ScriptReference/Touch-position.html
