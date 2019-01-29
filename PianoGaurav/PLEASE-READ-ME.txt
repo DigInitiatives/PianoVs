@@ -1,0 +1,5 @@
+Buttons seem to be a valiant step on the way to figuring out touch input controls. 
+As buttons work by default for touch and mouse controls, it is easy to directly use 
+the button's generic OnClick() Method. The downside is that this doesn't account for
+the button's "pressed" state, as sound only comes out after releasing the button.
+We can hopefully find a similar way online and be able to come up with a quick solution.
