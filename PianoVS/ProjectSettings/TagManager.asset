@@ -8,6 +8,7 @@ TagManager:
   - BlackKey
   - WhiteNote
   - BlackNote
+  - LongNote
   layers:
   - Default
   - TransparentFX

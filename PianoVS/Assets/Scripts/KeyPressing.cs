@@ -17,41 +17,66 @@ using UnityEngine;
 public class KeyPressing : MonoBehaviour
 {
     RaycastHit hit;
+    bool keyHeld;
 
     void start()
     {
-
+        keyHeld = false;
     }
 
     void Update()
     {
-        // Shoot a raycast up and detect if the note is in the sweet spot or not
-        if (Physics.Raycast(transform.position, Vector3.up, out hit, 1.5f))
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (hit.collider.tag == "WhiteNote")
+            if (Physics.Raycast(transform.position, Vector3.up, out hit, 1.5f))
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                PlayKey();
+
+                if (hit.collider.tag == "LongNote")
                 {
-                    if (hit.distance < 1.2f)
-                    {
-                        Debug.Log("Sweet Spot");
-                        Destroy(hit.transform.gameObject);
-                    }
-                    else
+                    Debug.Log("Key Held");
+                    keyHeld = true;
+                }
+
+                if (hit.collider.tag == "WhiteNote")
+                {
+                    if (hit.distance < 1.7f)
                     {
                         Debug.Log("Too Early");
+                        ScoreTracker.HalfHit();
                         Destroy(hit.transform.gameObject);
                     }
+                    else if (hit.distance < 1.2f)
+                    {
+                        Debug.Log("Sweet Spot");
+                        ScoreTracker.PerfectHit();
+                        Destroy(hit.transform.gameObject);
 
-                    PlayKey();
+                    }
+                    else if (hit.distance < 0.8f)
+                    {
+                        Debug.Log("Too Late");
+                        Destroy(hit.transform.gameObject);
+                    }
                 }
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            Debug.Log("Key Released");
+            keyHeld = false;
+        }
 
-                if (hit.distance < 0.8f)
+        if (keyHeld == true)
+        {
+            if (Physics.Raycast(transform.position, Vector3.up, out hit, 1.5f))
+            {
+                if (hit.collider.tag == "LongNote")
                 {
-                    Debug.Log("Too Late");
-                    Destroy(hit.transform.gameObject);
+                    Debug.Log("Holding Note");
                 }
-            }   
+            }
         }
     }
 
