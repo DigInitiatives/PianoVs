@@ -1,0 +1,27 @@
+    void start()
+    {
+        keyPos = transform.position;
+    }
+
+    void Update()
+    {
+
+    }
+
+    public void PlayKey()
+    {
+        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+        if (Physics.Raycast(new Vector3(keyPos.x, keyPos.y - 5, keyPos.z), Vector3.up, out hit))
+        {
+            if (hit.collider.tag == "WhiteNote")
+            {
+                if (hit.distance < 3 && hit.distance > 2)
+                {
+                    //Recognize good hit
+                }
+                else
+                {
+                }
+            }
+        }
+    }
