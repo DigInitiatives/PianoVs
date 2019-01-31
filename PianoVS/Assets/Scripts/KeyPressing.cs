@@ -6,30 +6,44 @@ public class KeyPressing : MonoBehaviour
 {
 
     RaycastHit hit;
-    Vector2 triggerPosition;
+    Vector3 keyPos;
 
     void start()
     {
-        triggerPosition = transform.position;
-        triggerPosition.y = transform.position.y + 10000;
-        
+        keyPos = transform.position;
     }
 
     void Update()
     {
-
-        if (Physics.Raycast(transform.position, Vector3.up))
+        if (Physics.Raycast(transform.position, Vector3.up, out hit))
         {
-            //if ()
-            //{
-            //    Debug.Log("in Range");
-            //}
-           
+            if (hit.collider.tag == "WhiteNote")
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (hit.distance < 1.2f)
+                    {
+                        Debug.Log("Sweet Spot");
+                        Destroy(hit.transform.gameObject);
+                    }
+                    else
+                    {
+                        Debug.Log("Too Early");
+                        Destroy(hit.transform.gameObject);
+                    }
+                }
+
+                if (hit.distance < 0.8f)
+                {
+                    Debug.Log("Too Late");
+                    Destroy(hit.transform.gameObject);
+                }
+            }   
         }
     }
 
     public void PlayKey()
     {
-        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);  
+        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
     }
 }
