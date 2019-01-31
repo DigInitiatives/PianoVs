@@ -5,41 +5,31 @@ using UnityEngine;
 public class KeyPressing : MonoBehaviour
 {
 
-    bool keyInTrigger;
-    GameObject note;
+    RaycastHit hit;
+    Vector2 triggerPosition;
 
     void start()
     {
-        keyInTrigger = false;
+        triggerPosition = transform.position;
+        triggerPosition.y = transform.position.y + 10000;
+        
     }
 
     void Update()
     {
-        if (keyInTrigger == true && Input.GetKeyDown(KeyCode.Z))
-        {
-            Debug.Log("Note Hit Sweet Spot");
-            PlayKey();
-            Destroy(note);
-        }
 
+        if (Physics.Raycast(transform.position, Vector3.up))
+        {
+            //if ()
+            //{
+            //    Debug.Log("in Range");
+            //}
+           
+        }
     }
 
     public void PlayKey()
     {
         GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);  
-    }
-
-    void OnTriggerEnter(Collider col)
-    {  
-        keyInTrigger = true;
-        note = col.gameObject;
-    }
-
-    void OnTriggerExit(Collider col)
-    {
-        Debug.Log("Exit");
-        keyInTrigger = false;
-        Debug.Log("Too Late");
-        Destroy(note);
     }
 }
