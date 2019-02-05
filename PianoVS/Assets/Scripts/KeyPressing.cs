@@ -18,15 +18,16 @@ public class KeyPressing : MonoBehaviour
 {
     RaycastHit hit;
     bool keyHeld;
+    float longNoteScoreTimer;
 
     void start()
     {
         keyHeld = false;
+        longNoteScoreTimer = 0;
     }
 
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (Physics.Raycast(transform.position, Vector3.up, out hit, 1.5f))
@@ -52,7 +53,6 @@ public class KeyPressing : MonoBehaviour
                         Debug.Log("Sweet Spot");
                         ScoreTracker.PerfectHit();
                         Destroy(hit.transform.gameObject);
-
                     }
                     else if (hit.distance < 0.8f)
                     {
@@ -68,16 +68,25 @@ public class KeyPressing : MonoBehaviour
             keyHeld = false;
         }
 
-        if (keyHeld == true)
+        longNoteScoreTimer += Time.deltaTime;
+        if (keyHeld == true && longNoteScoreTimer > 0.3f)
         {
+            longNoteScoreTimer = 0;
+            ScoreTracker.PerfectHit();
+
             if (Physics.Raycast(transform.position, Vector3.up, out hit, 1.5f))
             {
-                if (hit.collider.tag == "LongNote")
+                if (hit.collider.tag != "LongNote")
                 {
-                    Debug.Log("Holding Note");
+                    
+                    keyHeld = false;
+                    
                 }
             }
         }
+
+        Debug.Log(ScoreTracker.score);
+
     }
 
     // Plays the sound for the key
