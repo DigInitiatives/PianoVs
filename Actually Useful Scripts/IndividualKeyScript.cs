@@ -58,7 +58,7 @@ public class IndividualKeyScript : MonoBehaviour
     {
         if (holdingNote)//If the holding note has been hit
         {
-            if (Physics.Raycast(keyPos, Vector3.up, out hit))//Shoots raycast from center of note to check if the holding note is gone yet
+            if (Physics.Raycast(keyPos, Vector3.up, out hit, 4))//Shoots raycast from center of note to check if the holding note is gone yet
             {
                 if(hit.collider.tag == "HeldNote")
                 {
@@ -89,7 +89,7 @@ public class IndividualKeyScript : MonoBehaviour
         GetComponent<AudioSource>().Play();
         keyModelRenderer.material = keyDown;
 
-        if (Physics.Raycast(keyPos, Vector3.up, out hit))//Shoots raycast from center of note
+        if (Physics.Raycast(keyPos, Vector3.up, out hit, 4))//Shoots raycast from center of note
         {
             if (hit.collider.tag == "Note" || hit.collider.tag == "SharpNote")//If the raycast hits a regular or sharp note...
             {
