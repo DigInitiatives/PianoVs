@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PianoControl : MonoBehaviour
+public class OLDPianoControl : MonoBehaviour
 {
     //public List<GameObject> whiteKeys = new List<GameObject>();
     //public List<GameObject> blackKeys = new List<GameObject>();

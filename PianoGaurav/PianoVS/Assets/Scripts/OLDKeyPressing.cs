@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyPressing : MonoBehaviour
+public class OLDKeyPressing : MonoBehaviour
 {
     public bool hitNote;
     protected int counter;
