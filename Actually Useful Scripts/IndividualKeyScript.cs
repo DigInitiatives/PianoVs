@@ -1,18 +1,15 @@
-﻿using System.Collections;
+﻿///Author: Adam Warkentin
+///This script is attatched to a "Key" which only has a public method that plays the sound clip of the attatched audio source
+///Last Modified By: Noah Rittenhouse
+///Last Modified Date: 5-Feb-2019
+///Dependencies: Requires an audio source component.If the key is a white key, check the "whiteKey" bool in the editor
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class IndividualKeyScript : MonoBehaviour
 {
-
-    /*
-    * Summary:
-    * This script is attatched to a "Key" which only has a public method that plays the sound clip of the attatched audio source
-    * Date: 31/01/2019
-    * Author: Adam Warkentin
-    * Dependencies: Requires an audio source component. If the key is a white key, check the "whiteKey" bool in the editor
-    */
-
     //keymodel is the visual component of this obj
     GameObject keyModel;
 
@@ -63,7 +60,11 @@ public class IndividualKeyScript : MonoBehaviour
         {
             if (Physics.Raycast(keyPos, Vector3.up, out hit))//Shoots raycast from center of note to check if the holding note is gone yet
             {
-                if (hit.collider.gameObject != heldNote)//If the raycast stops hitting the held note stop giving points
+                if(hit.collider.tag == "HeldNote")
+                {
+                    Destroy(hit.collider.gameObject);
+                }
+                if (hit.collider.tag != "HeldNote")//If the raycast stops hitting the held note stop giving points
                 {
                     StopHolding();
                 }
@@ -111,7 +112,7 @@ public class IndividualKeyScript : MonoBehaviour
             {
                 //100 points
                 holdingNote = true;
-                heldNote = hit.collider.gameObject;
+                Destroy(hit.collider.gameObject);
             }
         }
     }
@@ -129,7 +130,6 @@ public class IndividualKeyScript : MonoBehaviour
     {
         if (holdingNote)//If they were holding a note, destroy the note, stop looping in update, and reset timer
         {
-            Destroy(heldNote);
             holdingTimer = 1.0f;
             holdingNote = false;
         }
