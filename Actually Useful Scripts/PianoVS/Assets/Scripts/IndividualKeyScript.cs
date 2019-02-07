@@ -73,11 +73,14 @@ public class IndividualKeyScript : MonoBehaviour
             {
                 StopHolding();
             }
-            holdingTimer -= Time.deltaTime;
-            if (holdingTimer <= 0)//Every frame the timer is lowered, once it hits zero it resets to one and gives points
+            if (holdingNote)
             {
-                //5 Points
-                holdingTimer = 1.0f;
+                holdingTimer -= Time.deltaTime;
+                if (holdingTimer <= 0)//Every frame the timer is lowered, once it hits zero it resets to one and gives points
+                {
+                    //5 Points
+                    holdingTimer = 1.0f;
+                }
             }
         }
     }
