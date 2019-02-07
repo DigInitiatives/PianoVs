@@ -60,7 +60,7 @@ public class IndividualKeyScript : MonoBehaviour
         {
             if (Physics.Raycast(keyPos, Vector3.up, out hit, 4))//Shoots raycast from center of note to check if the holding note is gone yet
             {
-                if(hit.collider.tag == "HeldNote")
+                if (hit.collider.tag == "HeldNote")
                 {
                     Destroy(hit.collider.gameObject);
                 }
@@ -85,48 +85,44 @@ public class IndividualKeyScript : MonoBehaviour
     //Plays the audio attatched to the key and sets its material to down
     public void PlayNote()
     {
-        //Debug.Log("NotePlay");
         GetComponent<AudioSource>().Play();
         keyModelRenderer.material = keyDown;
 
-        if (Physics.Raycast(keyPos, Vector3.up, out hit, 8))//Shoots raycast from center of note
+        if (Physics.Raycast(keyPos, Vector3.up, out hit, 8))//If a raycast shot from the key hits something...
         {
-            if (hit.collider.tag == "Note" || hit.collider.tag == "SharpNote")//If the raycast hits a regular or sharp note...
+            if (hit.collider.tag == "Note" || hit.collider.tag == "SharpNote" || hit.collider.tag == "HeldNote")//If the raycast hits a note...
             {
                 if (hit.distance <= 4 && hit.distance > 2)//Sweet spot distance
                 {
-                    Debug.Log("Sweet Spot");
-                    //100 points
-                    Destroy(hit.collider.gameObject);
+                    if (hit.collider.tag == "HeldNote")//If the raycast hits a note that must be held...
+                    {
+                        //100 points
+                        holdingNote = true;
+                        Destroy(hit.collider.gameObject);
+                    }
+                    else//If it hits any note that isnt a hold note
+                    {
+                        Debug.Log("Sweet Spot");
+                        //100 points
+                        Destroy(hit.collider.gameObject);
+                    }
                 }
-                else if (hit.distance > 4)//To far distance
+                else if (hit.distance > 4 && hit.distance <= 6)//Far but still good
                 {
-                    Debug.Log("Too far");
+                    //50 points
                 }
-                else//Not to far but not in sweet spot
+                else if (hit.distance > 6)//To far nibba
                 {
-
+                    //25 points
                 }
-            }
-            if (hit.collider.tag == "HeldNote")//If the raycast hits a note that must be held...
-            {
-                if (hit.distance <= 4 && hit.distance > 2)//Sweet spot distance
-                {
-                    //100 points
-                    holdingNote = true;
-                    Destroy(hit.collider.gameObject);
-                }
-                else if (hit.distance > 4)//To far distance
-                {
-                    Debug.Log("Too far");
-                }
-                else//Not to far but not in sweet spot
+                else//Too close
                 {
 
                 }
             }
         }
     }
+
     //Stops the audio attatched to the key and sets its material to up
     public void StopNote()
     {
@@ -146,3 +142,4 @@ public class IndividualKeyScript : MonoBehaviour
         }
     }
 }
+
