@@ -46,7 +46,7 @@ public class TouchControlScript : MonoBehaviour
                     //if the raycast hits a collider whose game object has the tag "Note"
                     if (hit.collider.gameObject.tag == "Key")
                     {
-                        Debug.Log("Touch");
+                        //Debug.Log("Touch");
                         //Call the PlayNote() method in this objects NoteObjScript
                         hit.collider.gameObject.GetComponent<IndividualKeyScript>().PlayNote();
                     }

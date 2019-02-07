@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3576794999628169792}
   - component: {fileID: 7980101818979211437}
   - component: {fileID: 4908038342674151711}
+  - component: {fileID: 1493128851376180987}
   m_Layer: 0
   m_Name: WhiteNote 1
-  m_TagString: Untagged
+  m_TagString: Note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,3 +93,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c28a6fcff9a2f14bb9f44b8a11f8e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1493128851376180987
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149428565863384051}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0699997, y: 2.0599997, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0}

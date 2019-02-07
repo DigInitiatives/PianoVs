@@ -42,7 +42,7 @@ public class NoteSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		Debug.Log(keyBoardKeys.Count);
+		//Debug.Log(keyBoardKeys.Count);
 		#region Instatiate New Notes and Starts or Stops held notes
 		//calculates the current beat number based on BPM and tracks beats
 		if (Time.time - beatTime > timestamp )
