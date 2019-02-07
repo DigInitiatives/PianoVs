@@ -42,13 +42,13 @@ public class IndividualKeyScript : MonoBehaviour
         //Gets the necessary material for the key from the Resources folder
         if (whiteKey)
         {
-            keyUp = Resources.Load("Key-Up") as Material;
-            keyDown = Resources.Load("Key-Down") as Material;
+            keyUp = Resources.Load("Material/Key-Up") as Material;
+            keyDown = Resources.Load("Material/Key-Down") as Material;
         }
         else
         {
-            keyUp = Resources.Load("KeySharp-Up") as Material;
-            keyDown = Resources.Load("KeySharp-Down") as Material;
+            keyUp = Resources.Load("Material/KeySharp-Up") as Material;
+            keyDown = Resources.Load("Material/KeySharp-Down") as Material;
         }
 
         keyModelRenderer.material = keyUp;
