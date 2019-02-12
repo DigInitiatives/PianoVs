@@ -45,14 +45,15 @@ public class TouchControlScript : MonoBehaviour
                     //Raycast from the touch on the screen position to the world position
                     if (Physics.Raycast(ray, out hit))
                     {
-                        //Add the object hit to the list, at the index of the touch
 
-
-                        //if the raycast hits a collider whose game object has the tag "Note"
+                        //check if that touch index is currently pressing a note. 
+                        // This is to prevent a very strange in which a touch index would began again without ending therefore its note would keep playing even if not touched
                         if (hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>() == null)
                         {
+                            //if the raycast hits a collider whose game object has the tag "Note"
                             if (hit.collider.gameObject.tag == "Key" && !hitObj.Contains(hit.collider.gameObject))
                             {
+                                //Add the object hit to the list, at the index of the touch
                                 hitObj[touchIndex] = hit.collider.gameObject;
                                 //Debug.Log("Touch");
                                 //Call the PlayNote() method in this objects NoteObjScript
@@ -70,13 +71,13 @@ public class TouchControlScript : MonoBehaviour
                         {
                             if (hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>() != null)
                             {
-                                hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote(); //error
+                                hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote(); 
                                 hitObj[touchIndex] = hit.collider.gameObject;
                                 hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().PlayNote();
                             }
                             else
                             {
-                                hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote(); //error
+                                hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote(); 
                                 hitObj[touchIndex] = new GameObject();
                             }
                         }
@@ -85,12 +86,6 @@ public class TouchControlScript : MonoBehaviour
                     }
                     break;
                 case TouchPhase.Ended:
-                    //if this touch has ended, call the stopnote method of the object it was touching and remove it from the obj list at the index of the touch
-                    //if (hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>() != null)
-                    //{
-                    //    hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote(); //error
-                    //    hitObj[touchIndex] = new GameObject();
-                    //}
                     if (Physics.Raycast(ray, out hit))
                     {
                         if (hit.collider.gameObject != hitObj[touchIndex].gameObject)
