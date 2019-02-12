@@ -63,12 +63,15 @@ public class TouchControlScript : MonoBehaviour
                 Debug.Log("moved");
                 //Raycast from the touch on the screen position to the world position
                 ray = Camera.main.ScreenPointToRay(touch.position);
-                if (!Physics.Raycast(ray))
+                if (Physics.Raycast(ray, out hit))
                 {
-                    if (hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>() != null)
+                    if (hit.collider.gameObject != hitObj[touchIndex].gameObject)
                     {
-                        hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote(); //error
-                        hitObj[touchIndex] = new GameObject();
+                        if (hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>() != null)
+                        {
+                            hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote(); //error
+                            hitObj[touchIndex] = new GameObject();
+                        }
                     }
                 }
                 //if (Physics.Raycast(ray, out hit))
