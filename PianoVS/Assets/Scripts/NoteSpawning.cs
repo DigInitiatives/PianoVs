@@ -48,7 +48,7 @@ public class NoteSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-		if (beat == 256 + 64)
+		if (beat == 256 + 384)
 		{
 			beat = 0;
 		}
@@ -82,7 +82,11 @@ public class NoteSpawning : MonoBehaviour
 						{
 							if (notes.GetKey() == c)
 							{
-								Instantiate(blackNote, keyBoardKeys[c].transform.position, keyBoardKeys[c].transform.rotation);
+								GameObject instantiatedObject = Instantiate(blackNote, keyBoardKeys[c].transform.position, keyBoardKeys[c].transform.rotation);
+								if(notes.GetHand() == 2)
+								{
+									instantiatedObject.GetComponent<SpriteRenderer>().color = new Color(138, 185, 255);
+								}
 								if (notes.GetEnd() != notes.GetStart())
 								{
 									holdNotes[c] = notes.GetEnd();
@@ -94,7 +98,11 @@ public class NoteSpawning : MonoBehaviour
 						{
 							if (notes.GetKey() == c)
 							{
-								Instantiate(note, keyBoardKeys[c].transform.position, keyBoardKeys[c].transform.rotation);
+								GameObject instantiatedObject = Instantiate(note, keyBoardKeys[c].transform.position, keyBoardKeys[c].transform.rotation);
+								if (notes.GetHand() == 2)
+								{
+									instantiatedObject.GetComponent<SpriteRenderer>().color = new Color(69, 169, 207);
+								}
 								if (notes.GetEnd() != notes.GetStart())
 								{
 									holdNotes[c] = notes.GetEnd();
