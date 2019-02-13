@@ -14,6 +14,9 @@ public class IndividualKeyScript : MonoBehaviour
 	float heldNotedistance = 0;
 	bool stamp;
 
+	public bool AI;
+	int AITimer;
+
 	//keymodel is the visual component of this obj
 	GameObject keyModel;
 
@@ -60,12 +63,32 @@ public class IndividualKeyScript : MonoBehaviour
 
     public void Update()
     {
+		if(AI)
+		{
+			if (Physics.Raycast(keyPos + new Vector3(0, 2.5f, 0), Vector3.up, out hit, .5f) && hit.collider.gameObject.tag == "Note")//Shoots raycast from the tip of note
+			{
+				PlayNote();
+				AITimer = 0;
+			}
+			else
+			{
+				if (!Physics.Raycast(keyPos + new Vector3(0, 2.5f, 0), Vector3.up, out hit, .6f) && AITimer > 10)//Shoots raycast from the tip of note
+				{
+					StopNote();
+				}
+				else
+				{
+					holdingNote = true;
+				}
+			}
+			AITimer++;
+		}
 		if (stamp)
 		{
 			TimeStamp();
 		}
 		if (holdingNote)//If the holding note has been hit
-        {
+		{
 			if (Physics.Raycast(keyPos + new Vector3(0, 2.5f, 0), Vector3.up, out hit, heldNotedistance + 1f))//Shoots raycast from the tip of note
 			{
 				if (hit.collider.tag == "HeldNote")//If the raycast hits a note that must be held...
@@ -89,9 +112,8 @@ public class IndividualKeyScript : MonoBehaviour
 				//5 Points
 				holdingTimer = 1.0f;
 			}
-
 		}
-    }
+	}
 
     //Plays the audio attatched to the key and sets its material to down
     public void PlayNote()
@@ -138,7 +160,6 @@ public class IndividualKeyScript : MonoBehaviour
     public void StopNote()
     {
 		Debug.Log("NoteEnd");
-		timeStamp = 0;
 		StartCoroutine("SoundStop");
 		stamp = true;
 		keyModelRenderer.material = keyUp;
@@ -155,7 +176,7 @@ public class IndividualKeyScript : MonoBehaviour
     }
 	public void TimeStamp()
 	{
-		GetComponent<AudioSource>().volume -= Time.deltaTime*4;
+		GetComponent<AudioSource>().volume -= Time.deltaTime * 4;
 	}
 
 	IEnumerator SoundStop()
