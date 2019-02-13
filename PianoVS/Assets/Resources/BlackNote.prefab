@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9046854278708603452}
   m_Layer: 0
   m_Name: BlackNote
-  m_TagString: Untagged
+  m_TagString: Note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,5 +104,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.07, y: 2.06, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.07, y: 2.06, z: 3.9054985}
+  m_Center: {x: 0, y: 0, z: 0.1789131}

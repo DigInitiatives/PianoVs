@@ -63,25 +63,52 @@ public class IndividualKeyScript : MonoBehaviour
 
     public void Update()
     {
+		if(!whiteKey)
+		Debug.DrawRay(keyPos + new Vector3(0, 1.5f, 0), Vector3.up);
 		if(AI)
 		{
-			if (Physics.Raycast(keyPos + new Vector3(0, 2.5f, 0), Vector3.up, out hit, .5f) && hit.collider.gameObject.tag == "Note")//Shoots raycast from the tip of note
+			if(whiteKey)
 			{
-				PlayNote();
-				AITimer = 0;
-			}
-			else
-			{
-				if (!Physics.Raycast(keyPos + new Vector3(0, 2.5f, 0), Vector3.up, out hit, .6f) && AITimer > 10)//Shoots raycast from the tip of note
+				if (Physics.Raycast(keyPos + new Vector3(0, 2.5f, 0), Vector3.up, out hit, .5f) && hit.collider.gameObject.tag == "Note")//Shoots raycast from the tip of note
 				{
 					StopNote();
+					PlayNote();
+					AITimer = 0;
 				}
 				else
 				{
-					holdingNote = true;
+					if (!Physics.Raycast(keyPos + new Vector3(0, 2.5f, 0), Vector3.up, out hit, .6f) && AITimer > 5)//Shoots raycast from the tip of note
+					{
+						StopNote();
+					}
+					else
+					{
+						holdingNote = true;
+					}
 				}
+				AITimer++;
 			}
-			AITimer++;
+			else
+			{
+				if (Physics.Raycast(keyPos + new Vector3(0, 1.5f, 0), Vector3.up, out hit, .7f) && hit.collider.gameObject.tag == "Note")//Shoots raycast from the tip of note
+				{
+					StopNote();
+					PlayNote();
+					AITimer = 0;
+				}
+				else
+				{
+					if (!Physics.Raycast(keyPos + new Vector3(0, 1.5f, 0), Vector3.up, out hit, .6f) && AITimer > 5)//Shoots raycast from the tip of note
+					{
+						StopNote();
+					}
+					else
+					{
+						holdingNote = true;
+					}
+				}
+				AITimer++;
+			}
 		}
 		if (stamp)
 		{
@@ -89,29 +116,59 @@ public class IndividualKeyScript : MonoBehaviour
 		}
 		if (holdingNote)//If the holding note has been hit
 		{
-			if (Physics.Raycast(keyPos + new Vector3(0, 2.5f, 0), Vector3.up, out hit, heldNotedistance + 1f))//Shoots raycast from the tip of note
+			if (whiteKey)
 			{
-				if (hit.collider.tag == "HeldNote")//If the raycast hits a note that must be held...
+				if (Physics.Raycast(keyPos + new Vector3(0, 2.5f, 0), Vector3.up, out hit, heldNotedistance + 1f))//Shoots raycast from the tip of note
 				{
-					Debug.Log("HELD!!!!!!");
-					holdingNote = true;
-					Destroy(hit.collider.gameObject);
+					if (hit.collider.tag == "HeldNote")//If the raycast hits a note that must be held...
+					{
+						Debug.Log("HELD!!!!!!");
+						holdingNote = true;
+						Destroy(hit.collider.gameObject);
+					}
+					else
+					{
+						holdingNote = false;
+					}
 				}
 				else
 				{
 					holdingNote = false;
 				}
+				holdingTimer -= Time.deltaTime;
+				if (holdingTimer <= 0)//Every frame the timer is lowered, once it hits zero it resets to one and gives points
+				{
+					//5 Points
+					holdingTimer = 1.0f;
+				}
 			}
 			else
 			{
-				holdingNote = false;
+				if (Physics.Raycast(keyPos + new Vector3(0, 1.5f, 0), Vector3.up, out hit, heldNotedistance + 1f))//Shoots raycast from the tip of note
+				{
+					if (hit.collider.tag == "HeldNote")//If the raycast hits a note that must be held...
+					{
+						Debug.Log("HELD!!!!!!");
+						holdingNote = true;
+						Destroy(hit.collider.gameObject);
+					}
+					else
+					{
+						holdingNote = false;
+					}
+				}
+				else
+				{
+					holdingNote = false;
+				}
+				holdingTimer -= Time.deltaTime;
+				if (holdingTimer <= 0)//Every frame the timer is lowered, once it hits zero it resets to one and gives points
+				{
+					//5 Points
+					holdingTimer = 1.0f;
+				}
 			}
-			holdingTimer -= Time.deltaTime;
-			if (holdingTimer <= 0)//Every frame the timer is lowered, once it hits zero it resets to one and gives points
-			{
-				//5 Points
-				holdingTimer = 1.0f;
-			}
+
 		}
 	}
 
@@ -127,37 +184,71 @@ public class IndividualKeyScript : MonoBehaviour
 		
 		heldNotedistance = 0;
 
-		if (Physics.Raycast(keyPos + new Vector3(0, 2.3f, 0), Vector3.up, out hit, 1))//Shoots raycast from the tip of note
+		if (whiteKey)
 		{
-			if (hit.collider.tag == "Note" || hit.collider.tag == "SharpNote")//If the raycast hits a regular or sharp note...
+			if (Physics.Raycast(keyPos + new Vector3(0, 2.3f, 0), Vector3.up, out hit, 1))//Shoots raycast from the tip of note
 			{
-				if (hit.distance <= .7f && hit.distance > .45f)//Sweet spot distance
+				if (hit.collider.tag == "Note" || hit.collider.tag == "SharpNote")//If the raycast hits a regular or sharp note...
 				{
-					holdingNote = true;
-					Debug.Log("Sweet Spot");
-					//Stores the distance hit in order to check forheld notes
-					heldNotedistance = hit.distance;
-					Destroy(hit.collider.gameObject);
+					if (hit.distance <= .7f && hit.distance > .45f)//Sweet spot distance
+					{
+						holdingNote = true;
+						Debug.Log("Sweet Spot");
+						//Stores the distance hit in order to check forheld notes
+						heldNotedistance = hit.distance;
+						Destroy(hit.collider.gameObject);
+					}
+					else if (hit.distance > .7f)//To far distance
+					{
+						holdingNote = true;
+						Debug.Log("Too far");
+						heldNotedistance = hit.distance;
+						Destroy(hit.collider.gameObject);
+					}
+					else//Not to far but not in sweet spot
+					{
+						holdingNote = true;
+						Debug.Log("Too close");
+						heldNotedistance = hit.distance;
+						Destroy(hit.collider.gameObject);
+					}
 				}
-				else if (hit.distance > .7f)//To far distance
+			}
+		}
+		else
+		{
+			if (Physics.Raycast(keyPos + new Vector3(0, 1.5f, 0), Vector3.up, out hit, 1))//Shoots raycast from the tip of note
+			{
+				if (hit.collider.tag == "Note" || hit.collider.tag == "SharpNote")//If the raycast hits a regular or sharp note...
 				{
-					holdingNote = true;
-					Debug.Log("Too far");
-					heldNotedistance = hit.distance;
-					Destroy(hit.collider.gameObject);
-				}
-				else//Not to far but not in sweet spot
-				{
-					holdingNote = true;
-					Debug.Log("Too close");
-					heldNotedistance = hit.distance;
-					Destroy(hit.collider.gameObject);
+					if (hit.distance <= .7f && hit.distance > .45f)//Sweet spot distance
+					{
+						holdingNote = true;
+						Debug.Log("Super Sweet Spot");
+						//Stores the distance hit in order to check forheld notes
+						heldNotedistance = hit.distance;
+						Destroy(hit.collider.gameObject);
+					}
+					else if (hit.distance > .7f)//To far distance
+					{
+						holdingNote = true;
+						Debug.Log("Too far");
+						heldNotedistance = hit.distance;
+						Destroy(hit.collider.gameObject);
+					}
+					else//Not to far but not in sweet spot
+					{
+						holdingNote = true;
+						Debug.Log("Too close");
+						heldNotedistance = hit.distance;
+						Destroy(hit.collider.gameObject);
+					}
 				}
 			}
 		}
 	}
-    //Stops the audio attatched to the key and sets its material to up
-    public void StopNote()
+	//Stops the audio attatched to the key and sets its material to up
+	public void StopNote()
     {
 		Debug.Log("NoteEnd");
 		StartCoroutine("SoundStop");
@@ -176,7 +267,7 @@ public class IndividualKeyScript : MonoBehaviour
     }
 	public void TimeStamp()
 	{
-		GetComponent<AudioSource>().volume -= Time.deltaTime * 4;
+		GetComponent<AudioSource>().volume -= Time.deltaTime * 8;
 	}
 
 	IEnumerator SoundStop()

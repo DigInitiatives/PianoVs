@@ -37,6 +37,7 @@ public class NoteSpawning : MonoBehaviour
 		}
 		songs = new List<Songholder>();
 		songs.Add(new HotCrossBuns());
+		songs.Add(new ATHousandMiles());
 		beat = 0;
 		timestamp = Time.time;
 		bpm = 120;
@@ -47,7 +48,11 @@ public class NoteSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-		if (beat % 128 == 0 || beat == 0)
+		if (beat == 256 + 64)
+		{
+			beat = 0;
+		}
+		if (beat % 64 == 0 || beat == 0)
 		{
 			Instantiate(noteBar, transform.position, transform.rotation);
 		}
@@ -66,7 +71,7 @@ public class NoteSpawning : MonoBehaviour
 			}
 
 			//instantiates the note if it starts on this beat
-			foreach (NoteClass notes in songs[0].songNotes)
+			foreach (NoteClass notes in songs[1].songNotes)
 			{
 				if (notes.GetStart() == beat)
 				{
