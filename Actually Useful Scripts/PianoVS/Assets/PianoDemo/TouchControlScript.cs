@@ -48,6 +48,7 @@ public class TouchControlScript : MonoBehaviour
                         //check if that touch index is currently pressing a note. 
                         // This is to prevent a very strange in which a touch index would began again without ending therefore its note would keep playing even if not touched
                         //if the raycast hits a collider whose game object has the tag "Note"
+                        
                         if (hit.collider.gameObject.tag == "Key" && !hitObj.Contains(hit.collider.gameObject))
                         {
 
