@@ -40,7 +40,7 @@ public class NoteSpawning : MonoBehaviour
 		songs.Add(new ATHousandMiles());
 		beat = 0;
 		timestamp = Time.time;
-		bpm = 120;
+		bpm = 150;
 		timesignature = 4;
 		beatTime = (60 / bpm) / 16;
     }
