@@ -17,21 +17,21 @@ public class ATHousandMiles : Songholder
 		songNotes.Add(new NoteClass(47, 0, 4, 1));
 		songNotes.Add(new NoteClass(35, 4, 8, 1));
 		songNotes.Add(new NoteClass(47, 8, 12, 1));
-		songNotes.Add(new NoteClass(45, 12, 16, 1));
+		songNotes.Add(new NoteClass(46, 12, 16, 1));
 		songNotes.Add(new NoteClass(35, 16, 20, 1));
-		songNotes.Add(new NoteClass(45, 20, 28, 1));
+		songNotes.Add(new NoteClass(46, 20, 28, 1));
 		songNotes.Add(new NoteClass(42, 28, 48, 1));
-		songNotes.Add(new NoteClass(40, 48, 56, 1));
-		songNotes.Add(new NoteClass(38, 56, 60, 1));
+		songNotes.Add(new NoteClass(39, 48, 56, 1));
+		songNotes.Add(new NoteClass(37, 56, 60, 1));
 		songNotes.Add(new NoteClass(35, 60, 64, 1));
 
 		songNotes.Add(new NoteClass(47, 0 + 64, 4 + 64, 1));
 		songNotes.Add(new NoteClass(35, 4 + 64, 8 + 64, 1));
 		songNotes.Add(new NoteClass(47, 8 + 64, 12 + 64, 1));
-		songNotes.Add(new NoteClass(45, 12 + 64, 16 + 64, 1));
+		songNotes.Add(new NoteClass(46, 12 + 64, 16 + 64, 1));
 
 		songNotes.Add(new NoteClass(35, 16 + 64, 20 + 64, 1));
-		songNotes.Add(new NoteClass(45, 20 + 64, 24 + 64, 1));
+		songNotes.Add(new NoteClass(46, 20 + 64, 24 + 64, 1));
 		songNotes.Add(new NoteClass(42, 24 + 64, 28 + 64, 1));
 		songNotes.Add(new NoteClass(35, 28 + 64, 32 + 64, 1));
 
@@ -41,27 +41,27 @@ public class ATHousandMiles : Songholder
 		songNotes.Add(new NoteClass(35, 44 + 64, 48 + 64, 1));
 
 		songNotes.Add(new NoteClass(39, 48 + 64, 52 + 64, 1));
-		songNotes.Add(new NoteClass(40, 52 + 64, 56 + 64, 1));
+		songNotes.Add(new NoteClass(41, 52 + 64, 56 + 64, 1));
 		songNotes.Add(new NoteClass(39, 56 + 64, 60 + 64, 1));
 		songNotes.Add(new NoteClass(35, 60 + 64, 64 + 64, 1));
 
 		songNotes.Add(new NoteClass(47, 0 + 128, 4 + 128, 1));
 		songNotes.Add(new NoteClass(35, 4 + 128, 8 + 128, 1));
 		songNotes.Add(new NoteClass(47, 8 + 128, 12 + 128, 1));
-		songNotes.Add(new NoteClass(45, 12 + 128, 16 + 128, 1));
+		songNotes.Add(new NoteClass(46, 12 + 128, 16 + 128, 1));
 		songNotes.Add(new NoteClass(35, 16 + 128, 20 + 128, 1));
-		songNotes.Add(new NoteClass(45, 20 + 128, 28 + 128, 1));
+		songNotes.Add(new NoteClass(46, 20 + 128, 28 + 128, 1));
 		songNotes.Add(new NoteClass(42, 28 + 128, 48 + 128, 1));
-		songNotes.Add(new NoteClass(40, 48 + 128, 56 + 128, 1));
+		songNotes.Add(new NoteClass(41, 48 + 128, 56 + 128, 1));
 		songNotes.Add(new NoteClass(38, 56 + 128, 60 + 128, 1));
 		songNotes.Add(new NoteClass(35, 60 + 128, 64 + 128, 1));
 
 		songNotes.Add(new NoteClass(39, 0 + 192, 4 + 192, 1));
 		songNotes.Add(new NoteClass(37, 4 + 192, 8 + 192, 1));
-		songNotes.Add(new NoteClass(34, 8 + 192, 12 + 192, 1));
+		songNotes.Add(new NoteClass(35, 8 + 192, 12 + 192, 1));
 		songNotes.Add(new NoteClass(39, 12 + 192, 16 + 192, 1));
 		songNotes.Add(new NoteClass(37, 16 + 192, 20 + 192, 1));
-		songNotes.Add(new NoteClass(34, 20 + 192, 24 + 192, 1));
+		songNotes.Add(new NoteClass(35, 20 + 192, 24 + 192, 1));
 		songNotes.Add(new NoteClass(42, 24 + 192, 48 + 192, 1));
 		songNotes.Add(new NoteClass(37, 48 + 192, 64 + 192, 1));
 
@@ -89,9 +89,9 @@ public class ATHousandMiles : Songholder
 		songNotes.Add(new NoteClass(47, 0 + 384, 4 + 384, 1));
 		songNotes.Add(new NoteClass(35, 4 + 384, 8 + 384, 1));
 		songNotes.Add(new NoteClass(47, 8 + 384, 12 + 384, 1));
-		songNotes.Add(new NoteClass(45, 12 + 384, 16 + 384, 1));
+		songNotes.Add(new NoteClass(46, 12 + 384, 16 + 384, 1));
 		songNotes.Add(new NoteClass(35, 16 + 384, 20 + 384, 1));
-		songNotes.Add(new NoteClass(45, 20 + 384, 24 + 384, 1));
+		songNotes.Add(new NoteClass(46, 20 + 384, 24 + 384, 1));
 		songNotes.Add(new NoteClass(42, 24 + 384, 28 + 384, 1));
 		songNotes.Add(new NoteClass(35, 28 + 384, 32 + 384, 1));
 		songNotes.Add(new NoteClass(42, 32 + 384, 36 + 384, 1));
@@ -106,9 +106,9 @@ public class ATHousandMiles : Songholder
 		songNotes.Add(new NoteClass(47, 0 + 448, 4 + 448, 1));
 		songNotes.Add(new NoteClass(35, 4 + 448, 8 + 448, 1));
 		songNotes.Add(new NoteClass(47, 8 + 448, 12 + 448, 1));
-		songNotes.Add(new NoteClass(45, 12 + 448, 16 + 448, 1));
+		songNotes.Add(new NoteClass(46, 12 + 448, 16 + 448, 1));
 		songNotes.Add(new NoteClass(35, 16 + 448, 20 + 448, 1));
-		songNotes.Add(new NoteClass(45, 20 + 448, 24 + 448, 1));
+		songNotes.Add(new NoteClass(46, 20 + 448, 24 + 448, 1));
 		songNotes.Add(new NoteClass(42, 24 + 448, 28 + 448, 1));
 		songNotes.Add(new NoteClass(35, 28 + 448, 32 + 448, 1));
 		songNotes.Add(new NoteClass(42, 32 + 448, 36 + 448, 1));
@@ -145,19 +145,19 @@ public class ATHousandMiles : Songholder
 
 		songNotes.Add(new NoteClass(23, 0 + 256, 12 + 256, 2));
 		songNotes.Add(new NoteClass(16, 0 + 256, 12 + 256, 2));
-		songNotes.Add(new NoteClass(24, 12 + 256, 16 + 256, 2));
-		songNotes.Add(new NoteClass(17, 12 + 256, 16 + 256, 2));
+		songNotes.Add(new NoteClass(25, 12 + 256, 16 + 256, 2));
+		songNotes.Add(new NoteClass(18, 12 + 256, 16 + 256, 2));
 		songNotes.Add(new NoteClass(23, 32 + 256, 48 + 256, 2));
-		songNotes.Add(new NoteClass(14, 32 + 256, 48 + 256, 2));
+		songNotes.Add(new NoteClass(15, 32 + 256, 48 + 256, 2));
 		songNotes.Add(new NoteClass(23, 48 + 256, 56 + 256, 2));
 		songNotes.Add(new NoteClass(16, 48 + 256, 56 + 256, 2));
 
 		songNotes.Add(new NoteClass(23, 0 + 320, 12 + 320, 2));
 		songNotes.Add(new NoteClass(16, 0 + 320, 12 + 320, 2));
-		songNotes.Add(new NoteClass(24, 12 + 320, 16 + 320, 2));
-		songNotes.Add(new NoteClass(17, 12 + 320, 16 + 320, 2));
+		songNotes.Add(new NoteClass(25, 12 + 320, 16 + 320, 2));
+		songNotes.Add(new NoteClass(18, 12 + 320, 16 + 320, 2));
 		songNotes.Add(new NoteClass(23, 32 + 320, 48 + 320, 2));
-		songNotes.Add(new NoteClass(14, 32 + 320, 48 + 320, 2));
+		songNotes.Add(new NoteClass(15, 32 + 320, 48 + 320, 2));
 		songNotes.Add(new NoteClass(23, 48 + 320, 56 + 320, 2));
 		songNotes.Add(new NoteClass(16, 48 + 320, 56 + 320, 2));
 
