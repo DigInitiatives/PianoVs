@@ -20,11 +20,10 @@ public class TouchControlScript : MonoBehaviour
     void Start()
     {
         hitObj = new List<GameObject>();
-
-        for (int i = 0; i < 80; i++)
-        {
-            hitObj.Add(new GameObject());
-        }
+        //for (int i = 0; i < 80; i++)
+        //{
+        //    hitObj.Add(new GameObject());
+        //}
     }
 
     // Update is called once per frame
@@ -48,56 +47,35 @@ public class TouchControlScript : MonoBehaviour
 
                         //check if that touch index is currently pressing a note. 
                         // This is to prevent a very strange in which a touch index would began again without ending therefore its note would keep playing even if not touched
-                        if (hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>() == null)
+                        //if the raycast hits a collider whose game object has the tag "Note"
+                        if (hit.collider.gameObject.tag == "Key" && !hitObj.Contains(hit.collider.gameObject))
                         {
-                            //if the raycast hits a collider whose game object has the tag "Note"
-                            if (hit.collider.gameObject.tag == "Key" && !hitObj.Contains(hit.collider.gameObject))
-                            {
-                                //Add the object hit to the list, at the index of the touch
-                                hitObj[touchIndex] = hit.collider.gameObject;
-                                //Debug.Log("Touch");
-                                //Call the PlayNote() method in this objects NoteObjScript
-                                hit.collider.gameObject.GetComponent<IndividualKeyScript>().PlayNote();
-                            }
+
+                            hitObj.Add(hit.collider.gameObject);
+                            //Debug.Log("Touch");
+                            //Call the PlayNote() method in this objects NoteObjScript
+                            hit.collider.gameObject.GetComponent<IndividualKeyScript>().PlayNote();
                         }
                     }
+
+                    Debug.Log("Touch: " + touchIndex + " Started");
                     break;
                 case TouchPhase.Moved:
-                    Debug.Log("moved");
-                    //Raycast from the touch on the screen position to the world position
-                    if (Physics.Raycast(ray, out hit))
-                    {
-                        if (hit.collider.gameObject != hitObj[touchIndex].gameObject)
-                        {
-                            if (hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>() != null)
-                            {
-                                hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote(); 
-                                hitObj[touchIndex] = hit.collider.gameObject;
-                                hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().PlayNote();
-                            }
-                            else
-                            {
-                                hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote(); 
-                                hitObj[touchIndex] = new GameObject();
-                            }
-                        }
-                       
-                        
-                    }
                     break;
                 case TouchPhase.Ended:
-                    if (Physics.Raycast(ray, out hit))
+
+                    if (hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>() != null)
                     {
-                        if (hit.collider.gameObject != hitObj[touchIndex].gameObject)
-                        {
-                            hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote(); //error
-                            hitObj[touchIndex] = new GameObject();
-                        }
+                        hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote(); //error
                     }
+                    hitObj.Remove(hitObj[touchIndex]);
+
+                    Debug.Log("Touch: " + touchIndex + " Ended");
                     break;
                 default:
                     break;
             }
+
             //increments the touch index
             touchIndex += 1;
         }
@@ -109,7 +87,7 @@ public class TouchControlScript : MonoBehaviour
                 if (hitObj[i].GetComponent<IndividualKeyScript>() != null)
                 {
                     hitObj[i].gameObject.GetComponent<IndividualKeyScript>().StopNote();
-                    hitObj[i] = new GameObject();
+                    hitObj.Remove(hitObj[i]);
                 }
             }
         }
