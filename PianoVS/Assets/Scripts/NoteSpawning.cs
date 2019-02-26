@@ -27,13 +27,14 @@ public class NoteSpawning : MonoBehaviour
     {
 		//Grabs all children of the object (the Keyspawners on the Keyboard)
 		keyBoardKeys = new List<GameObject>();
+		//
 		holdNotes = new List<int>();
 		heldNoteCount = new List<int>();
 		for (int c = 0; c < transform.childCount; c++)
 		{
 			keyBoardKeys.Add(transform.GetChild(c).gameObject);
 			holdNotes.Add(0);
-			heldNoteCount.Add(-15);
+			heldNoteCount.Add(-500);
 		}
 		songs = new List<Songholder>();
 		songs.Add(new HotCrossBuns());
@@ -90,7 +91,7 @@ public class NoteSpawning : MonoBehaviour
 								if (notes.GetEnd() != notes.GetStart())
 								{
 									holdNotes[c] = notes.GetEnd();
-									heldNoteCount[c] = -15;
+									heldNoteCount[c] = -500;
 								}
 							}
 						}
@@ -106,14 +107,13 @@ public class NoteSpawning : MonoBehaviour
 								if (notes.GetEnd() != notes.GetStart())
 								{
 									holdNotes[c] = notes.GetEnd();
-									heldNoteCount[c] = -15;
+									heldNoteCount[c] = -500;
 								}
 							}
 						}
 					}
 				}					
 			}
-
 			beat++;
 			timestamp = Time.time;
 		}
