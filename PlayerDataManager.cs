@@ -6,7 +6,7 @@ using UnityEngine.UI;
 ///This script will be attached to each of the keyboard prefabs and will handle any and all player data, score/AI bool, etc
 ///Last Modified By: Noah Rittenhouse
 ///Last Modified Date: Feb-14-2019
-///Dependencies: N/A
+///Dependencies: Score displays must be assigned in the editor
 
 public class PlayerDataManager : MonoBehaviour
 {

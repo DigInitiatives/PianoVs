@@ -1,8 +1,8 @@
 ﻿///Author: Adam Warkentin
-///This script is attatched to a "Key" which only has a public method that plays the sound clip of the attatched audio source
+///This script is attatched to a "Key" and controls note hitting, sounds, and score provision
 ///Last Modified By: Noah Rittenhouse
-///Last Modified Date: 5-Feb-2019
-///Dependencies: Requires an audio source component.If the key is a white key, check the "whiteKey" bool in the editor
+///Last Modified Date: 14-Feb-2019
+///Dependencies: If the key is a white key, check the "whiteKey" bool in the editor
 
 using System.Collections;
 using System.Collections.Generic;
