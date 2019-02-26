@@ -267,12 +267,12 @@ public class IndividualKeyScript : MonoBehaviour
     }
 	public void TimeStamp()
 	{
-		GetComponent<AudioSource>().volume -= Time.deltaTime * 8;
+		GetComponent<AudioSource>().volume -= Time.deltaTime * 4;
 	}
 
 	IEnumerator SoundStop()
 	{
-		yield return new WaitForSeconds(.5f);
+		yield return new WaitForSeconds(1f);
 
 		GetComponent<AudioSource>().Stop();
 		GetComponent<AudioSource>().volume = 1;
