@@ -3475,6 +3475,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: e0b72f971eecb864ca713a5216550d52, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 7766336068802937326, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3485,6 +3486,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.0959253
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 1543517... Crap
 =======
 >>>>>>> parent of 1543517... Crap
     m_RemovedComponents: []
