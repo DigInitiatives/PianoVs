@@ -51,8 +51,13 @@ public class IndividualKeyScript : MonoBehaviour
         //Gets the necessary material for the key from the Resources folder
         if (whiteKey)
         {
+<<<<<<< HEAD
             keyUp = Resources.Load("Material/Key-Up") as Material;
             keyDown = Resources.Load("Material/Key-Down") as Material;
+=======
+            keyUp = Resources.Load("Key-Up") as Material;
+            keyDown = Resources.Load("Key-Down") as Material;
+>>>>>>> parent of 1543517... Crap
         }
         else
         {
