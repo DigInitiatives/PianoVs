@@ -27,21 +27,20 @@ public class NoteSpawning : MonoBehaviour
     {
 		//Grabs all children of the object (the Keyspawners on the Keyboard)
 		keyBoardKeys = new List<GameObject>();
-		//
 		holdNotes = new List<int>();
 		heldNoteCount = new List<int>();
 		for (int c = 0; c < transform.childCount; c++)
 		{
 			keyBoardKeys.Add(transform.GetChild(c).gameObject);
 			holdNotes.Add(0);
-			heldNoteCount.Add(-500);
+			heldNoteCount.Add(-15);
 		}
 		songs = new List<Songholder>();
 		songs.Add(new HotCrossBuns());
 		songs.Add(new ATHousandMiles());
 		beat = 0;
 		timestamp = Time.time;
-		bpm = 150;
+		bpm = 120;
 		timesignature = 4;
 		beatTime = (60 / bpm) / 16;
     }
@@ -91,7 +90,7 @@ public class NoteSpawning : MonoBehaviour
 								if (notes.GetEnd() != notes.GetStart())
 								{
 									holdNotes[c] = notes.GetEnd();
-									heldNoteCount[c] = -500;
+									heldNoteCount[c] = -15;
 								}
 							}
 						}
@@ -107,20 +106,21 @@ public class NoteSpawning : MonoBehaviour
 								if (notes.GetEnd() != notes.GetStart())
 								{
 									holdNotes[c] = notes.GetEnd();
-									heldNoteCount[c] = -500;
+									heldNoteCount[c] = -15;
 								}
 							}
 						}
 					}
 				}					
 			}
+
 			beat++;
 			timestamp = Time.time;
 		}
 		#endregion
 		#region Held NoteCreation
 		// Checks to see if the note is being held. If it is, then create a held note.
-		for (int c =0; c <= holdNotes.Count - 1; c++)
+		for (int c = 0; c <= holdNotes.Count - 1; c++)
 		{
 			if (c == 1 || c == 3 || c == 6 || c == 8 || c == 10 || c == 13 || c == 15 || c == 18 || c == 20 || c == 22
 				|| c == 25 || c == 27 || c == 30 || c == 32 || c == 34 || 37 == c || c == 39 || c == 42 || c == 44 || c == 46)
