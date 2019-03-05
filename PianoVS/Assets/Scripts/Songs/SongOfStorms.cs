@@ -13,7 +13,7 @@ public class SongOfStorms : Songholder
         songNotes = new List<NoteClass>();
         SetBPM(200);
         SetTimeSignature(3);
-        int barTime = 48;
+        int barTime = timeSignature * 16;
 
         //Right Hand
 
@@ -142,6 +142,164 @@ public class SongOfStorms : Songholder
         // Bar 22
         songNotes.Add(new NoteClass(a3, 0 + (barTime * 21), 32 + (barTime * 21), 1));
         songNotes.Add(new NoteClass(a3, 32 + (barTime * 21), 32 + (barTime * 21), 1));
+
+        // Bar 23
+        songNotes.Add(new NoteClass(d4, 16 + (barTime * 22), 16 + (barTime * 22), 1));
+
+        songNotes.Add(new NoteClass(d3, 16 + (barTime * 22), 16 + (barTime * 22), 1));
+        songNotes.Add(new NoteClass(f3, 16 + (barTime * 22), 16 + (barTime * 22), 1));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 22), 16 + (barTime * 22), 1));
+
+        songNotes.Add(new NoteClass(d3, 32 + (barTime * 22), 32 + (barTime * 22), 1));
+        songNotes.Add(new NoteClass(f3, 32 + (barTime * 22), 32 + (barTime * 22), 1));
+        songNotes.Add(new NoteClass(a3, 32 + (barTime * 22), 32 + (barTime * 22), 1));
+
+        // Bar 24
+        songNotes.Add(new NoteClass(e3, 8 + (barTime * 23), 48 + (barTime * 23), 1));
+        songNotes.Add(new NoteClass(g3, 16 + (barTime * 23), 48 + (barTime * 23), 1));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 23), 48 + (barTime * 23), 1));
+
+        // Bar 25
+        songNotes.Add(new NoteClass(f3, 16 + (barTime * 24), 16 + (barTime * 24), 1));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 24), 16 + (barTime * 24), 1));
+        songNotes.Add(new NoteClass(c4, 16 + (barTime * 24), 16 + (barTime * 24), 1));
+
+        songNotes.Add(new NoteClass(f3, 32 + (barTime * 24), 32 + (barTime * 24), 1));
+        songNotes.Add(new NoteClass(a3, 32 + (barTime * 24), 32 + (barTime * 24), 1));
+        songNotes.Add(new NoteClass(c4, 32 + (barTime * 24), 32 + (barTime * 24), 1));
+
+        // Bar 26
+        songNotes.Add(new NoteClass(e3, 8 + (barTime * 25), 48 + (barTime * 25), 1));
+        songNotes.Add(new NoteClass(g3, 16 + (barTime * 25), 48 + (barTime * 25), 1));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 25), 48 + (barTime * 25), 1));
+
+        // Bar 27
+        songNotes.Add(new NoteClass(d3, 16 + (barTime * 26), 16 + (barTime * 26), 1));
+        songNotes.Add(new NoteClass(f3, 16 + (barTime * 26), 16 + (barTime * 26), 1));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 26), 16 + (barTime * 26), 1));
+
+        songNotes.Add(new NoteClass(d3, 32 + (barTime * 26), 32 + (barTime * 26), 1));
+        songNotes.Add(new NoteClass(f3, 32 + (barTime * 26), 32 + (barTime * 26), 1));
+        songNotes.Add(new NoteClass(a3, 32 + (barTime * 26), 32 + (barTime * 26), 1));
+
+        // Bar 28
+        songNotes.Add(new NoteClass(e3, 8 + (barTime * 27), 48 + (barTime * 27), 1));
+        songNotes.Add(new NoteClass(g3, 16 + (barTime * 27), 48 + (barTime * 27), 1));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 27), 48 + (barTime * 27), 1));
+
+        // Bar 29
+        songNotes.Add(new NoteClass(f3, 16 + (barTime * 28), 16 + (barTime * 28), 1));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 28), 16 + (barTime * 28), 1));
+        songNotes.Add(new NoteClass(c4, 16 + (barTime * 28), 16 + (barTime * 28), 1));
+
+        songNotes.Add(new NoteClass(f3, 32 + (barTime * 28), 32 + (barTime * 28), 1));
+        songNotes.Add(new NoteClass(a3, 32 + (barTime * 28), 32 + (barTime * 28), 1));
+        songNotes.Add(new NoteClass(c4, 32 + (barTime * 28), 32 + (barTime * 28), 1));
+
+        // Bar 30
+        songNotes.Add(new NoteClass(e3, 8 + (barTime * 29), 48 + (barTime * 29), 1));
+        songNotes.Add(new NoteClass(g3, 16 + (barTime * 29), 48 + (barTime * 29), 1));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 29), 48 + (barTime * 29), 1));
+
+        // Bar 31
+        songNotes.Add(new NoteClass(d3, 0 + (barTime * 30), 0 + (barTime * 30), 1));
+        songNotes.Add(new NoteClass(f3, 8 + (barTime * 30), 8 + (barTime * 30), 1));
+        songNotes.Add(new NoteClass(d4, 16 + (barTime * 30), 48 + (barTime * 30), 1));
+
+        // Bar 32
+        songNotes.Add(new NoteClass(d3, 0 + (barTime * 31), 0 + (barTime * 31), 1));
+        songNotes.Add(new NoteClass(f3, 8 + (barTime * 31), 8 + (barTime * 31), 1));
+        songNotes.Add(new NoteClass(d4, 16 + (barTime * 31), 16 + (barTime * 31), 1));
+
+        // Bar 33
+        songNotes.Add(new NoteClass(e4, 0 + (barTime * 32), 0 + (barTime * 32), 1));
+        songNotes.Add(new NoteClass(f4, 24 + (barTime * 32), 24 + (barTime * 32), 1));
+        songNotes.Add(new NoteClass(e4, 32 + (barTime * 32), 32 + (barTime * 32), 1));
+        songNotes.Add(new NoteClass(f4, 40 + (barTime * 32), 40 + (barTime * 32), 1));
+
+        // Bar 34
+        songNotes.Add(new NoteClass(e4, 0 + (barTime * 33), 0 + (barTime * 33), 1));
+        songNotes.Add(new NoteClass(c4, 8 + (barTime * 33), 8 + (barTime * 33), 1));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 33), 48 + (barTime * 33), 1));
+
+        // Bar 35
+        songNotes.Add(new NoteClass(a3, 0 + (barTime * 34), 0 + (barTime * 34), 1));
+        songNotes.Add(new NoteClass(d3, 16 + (barTime * 34), 16 + (barTime * 34), 1));
+        songNotes.Add(new NoteClass(f3, 32 + (barTime * 34), 32 + (barTime * 34), 1));
+        songNotes.Add(new NoteClass(g3, 40 + (barTime * 34), 40 + (barTime * 34), 1));
+
+        // Bar 36
+        songNotes.Add(new NoteClass(a3, 0 + (barTime * 35), 48 + (barTime * 35), 1));
+
+        // Bar 37
+        songNotes.Add(new NoteClass(a3, 0 + (barTime * 36), 0 + (barTime * 36), 1));
+        songNotes.Add(new NoteClass(d3, 16 + (barTime * 36), 16 + (barTime * 36), 1));
+        songNotes.Add(new NoteClass(f3, 36 + (barTime * 36), 36 + (barTime * 36), 1));
+        songNotes.Add(new NoteClass(g3, 40 + (barTime * 36), 40 + (barTime * 36), 1));
+
+        // Bar 38
+        songNotes.Add(new NoteClass(e3, 0 + (barTime * 37), 48 + (barTime * 37), 1));
+
+        // Bar 39
+        songNotes.Add(new NoteClass(d3, 0 + (barTime * 38), 0 + (barTime * 38), 1));
+        songNotes.Add(new NoteClass(f3, 8 + (barTime * 38), 8 + (barTime * 38), 1));
+        songNotes.Add(new NoteClass(d4, 16 + (barTime * 38), 48 + (barTime * 38), 1));
+
+        // Bar 40
+        songNotes.Add(new NoteClass(d3, 0 + (barTime * 39), 0 + (barTime * 39), 1));
+        songNotes.Add(new NoteClass(f3, 8 + (barTime * 39), 8 + (barTime * 39), 1));
+        songNotes.Add(new NoteClass(d4, 16 + (barTime * 39), 16 + (barTime * 39), 1));
+
+        // Bar 41
+        songNotes.Add(new NoteClass(e4, 0 + (barTime * 40), 0 + (barTime * 40), 1));
+        songNotes.Add(new NoteClass(f4, 24 + (barTime * 40), 24 + (barTime * 40), 1));
+        songNotes.Add(new NoteClass(e4, 32 + (barTime * 40), 32 + (barTime * 40), 1));
+        songNotes.Add(new NoteClass(f4, 40 + (barTime * 40), 40 + (barTime * 40), 1));
+
+        // Bar 42
+        songNotes.Add(new NoteClass(e4, 0 + (barTime * 41), 0 + (barTime * 41), 1));
+        songNotes.Add(new NoteClass(c4, 8 + (barTime * 41), 8 + (barTime * 41), 1));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 41), 48 + (barTime * 41), 1));
+
+        // Bar 43
+        songNotes.Add(new NoteClass(a3, 0 + (barTime * 42), 0 + (barTime * 42), 1));
+        songNotes.Add(new NoteClass(d3, 16 + (barTime * 42), 16 + (barTime * 42), 1));
+        songNotes.Add(new NoteClass(f3, 32 + (barTime * 42), 32 + (barTime * 42), 1));
+        songNotes.Add(new NoteClass(g3, 40 + (barTime * 42), 40 + (barTime * 42), 1));
+
+        // Bar 44
+        songNotes.Add(new NoteClass(a3, 0 + (barTime * 43), 32 + (barTime * 43), 1));
+        songNotes.Add(new NoteClass(a3, 32 + (barTime * 43), 32 + (barTime * 43), 1));
+
+        // Bar 45
+        songNotes.Add(new NoteClass(d4, 16 + (barTime * 44), 16 + (barTime * 44), 1));
+
+        songNotes.Add(new NoteClass(d3, 16 + (barTime * 44), 16 + (barTime * 44), 1));
+        songNotes.Add(new NoteClass(f3, 16 + (barTime * 44), 16 + (barTime * 44), 1));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 44), 16 + (barTime * 44), 1));
+
+        songNotes.Add(new NoteClass(d3, 32 + (barTime * 44), 32 + (barTime * 44), 1));
+        songNotes.Add(new NoteClass(f3, 32 + (barTime * 44), 32 + (barTime * 44), 1));
+        songNotes.Add(new NoteClass(a3, 32 + (barTime * 44), 32 + (barTime * 44), 1));
+
+        // Bar 46
+        songNotes.Add(new NoteClass(e3, 8 + (barTime * 45), 48 + (barTime * 45), 1));
+        songNotes.Add(new NoteClass(g3, 16 + (barTime * 45), 48 + (barTime * 45), 1));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 45), 48 + (barTime * 45), 1));
+
+        // Bar 47
+        songNotes.Add(new NoteClass(f3, 16 + (barTime * 46), 16 + (barTime * 46), 1));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 46), 16 + (barTime * 46), 1));
+        songNotes.Add(new NoteClass(c4, 16 + (barTime * 46), 16 + (barTime * 46), 1));
+
+        songNotes.Add(new NoteClass(f3, 32 + (barTime * 46), 32 + (barTime * 46), 1));
+        songNotes.Add(new NoteClass(a3, 32 + (barTime * 46), 32 + (barTime * 46), 1));
+        songNotes.Add(new NoteClass(c4, 32 + (barTime * 46), 32 + (barTime * 46), 1));
+
+        // Bar 48
+        songNotes.Add(new NoteClass(e3, 8 + (barTime * 47), 48 + (barTime * 47), 1));
+        songNotes.Add(new NoteClass(g3, 16 + (barTime * 47), 48 + (barTime * 47), 1));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 47), 48 + (barTime * 47), 1));
 
         //Left Hand
 
@@ -293,8 +451,206 @@ public class SongOfStorms : Songholder
         // Bar 21
         songNotes.Add(new NoteClass(b2, 0 + (barTime * 20), 48 + (barTime * 20), 2));
 
-        songNotes.Add(new NoteClass(cSharp3, 16 + (barTime * 20), 48 + (barTime * 20), 2));
-        songNotes.Add(new NoteClass(e3, 16 + (barTime * 20), 48 + (barTime * 20), 2));
-        songNotes.Add(new NoteClass(a3, 16 + (barTime * 20), 48 + (barTime * 20), 2));
+        songNotes.Add(new NoteClass(f3, 16 + (barTime * 20), 16 + (barTime * 20), 2));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 20), 16 + (barTime * 20), 2));
+
+        songNotes.Add(new NoteClass(f3, 32 + (barTime * 20), 32 + (barTime * 20), 2));
+        songNotes.Add(new NoteClass(a3, 32 + (barTime * 20), 32 + (barTime * 20), 2));
+
+        // Bar 22
+        songNotes.Add(new NoteClass(b2, 0 + (barTime * 21), 48 + (barTime * 21), 2));
+
+        songNotes.Add(new NoteClass(cSharp3, 16 + (barTime * 21), 48 + (barTime * 21), 2));
+        songNotes.Add(new NoteClass(e3, 16 + (barTime * 21), 48 + (barTime * 21), 2));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 21), 48 + (barTime * 21), 2));
+
+        // Bar 23
+        songNotes.Add(new NoteClass(d2, 0 + (barTime * 22), 48 + (barTime * 22), 2));
+
+        songNotes.Add(new NoteClass(f2, 16 + (barTime * 22), 16 + (barTime * 22), 2));
+        songNotes.Add(new NoteClass(a2, 16 + (barTime * 22), 16 + (barTime * 22), 2));
+
+        songNotes.Add(new NoteClass(f2, 32 + (barTime * 22), 32 + (barTime * 22), 2));
+        songNotes.Add(new NoteClass(a2, 32 + (barTime * 22), 32 + (barTime * 22), 2));
+
+        // Bar 24
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * 23), 48 + (barTime * 23), 2));
+        songNotes.Add(new NoteClass(g2, 16 + (barTime * 23), 48 + (barTime * 23), 2));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 23), 48 + (barTime * 23), 2));
+
+        // Bar 25
+        songNotes.Add(new NoteClass(f2, 0 + (barTime * 24), 48 + (barTime * 24), 2));
+
+        songNotes.Add(new NoteClass(a2, 16 + (barTime * 24), 16 + (barTime * 24), 2));
+        songNotes.Add(new NoteClass(c3, 16 + (barTime * 24), 16 + (barTime * 24), 2));
+
+        songNotes.Add(new NoteClass(a2, 32 + (barTime * 24), 32 + (barTime * 24), 2));
+        songNotes.Add(new NoteClass(c3, 32 + (barTime * 24), 32 + (barTime * 24), 2));
+
+        // Bar 26
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * 25), 48 + (barTime * 25), 2));
+        songNotes.Add(new NoteClass(g2, 16 + (barTime * 25), 48 + (barTime * 25), 2));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 25), 48 + (barTime * 25), 2));
+
+        // Bar 27
+        songNotes.Add(new NoteClass(d2, 0 + (barTime * 26), 48 + (barTime * 26), 2));
+
+        songNotes.Add(new NoteClass(f2, 16 + (barTime * 26), 16 + (barTime * 26), 2));
+        songNotes.Add(new NoteClass(a2, 16 + (barTime * 26), 16 + (barTime * 26), 2));
+
+        songNotes.Add(new NoteClass(f2, 32 + (barTime * 26), 32 + (barTime * 26), 2));
+        songNotes.Add(new NoteClass(a2, 32 + (barTime * 26), 32 + (barTime * 26), 2));
+
+        // Bar 28
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * 27), 48 + (barTime * 27), 2));
+        songNotes.Add(new NoteClass(g2, 16 + (barTime * 27), 48 + (barTime * 27), 2));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 27), 48 + (barTime * 27), 2));
+
+        // Bar 29
+        songNotes.Add(new NoteClass(f2, 0 + (barTime * 28), 48 + (barTime * 28), 2));
+
+        songNotes.Add(new NoteClass(a2, 16 + (barTime * 28), 16 + (barTime * 28), 2));
+        songNotes.Add(new NoteClass(c3, 16 + (barTime * 28), 16 + (barTime * 28), 2));
+
+        songNotes.Add(new NoteClass(a2, 32 + (barTime * 28), 32 + (barTime * 28), 2));
+        songNotes.Add(new NoteClass(c3, 32 + (barTime * 28), 32 + (barTime * 28), 2));
+
+        // Bar 30
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * 29), 48 + (barTime * 29), 2));
+        songNotes.Add(new NoteClass(g2, 16 + (barTime * 29), 48 + (barTime * 29), 2));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 29), 48 + (barTime * 29), 2));
+
+        // Bar 31
+        songNotes.Add(new NoteClass(d2, 0 + (barTime * 30), 48 + (barTime * 30), 2));
+
+        songNotes.Add(new NoteClass(f2, 16 + (barTime * 30), 16 + (barTime * 30), 2));
+        songNotes.Add(new NoteClass(a2, 16 + (barTime * 30), 16 + (barTime * 30), 2));
+
+        songNotes.Add(new NoteClass(f2, 32 + (barTime * 30), 32 + (barTime * 30), 2));
+        songNotes.Add(new NoteClass(a2, 32 + (barTime * 30), 32 + (barTime * 30), 2));
+
+        // Bar 32
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * 31), 48 + (barTime * 31), 2));
+        songNotes.Add(new NoteClass(g2, 16 + (barTime * 31), 48 + (barTime * 31), 2));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 31), 48 + (barTime * 31), 2));
+
+        // Bar 33
+        songNotes.Add(new NoteClass(f2, 0 + (barTime * 32), 48 + (barTime * 32), 2));
+
+        songNotes.Add(new NoteClass(a2, 16 + (barTime * 32), 16 + (barTime * 32), 2));
+        songNotes.Add(new NoteClass(c3, 16 + (barTime * 32), 16 + (barTime * 32), 2));
+
+        songNotes.Add(new NoteClass(a2, 32 + (barTime * 32), 32 + (barTime * 32), 2));
+        songNotes.Add(new NoteClass(c3, 32 + (barTime * 32), 32 + (barTime * 32), 2));
+
+        // Bar 34
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * 33), 48 + (barTime * 33), 2));
+        songNotes.Add(new NoteClass(g2, 16 + (barTime * 33), 48 + (barTime * 33), 2));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 33), 48 + (barTime * 33), 2));
+
+        // Bar 35
+        songNotes.Add(new NoteClass(b2, 0 + (barTime * 34), 48 + (barTime * 34), 2));
+
+        songNotes.Add(new NoteClass(f3, 16 + (barTime * 34), 16 + (barTime * 34), 2));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 34), 16 + (barTime * 34), 2));
+
+        songNotes.Add(new NoteClass(f3, 32 + (barTime * 34), 32 + (barTime * 34), 2));
+        songNotes.Add(new NoteClass(a3, 32 + (barTime * 34), 32 + (barTime * 34), 2));
+
+        // Bar 36
+        songNotes.Add(new NoteClass(f2, 0 + (barTime * 35), 48 + (barTime * 35), 2));
+
+        songNotes.Add(new NoteClass(c3, 8 + (barTime * 35), 8 + (barTime * 35), 2));
+
+        songNotes.Add(new NoteClass(f3, 16 + (barTime * 35), 48 + (barTime * 35), 2));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 35), 48 + (barTime * 35), 2));
+
+        // Bar 37
+        songNotes.Add(new NoteClass(b2, 0 + (barTime * 36), 48 + (barTime * 36), 2));
+
+        songNotes.Add(new NoteClass(f3, 16 + (barTime * 36), 16 + (barTime * 36), 2));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 36), 16 + (barTime * 36), 2));
+
+        songNotes.Add(new NoteClass(f3, 36 + (barTime * 36), 36 + (barTime * 36), 2));
+        songNotes.Add(new NoteClass(a3, 36 + (barTime * 36), 36 + (barTime * 36), 2));
+
+        // Bar 38
+        songNotes.Add(new NoteClass(b2, 0 + (barTime * 37), 48 + (barTime * 37), 2));
+
+        songNotes.Add(new NoteClass(cSharp3, 16 + (barTime * 37), 48 + (barTime * 37), 2));
+        songNotes.Add(new NoteClass(e3, 16 + (barTime * 37), 48 + (barTime * 37), 2));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 37), 48 + (barTime * 37), 2));
+
+        // Bar 39
+        songNotes.Add(new NoteClass(d2, 0 + (barTime * 38), 48 + (barTime * 38), 2));
+
+        songNotes.Add(new NoteClass(f2, 16 + (barTime * 38), 16 + (barTime * 38), 2));
+        songNotes.Add(new NoteClass(a2, 16 + (barTime * 38), 16 + (barTime * 38), 2));
+
+        songNotes.Add(new NoteClass(f2, 32 + (barTime * 38), 32 + (barTime * 38), 2));
+        songNotes.Add(new NoteClass(a2, 32 + (barTime * 38), 32 + (barTime * 38), 2));
+
+        // Bar 40
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * 39), 48 + (barTime * 39), 2));
+        songNotes.Add(new NoteClass(g2, 16 + (barTime * 39), 48 + (barTime * 39), 2));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 39), 48 + (barTime * 39), 2));
+
+        // Bar 41
+        songNotes.Add(new NoteClass(f2, 0 + (barTime * 40), 48 + (barTime * 40), 2));
+
+        songNotes.Add(new NoteClass(a2, 16 + (barTime * 40), 16 + (barTime * 40), 2));
+        songNotes.Add(new NoteClass(c3, 16 + (barTime * 40), 16 + (barTime * 40), 2));
+
+        songNotes.Add(new NoteClass(a2, 32 + (barTime * 40), 32 + (barTime * 40), 2));
+        songNotes.Add(new NoteClass(c3, 32 + (barTime * 40), 32 + (barTime * 40), 2));
+
+        // Bar 42
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * 41), 48 + (barTime * 41), 2));
+        songNotes.Add(new NoteClass(g2, 16 + (barTime * 41), 48 + (barTime * 41), 2));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 41), 48 + (barTime * 41), 2));
+
+        // Bar 43
+        songNotes.Add(new NoteClass(b2, 0 + (barTime * 42), 48 + (barTime * 42), 2));
+
+        songNotes.Add(new NoteClass(f3, 16 + (barTime * 42), 16 + (barTime * 42), 2));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 42), 16 + (barTime * 42), 2));
+
+        songNotes.Add(new NoteClass(f3, 32 + (barTime * 42), 32 + (barTime * 42), 2));
+        songNotes.Add(new NoteClass(a3, 32 + (barTime * 42), 32 + (barTime * 42), 2));
+
+        // Bar 44
+        songNotes.Add(new NoteClass(b2, 0 + (barTime * 43), 48 + (barTime * 43), 2));
+
+        songNotes.Add(new NoteClass(cSharp3, 16 + (barTime * 43), 48 + (barTime * 43), 2));
+        songNotes.Add(new NoteClass(e3, 16 + (barTime * 43), 48 + (barTime * 43), 2));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * 43), 48 + (barTime * 43), 2));
+
+        // Bar 45
+        songNotes.Add(new NoteClass(d2, 0 + (barTime * 44), 48 + (barTime * 44), 2));
+
+        songNotes.Add(new NoteClass(f2, 16 + (barTime * 44), 16 + (barTime * 44), 2));
+        songNotes.Add(new NoteClass(a2, 16 + (barTime * 44), 16 + (barTime * 44), 2));
+
+        songNotes.Add(new NoteClass(f2, 32 + (barTime * 44), 32 + (barTime * 44), 2));
+        songNotes.Add(new NoteClass(a2, 32 + (barTime * 44), 32 + (barTime * 44), 2));
+
+        // Bar 46
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * 45), 48 + (barTime * 45), 2));
+        songNotes.Add(new NoteClass(g2, 16 + (barTime * 45), 48 + (barTime * 45), 2));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 45), 48 + (barTime * 45), 2));
+
+        // Bar 47
+        songNotes.Add(new NoteClass(f2, 0 + (barTime * 46), 48 + (barTime * 46), 2));
+
+        songNotes.Add(new NoteClass(a2, 16 + (barTime * 46), 16 + (barTime * 46), 2));
+        songNotes.Add(new NoteClass(c3, 16 + (barTime * 46), 16 + (barTime * 46), 2));
+
+        songNotes.Add(new NoteClass(a2, 32 + (barTime * 46), 32 + (barTime * 46), 2));
+        songNotes.Add(new NoteClass(c3, 32 + (barTime * 46), 32 + (barTime * 46), 2));
+
+        // Bar 48
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * 47), 48 + (barTime * 47), 2));
+        songNotes.Add(new NoteClass(g2, 16 + (barTime * 47), 48 + (barTime * 47), 2));
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * 47), 48 + (barTime * 47), 2));
     }
 }

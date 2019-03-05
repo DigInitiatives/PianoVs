@@ -11,11 +11,6 @@ public class NoteSpawning : MonoBehaviour
 {
     //Will call from reasource folder eventually
 
-    int m_frameCounter = 0;
-    float m_timeCounter = 0.0f;
-    float m_lastFramerate = 0.0f;
-    public float m_refreshTime = 0.5f;
-
     [SerializeField]
 	GameObject note, heldNote, blackNote, heldBlackNote, noteBar;
 
@@ -57,23 +52,10 @@ public class NoteSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-        if (m_timeCounter < m_refreshTime)
+        if (beat == 2352)
         {
-            m_timeCounter += Time.deltaTime;
-            m_frameCounter++;
+            beat = 0;
         }
-        else
-        {
-            //This code will break if you set your m_refreshTime to 0, which makes no sense.
-            m_lastFramerate = (float)m_frameCounter / m_timeCounter;
-            m_frameCounter = 0;
-            m_timeCounter = 0.0f;
-        }
-        Debug.Log(m_lastFramerate);
-        //if (beat == 256 + 384)
-        //{
-        //	beat = 0;
-        //}
         if (beat % (timesignature * 16) == 0 || beat == 0)
 		{
 			Instantiate(noteBar, transform.position, transform.rotation);
