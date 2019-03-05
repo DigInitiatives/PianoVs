@@ -14,8 +14,7 @@ public class IndividualKeyScript : MonoBehaviour
 	float heldNotedistance = 0;
 	bool stamp;
 
-	public bool AI, 
-				player3or4;
+	public bool AI, player3or4;
 	int AITimer;
 
 	//keymodel is the visual component of this obj

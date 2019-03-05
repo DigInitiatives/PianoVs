@@ -10,7 +10,8 @@ using UnityEngine.UI;
 
 public class PlayerDataManager : MonoBehaviour
 {
-    bool isAI;//Bool that controls whether or not the AI is active
+    public bool isAI,
+				isPlayer3Or4;//Bool that controls whether or not the AI is active
 
     float playerScore, playerMultiplier;//Ints that hold the players score and multiplier
     float holdingScore;//Float that holds score from holding note so it can be rounded for the display
@@ -29,9 +30,23 @@ public class PlayerDataManager : MonoBehaviour
         multiplierCount = 0;
         playerMultiplier = 1;
 
-        isAI = true;
-
-        if(comboCount == 0)
+		if (isAI)
+		{
+			transform.GetComponentInChildren<IndividualKeyScript>().AI = true;
+		}
+		else
+		{
+			transform.GetComponentInChildren<IndividualKeyScript>().AI = false;
+		}
+		if (isPlayer3Or4)
+		{
+			transform.GetComponentInChildren<IndividualKeyScript>().player3or4 = true;
+		}
+		else
+		{
+			transform.GetComponentInChildren<IndividualKeyScript>().player3or4 = false;
+		}
+		if (comboCount == 0)
         {
             comboCount = 10;//Defaults to 10 good hits needed
         }

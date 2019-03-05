@@ -18,6 +18,7 @@ public class ATHousandMiles : Songholder
 		songNotes.Add(new NoteClass(35, 4, 8, 1));
 		songNotes.Add(new NoteClass(47, 8, 12, 1));
 		songNotes.Add(new NoteClass(46, 12, 16, 1));
+
 		songNotes.Add(new NoteClass(35, 16, 20, 1));
 		songNotes.Add(new NoteClass(46, 20, 28, 1));
 		songNotes.Add(new NoteClass(42, 28, 48, 1));
