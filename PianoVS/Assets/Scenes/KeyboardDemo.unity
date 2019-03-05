@@ -1032,6 +1032,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keyboard
       objectReference: {fileID: 0}
+    - target: {fileID: 2397406472197117168, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7766336068802937326, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: m_LocalScale.x

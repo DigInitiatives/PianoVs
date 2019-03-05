@@ -38,6 +38,7 @@ public class NoteSpawning : MonoBehaviour
 		songs = new List<Songholder>();
 		songs.Add(new HotCrossBuns());
 		songs.Add(new ATHousandMiles());
+        songs.Add(new ProfLaytonTheme());
 		beat = 0;
 		timestamp = Time.time;
 		bpm = 120;
@@ -71,7 +72,7 @@ public class NoteSpawning : MonoBehaviour
 			}
 
 			//instantiates the note if it starts on this beat
-			foreach (NoteClass notes in songs[1].songNotes)
+			foreach (NoteClass notes in songs[2].songNotes)
 			{
 				if (notes.GetStart() == beat)
 				{
