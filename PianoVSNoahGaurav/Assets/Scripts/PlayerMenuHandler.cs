@@ -13,14 +13,19 @@ public class PlayerMenuHandler : MonoBehaviour
 {
     bool menuStatus, toggleTimerStatus;
     float toggleTimer;
+    int currentSongID, songToVoteFor;
     [SerializeField]
     GameObject menuPanel, menuToggleText;
-
+    [SerializeField]
+    GameObject dropdownMenu, votingText, votePanel, waitingMessage;
+    string songName;
     void Start()
     {
+        songName = "default";
+        songToVoteFor = -1;
         menuStatus = false;
         toggleTimerStatus = false;
-        toggleTimer = 1;
+        toggleTimer = 0.5f;
     }
     void Update()
     {
@@ -32,6 +37,7 @@ public class PlayerMenuHandler : MonoBehaviour
         menuToggleText.GetComponent<Text>().text = toggleTimer.ToString();//Just a display that shows how long they have pressed
     }
 
+    #region Menu Activation
     public void PressedMenuToggle()//When the player presses the menu button begin a timer, or if the menu is already open then just close it
     {
         if (!menuStatus)
@@ -50,6 +56,47 @@ public class PlayerMenuHandler : MonoBehaviour
         {
             menuStatus = true;//Open menu
         }
-        toggleTimer = 1;//Reset timer
+        toggleTimer = 0.5f;//Reset timer
     }
+    #endregion
+
+    #region Difficulty Selection
+
+    #endregion
+
+    #region Song Selection
+    public void SelectSong()
+    {
+        int songID = dropdownMenu.GetComponent<Dropdown>().value;
+        if(songID != currentSongID)
+        {
+            songToVoteFor = songID;
+
+            //Find song data from songID, database required
+
+            votingText.GetComponent<Text>().text = "Switch to " + songName;
+
+            //Send song to vote for to other players
+
+            votePanel.SetActive(true);
+            dropdownMenu.GetComponent<Dropdown>().interactable = false;
+        }
+    }
+
+    public void SubmitVote(bool vote)
+    {
+        //true = yes
+        //false = no
+        if(vote)//Yes
+        {
+            VotingHandler.IncrementVote(1);
+        }
+        else//No
+        {
+            VotingHandler.IncrementVote(-1);
+        }
+        waitingMessage.SetActive(true);
+        votePanel.SetActive(false);//Close vote panel
+    }
+    #endregion
 }

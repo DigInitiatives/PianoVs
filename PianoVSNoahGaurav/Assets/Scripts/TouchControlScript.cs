@@ -63,7 +63,7 @@ public class TouchControlScript : MonoBehaviour
                     }
                     break;
                 case TouchPhase.Moved:
-                    Debug.Log("moved");
+                    //Debug.Log("moved");
                     //Raycast from the touch on the screen position to the world position
                     if (Physics.Raycast(ray, out hit))
                     {

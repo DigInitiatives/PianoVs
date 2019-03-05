@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Note
   - HeldNote
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: InFront
+    uniqueID: 1194224679
     locked: 0
