@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class PlayerDataManager : MonoBehaviour
 {
-    bool isAI;//Bool that controls whether or not the AI is active
+    public bool isAI;//Bool that controls whether or not the AI is active
 
     float playerScore, playerMultiplier;//Ints that hold the players score and multiplier
     float holdingScore;//Float that holds score from holding note so it can be rounded for the display

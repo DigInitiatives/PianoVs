@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VotingHandler : MonoBehaviour
+public class GameDataManager : MonoBehaviour
 {
-    static int currentVote;
-
+    static int currentVote;//Vote count
+    static int aiCount;//How many AI there are active
+    static int currentSongID;
     void Start()
     {
         currentVote = 0;
+        aiCount = 0;
+        currentSongID = 0;
     }
     void Update()
     {
-        Debug.Log(currentVote);
+        
     }
 
     public static void IncrementVote(int vote)

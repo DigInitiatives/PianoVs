@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 public class PlayerMenuHandler : MonoBehaviour
 {
-    bool menuStatus, toggleTimerStatus;
+    bool menuStatus, toggleTimerStatus, votingPanelStatus, waitingMessageStatus;
     float toggleTimer;
     int currentSongID, songToVoteFor;
     [SerializeField]
@@ -25,11 +25,15 @@ public class PlayerMenuHandler : MonoBehaviour
         songToVoteFor = -1;
         menuStatus = false;
         toggleTimerStatus = false;
+        votingPanelStatus = false;
+        waitingMessageStatus = false;
         toggleTimer = 0.5f;
     }
     void Update()
     {
         menuPanel.SetActive(menuStatus);//Either enable or disable the menu
+        waitingMessage.SetActive(waitingMessageStatus);
+        votePanel.SetActive(votingPanelStatus);//Close vote panel
         if (toggleTimerStatus)//if they are holding the button decrement the timer variable
         {
             toggleTimer -= Time.deltaTime;
@@ -71,14 +75,14 @@ public class PlayerMenuHandler : MonoBehaviour
         if(songID != currentSongID)
         {
             songToVoteFor = songID;
-
+            //
             //Find song data from songID, database required
-
+            //
             votingText.GetComponent<Text>().text = "Switch to " + songName;
-
+            //
             //Send song to vote for to other players
-
-            votePanel.SetActive(true);
+            //
+            votingPanelStatus = true;
             dropdownMenu.GetComponent<Dropdown>().interactable = false;
         }
     }
@@ -89,14 +93,14 @@ public class PlayerMenuHandler : MonoBehaviour
         //false = no
         if(vote)//Yes
         {
-            VotingHandler.IncrementVote(1);
+            GameDataManager.IncrementVote(1);
         }
         else//No
         {
-            VotingHandler.IncrementVote(-1);
+            GameDataManager.IncrementVote(-1);
         }
-        waitingMessage.SetActive(true);
-        votePanel.SetActive(false);//Close vote panel
+        waitingMessageStatus = true;//Open message
+        votingPanelStatus = false;//Close panel
     }
     #endregion
 }
