@@ -20,7 +20,7 @@ public class NoteSpawning : MonoBehaviour
 	public float bpm, timesignature, beatTime, timestamp;
 	public int beat;
 	List<Songholder> songs;
-    int songSelect = 2;
+    int songSelect = 3;
 	List<int> holdNotes, heldNoteCount;
 
 	// Start is called before the first frame update
@@ -41,6 +41,7 @@ public class NoteSpawning : MonoBehaviour
 		songs.Add(new HotCrossBuns());
 		songs.Add(new ATHousandMiles());
         songs.Add(new SongOfStorms());
+        songs.Add(new LostWoods());
 
 		beat = 0;
 		timestamp = Time.time;
@@ -52,7 +53,7 @@ public class NoteSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-        if (beat == 2352)
+        if (beat == songs[songSelect].GetMaxBeat())
         {
             beat = 0;
         }

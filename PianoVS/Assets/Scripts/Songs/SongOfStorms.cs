@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**Created By Josh Sadoway
- * Last Edited on : February 28th 2019
+ * Last Edited on : March 5th 2019
  * This script is designed to hold the notes for the Song Song of Storms
 **/
 public class SongOfStorms : Songholder
@@ -13,6 +13,7 @@ public class SongOfStorms : Songholder
         songNotes = new List<NoteClass>();
         SetBPM(200);
         SetTimeSignature(3);
+        SetMaxBeat(2352);
         int barTime = timeSignature * 16;
 
         //Right Hand
