@@ -32,7 +32,7 @@ public class PlayerMenuHandler : MonoBehaviour
         voted = false;
         toggleTimer = 0.5f;
         doOnce = true;
-
+        currentSongID = GameDataManager.GetCurrentSongID();
         songNames = new List<string>();
         //Find children assets
         menuPanel = transform.Find("MenuPanel").gameObject;
@@ -46,6 +46,7 @@ public class PlayerMenuHandler : MonoBehaviour
     }
     void Update()
     {
+
         if (doOnce)//Do once...clear dropdown, and for every song add that songs name to the dropdown list
         {
             dropdownMenu.GetComponent<Dropdown>().ClearOptions();
@@ -79,6 +80,8 @@ public class PlayerMenuHandler : MonoBehaviour
         {
             VotingInactive();
         }
+        currentSongID = GameDataManager.GetCurrentSongID();
+        dropdownMenu.GetComponent<Dropdown>().value = currentSongID;
     }
 
     #region Menu Activation
@@ -154,6 +157,7 @@ public class PlayerMenuHandler : MonoBehaviour
     {
         dropdownMenu.GetComponent<Dropdown>().interactable = true;
         voted = false;
+        waitingMessageStatus = false;//Open message
     }
     #endregion
 }

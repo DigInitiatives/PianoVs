@@ -19,7 +19,7 @@ public class GameDataManager : MonoBehaviour
     {
         voteInProgress = false;
         currentVote = 0;
-        aiCount = 3;
+        aiCount = 2;
         currentSongID = 0;
         newSongID = -1;
         noteSpawners = GameObject.FindGameObjectsWithTag("NoteSpawner");
@@ -64,6 +64,10 @@ public class GameDataManager : MonoBehaviour
     {
         currentSongID = songID;
     }
+    public static int GetCurrentSongID()
+    {
+        return currentSongID;
+    }
 
     public static string GetSongName()
     {
@@ -75,6 +79,6 @@ public class GameDataManager : MonoBehaviour
         voteInProgress = false;
         currentVote = 0;
         totalVotes = 0;
-        newSongID = -1;
+        newSongID = currentSongID;
     }
 }
