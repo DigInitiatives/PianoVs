@@ -163,4 +163,13 @@ public class NoteSpawning : MonoBehaviour
         timesignature = songs[songSelect].GetTimeSignature();
         beatTime = (60 / bpm) / 16f;
     }
+
+
+    public void ResetHoldNotes()
+    {
+        for (int c = 0; c <= holdNotes.Count - 1; c++)
+        {
+            holdNotes[c] = 0;
+        }
+    }
 }

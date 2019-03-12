@@ -39,8 +39,16 @@ public class PlayerDataManager : MonoBehaviour
 
     void Update()
     {
-        playerScoreDisplay.text = "Score " + Mathf.RoundToInt(playerScore + holdingScore) + "\n" + "Multiplier " + playerMultiplier;
+        try
+        {
 
+
+            playerScoreDisplay.text = "Score " + Mathf.RoundToInt(playerScore + holdingScore) + "\n" + "Multiplier " + playerMultiplier;
+        }
+        catch
+        {
+
+        }
         if(isAI)
         {
             //Turn AI on? Maybe have a method that is called when the keyboard area is touched?

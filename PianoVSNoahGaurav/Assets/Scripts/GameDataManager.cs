@@ -36,6 +36,7 @@ public class GameDataManager : MonoBehaviour
             foreach(GameObject noteSpawner in noteSpawners)//For the 4 note spawners
             {
                 noteSpawner.GetComponent<NoteSpawning>().ChangeSong(newSongID);//Set the song choice, reset the beat, and set the bpm and time signature to the songs
+                noteSpawner.GetComponent<NoteSpawning>().ResetHoldNotes();
                 SetCurrentSongID(newSongID);
             }
             ResetVote();

@@ -10,9 +10,10 @@ public class HotCrossBuns : Songholder
 {
     public HotCrossBuns()
     {
-		bpm = 120;
+        SetBPM(120);
+        SetSongName("Hot Cross Buns");
 
-		songNotes = new List<NoteClass>();
+        songNotes = new List<NoteClass>();
 		songNotes.Add(new NoteClass(28, 0 * 16, 0 * 16, 1));
 		songNotes.Add(new NoteClass(26, 2 * 16, 2 * 16, 1));
 		songNotes.Add(new NoteClass(24, 4 * 16, 7 * 16, 1));

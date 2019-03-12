@@ -14,6 +14,7 @@ public class SongOfStorms : Songholder
         SetBPM(200);
         SetTimeSignature(3);
         SetMaxBeat(2352);
+        SetSongName("Song of Storms");
         int barTime = timeSignature * 16;
 
         //Right Hand

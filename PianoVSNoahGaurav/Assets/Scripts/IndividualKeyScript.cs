@@ -68,8 +68,10 @@ public class IndividualKeyScript : MonoBehaviour
 
     public void Update()
     {
-		if(!whiteKey)
-		Debug.DrawRay(keyPos + new Vector3(0, 1.5f, 0), Vector3.up);
+        if (!whiteKey)
+        {
+            Debug.DrawRay(keyPos + new Vector3(0, 1.5f, 0), Vector3.up);
+        }
 		if(AI)
 		{
 			if (player3or4)
@@ -177,7 +179,7 @@ public class IndividualKeyScript : MonoBehaviour
 					{
 						if (hit.collider.tag == "HeldNote")//If the raycast hits a note that must be held...
 						{
-							Debug.Log("HELD!!!!!!");
+							//Debug.Log("HELD!!!!!!");
 
 							playerData.AddHoldingScore(0.3f);
 
@@ -206,7 +208,7 @@ public class IndividualKeyScript : MonoBehaviour
 					{
 						if (hit.collider.tag == "HeldNote")//If the raycast hits a note that must be held...
 						{
-							Debug.Log("HELD!!!!!!");
+							//Debug.Log("HELD!!!!!!");
 
 							playerData.AddHoldingScore(0.3f);
 
@@ -238,7 +240,7 @@ public class IndividualKeyScript : MonoBehaviour
 					{
 						if (hit.collider.tag == "HeldNote")//If the raycast hits a note that must be held...
 						{
-							Debug.Log("HELD!!!!!!");
+							//Debug.Log("HELD!!!!!!");
 
 							playerData.AddHoldingScore(0.3f);
 
@@ -267,7 +269,7 @@ public class IndividualKeyScript : MonoBehaviour
 					{
 						if (hit.collider.tag == "HeldNote")//If the raycast hits a note that must be held...
 						{
-							Debug.Log("HELD!!!!!!");
+							//Debug.Log("HELD!!!!!!");
 
 							playerData.AddHoldingScore(0.3f);
 
@@ -319,7 +321,7 @@ public class IndividualKeyScript : MonoBehaviour
 						if (hit.distance <= .7f && hit.distance > .45f)//Sweet spot distance
 						{
 							holdingNote = true;
-							Debug.Log("Sweet Spot");
+							//Debug.Log("Sweet Spot");
 
 							playerData.AddScore(100);//Sweet spot
 							playerData.IncreaseMultiplier(1);//Add to multiplier
@@ -331,7 +333,7 @@ public class IndividualKeyScript : MonoBehaviour
 						else if (hit.distance > .7f)//To far distance
 						{
 							holdingNote = true;
-							Debug.Log("Too far");
+							//Debug.Log("Too far");
 							playerData.BreakMultiplier();//No score, break multiplier
 							heldNotedistance = hit.distance;
 							Destroy(hit.collider.gameObject);
@@ -339,7 +341,7 @@ public class IndividualKeyScript : MonoBehaviour
 						else//Not to far but not in sweet spot
 						{
 							holdingNote = true;
-							Debug.Log("Too close");
+							//Debug.Log("Too close");
 							playerData.AddScore(50);//Too Close spot
 							heldNotedistance = hit.distance;
 							Destroy(hit.collider.gameObject);
@@ -356,7 +358,7 @@ public class IndividualKeyScript : MonoBehaviour
 						if (hit.distance <= .7f && hit.distance > .45f)//Sweet spot distance
 						{
 							holdingNote = true;
-							Debug.Log("Sweet Spot");
+							//Debug.Log("Sweet Spot");
 
 							playerData.AddScore(100);//Sweet spot
 							playerData.IncreaseMultiplier(1);//Add to multiplier
@@ -368,7 +370,7 @@ public class IndividualKeyScript : MonoBehaviour
 						else if (hit.distance > .7f)//To far distance
 						{
 							holdingNote = true;
-							Debug.Log("Too far");
+							//Debug.Log("Too far");
 							playerData.BreakMultiplier();//No score, break multiplier
 							heldNotedistance = hit.distance;
 							Destroy(hit.collider.gameObject);
@@ -376,7 +378,7 @@ public class IndividualKeyScript : MonoBehaviour
 						else//Not to far but not in sweet spot
 						{
 							holdingNote = true;
-							Debug.Log("Too close");
+							//Debug.Log("Too close");
 							playerData.AddScore(50);//Too Close spot
 							heldNotedistance = hit.distance;
 							Destroy(hit.collider.gameObject);
@@ -397,7 +399,7 @@ public class IndividualKeyScript : MonoBehaviour
 						if (hit.distance <= .7f && hit.distance > .45f)//Sweet spot distance
 						{
 							holdingNote = true;
-							Debug.Log("Sweet Spot");
+							//Debug.Log("Sweet Spot");
 
 							playerData.AddScore(100);//Sweet spot
 							playerData.IncreaseMultiplier(1);//Add to multiplier
@@ -409,7 +411,7 @@ public class IndividualKeyScript : MonoBehaviour
 						else if (hit.distance > .7f)//To far distance
 						{
 							holdingNote = true;
-							Debug.Log("Too far");
+							//Debug.Log("Too far");
 							playerData.BreakMultiplier();//No score, break multiplier
 							heldNotedistance = hit.distance;
 							Destroy(hit.collider.gameObject);
@@ -417,7 +419,7 @@ public class IndividualKeyScript : MonoBehaviour
 						else//Not to far but not in sweet spot
 						{
 							holdingNote = true;
-							Debug.Log("Too close");
+							//Debug.Log("Too close");
 							playerData.AddScore(50);//Too Close spot
 							heldNotedistance = hit.distance;
 							Destroy(hit.collider.gameObject);
@@ -434,7 +436,7 @@ public class IndividualKeyScript : MonoBehaviour
 						if (hit.distance <= .7f && hit.distance > .45f)//Sweet spot distance
 						{
 							holdingNote = true;
-							Debug.Log("Sweet Spot");
+							//Debug.Log("Sweet Spot");
 
 							playerData.AddScore(100);//Sweet spot
 							playerData.IncreaseMultiplier(1);//Add to multiplier
@@ -446,7 +448,7 @@ public class IndividualKeyScript : MonoBehaviour
 						else if (hit.distance > .7f)//To far distance
 						{
 							holdingNote = true;
-							Debug.Log("Too far");
+							//Debug.Log("Too far");
 							playerData.BreakMultiplier();//No score, break multiplier
 							heldNotedistance = hit.distance;
 							Destroy(hit.collider.gameObject);
@@ -454,7 +456,7 @@ public class IndividualKeyScript : MonoBehaviour
 						else//Not to far but not in sweet spot
 						{
 							holdingNote = true;
-							Debug.Log("Too close");
+							//Debug.Log("Too close");
 							playerData.AddScore(50);//Too Close spot
 							heldNotedistance = hit.distance;
 							Destroy(hit.collider.gameObject);
@@ -468,7 +470,7 @@ public class IndividualKeyScript : MonoBehaviour
 	//Stops the audio attatched to the key and sets its material to up
 	public void StopNote()
     {
-		Debug.Log("NoteEnd");
+		//Debug.Log("NoteEnd");
 		StartCoroutine("SoundStop");
 		stamp = true;
 		keyModelRenderer.material = keyUp;
