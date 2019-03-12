@@ -238,8 +238,6 @@ public class IndividualKeyScript : MonoBehaviour
 					{
 						if (hit.collider.tag == "HeldNote")//If the raycast hits a note that must be held...
 						{
-							Debug.Log("HELD!!!!!!");
-
 							playerData.AddHoldingScore(0.3f);
 
 							holdingNote = true;
@@ -417,7 +415,6 @@ public class IndividualKeyScript : MonoBehaviour
 						else//Not to far but not in sweet spot
 						{
 							holdingNote = true;
-							Debug.Log("Too close");
 							playerData.AddScore(50);//Too Close spot
 							heldNotedistance = hit.distance;
 							Destroy(hit.collider.gameObject);
@@ -468,7 +465,6 @@ public class IndividualKeyScript : MonoBehaviour
 	//Stops the audio attatched to the key and sets its material to up
 	public void StopNote()
     {
-		Debug.Log("NoteEnd");
 		StartCoroutine("SoundStop");
 		stamp = true;
 		keyModelRenderer.material = keyUp;

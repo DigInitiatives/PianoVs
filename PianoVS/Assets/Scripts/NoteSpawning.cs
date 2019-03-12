@@ -43,7 +43,7 @@ public class NoteSpawning : MonoBehaviour
         songs.Add(new SongOfStorms());
         songs.Add(new LostWoods());
 
-		beat = 640;
+		beat = 0;
 		timestamp = Time.time;
         bpm = songs[songSelect].GetBPM();
 		timesignature = songs[songSelect].GetTimeSignature();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**Created By Josh Sadoway
- * Last Edited on : March 7th 2019
+ * Last Edited on : March 12th 2019
  * This script is designed to hold the notes for the Song Song of Storms
 **/
 public class LostWoods : Songholder
@@ -13,7 +13,7 @@ public class LostWoods : Songholder
         songNotes = new List<NoteClass>();
         SetBPM(140);
         SetTimeSignature(2);
-        SetMaxBeat(1000);
+        SetMaxBeat((timeSignature * 16) * 36);
         int barTime = timeSignature * 16;
         int leftBarCount = 0, rightBarCount = 0;
 
@@ -202,15 +202,97 @@ public class LostWoods : Songholder
 
         rightBarCount++;
 
-        // Bar 26
+        // Bar 27
         songNotes.Add(new NoteClass(c4, 0 + (barTime * rightBarCount), 0 + (barTime * rightBarCount), 1));
         songNotes.Add(new NoteClass(b3, 8 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
         songNotes.Add(new NoteClass(e3, 16 + (barTime * rightBarCount), 64 + (barTime * rightBarCount), 1));
 
         rightBarCount++;
 
-        // Bar 27
+        // Bar 28
         // HELD NOTE
+        rightBarCount++;
+
+        // Bar 29
+        songNotes.Add(new NoteClass(d3, 0 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(f3, 0 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(c3, 8 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(e3, 8 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(f3, 16 + (barTime * rightBarCount), 24 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * rightBarCount), 24 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(e3, 24 + (barTime * rightBarCount), 24 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(g3, 24 + (barTime * rightBarCount), 24 + (barTime * rightBarCount), 1));
+
+        rightBarCount++;
+
+        // Bar 30
+        songNotes.Add(new NoteClass(g3, 0 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(b3, 0 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(f3, 8 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(a3, 8 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(a3, 16 + (barTime * rightBarCount), 24 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(c4, 16 + (barTime * rightBarCount), 24 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(g3, 24 + (barTime * rightBarCount), 24 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(b3, 24 + (barTime * rightBarCount), 24 + (barTime * rightBarCount), 1));
+
+        rightBarCount++;
+
+        // Bar 31
+        songNotes.Add(new NoteClass(b3, 0 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(d4, 0 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(a3, 8 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(c4, 8 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(c4, 16 + (barTime * rightBarCount), 24 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(e4, 16 + (barTime * rightBarCount), 24 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(b3, 24 + (barTime * rightBarCount), 24 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(d4, 24 + (barTime * rightBarCount), 24 + (barTime * rightBarCount), 1));
+
+        rightBarCount++;
+
+        // Bar 32
+        songNotes.Add(new NoteClass(d4, 0 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(f4, 0 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(c4, 8 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(e4, 8 + (barTime * rightBarCount), 8 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(b3, 16 + (barTime * rightBarCount), 16 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(e4, 16 + (barTime * rightBarCount), 16 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(c4, 20 + (barTime * rightBarCount), 20 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(f4, 20 + (barTime * rightBarCount), 20 + (barTime * rightBarCount), 1));
+
+        songNotes.Add(new NoteClass(a3, 28 + (barTime * rightBarCount), 28 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(d4, 28 + (barTime * rightBarCount), 28 + (barTime * rightBarCount), 1));
+
+        rightBarCount++;
+
+        // Bar 33
+        songNotes.Add(new NoteClass(b3, 0 + (barTime * rightBarCount), 64 + (barTime * rightBarCount), 1));
+        songNotes.Add(new NoteClass(e4, 0 + (barTime * rightBarCount), 64 + (barTime * rightBarCount), 1));
+
+        rightBarCount++;
+
+        // Bar 34
+        // HELD NOTE
+        rightBarCount++;
+
+        // Bar 35
+        // REST
+        rightBarCount++;
+
+        // Bar 36
+        songNotes.Add(new NoteClass(e3, 16 + (barTime * rightBarCount), 16 + (barTime * rightBarCount), 1));
+
         rightBarCount++;
 
 
@@ -589,6 +671,96 @@ public class LostWoods : Songholder
 
         songNotes.Add(new NoteClass(e2, 24 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
         songNotes.Add(new NoteClass(a2, 24 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+
+        leftBarCount++;
+
+        // Bar 29
+        songNotes.Add(new NoteClass(d2, 0 + (barTime * leftBarCount), 0 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(f2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(a2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(f2, 16 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(a2, 16 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+
+        leftBarCount++;
+
+        // Bar 30
+        songNotes.Add(new NoteClass(d2, 0 + (barTime * leftBarCount), 0 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(f2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(a2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(f2, 16 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(a2, 16 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+
+        leftBarCount++;
+
+        // Bar 31
+        songNotes.Add(new NoteClass(c2, 0 + (barTime * leftBarCount), 0 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(g2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(b2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(g2, 16 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(b2, 16 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+
+        leftBarCount++;
+
+        // Bar 32
+        songNotes.Add(new NoteClass(c2, 0 + (barTime * leftBarCount), 0 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(g2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(b2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(g2, 16 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(b2, 16 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+
+        leftBarCount++;
+
+        // Bar 33
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * leftBarCount), 0 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(a2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(b2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(a2, 24 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(b2, 24 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+
+        leftBarCount++;
+
+        // Bar 34
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * leftBarCount), 0 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(a2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(b2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(a2, 24 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(b2, 24 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+
+        leftBarCount++;
+
+        // Bar 35
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * leftBarCount), 0 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(gSharp2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(b2, 8 + (barTime * leftBarCount), 8 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(gSharp2, 16 + (barTime * leftBarCount), 16 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(b2, 16 + (barTime * leftBarCount), 16 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(e2, 24 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(gSharp2, 24 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(b2, 24 + (barTime * leftBarCount), 24 + (barTime * leftBarCount), 2));
+
+        leftBarCount++;
+
+        // Bar 36
+        songNotes.Add(new NoteClass(e2, 0 + (barTime * leftBarCount), 0 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(gSharp2, 0 + (barTime * leftBarCount), 0 + (barTime * leftBarCount), 2));
+        songNotes.Add(new NoteClass(b2, 0 + (barTime * leftBarCount), 0 + (barTime * leftBarCount), 2));
+
+        songNotes.Add(new NoteClass(e2, 16 + (barTime * leftBarCount), 16 + (barTime * leftBarCount), 2));
 
         leftBarCount++;
     }
