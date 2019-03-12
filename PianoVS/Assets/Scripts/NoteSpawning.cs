@@ -9,9 +9,9 @@ using UnityEngine;
 **/
 public class NoteSpawning : MonoBehaviour
 {
-	//Will call from reasource folder eventually
+    //Will call from reasource folder eventually
 
-	[SerializeField]
+    [SerializeField]
 	GameObject note, heldNote, blackNote, heldBlackNote, noteBar;
 
 	public List<GameObject> keyBoardKeys;
@@ -20,6 +20,7 @@ public class NoteSpawning : MonoBehaviour
 	public float bpm, timesignature, beatTime, timestamp;
 	public int beat;
 	List<Songholder> songs;
+    int songSelect = 3;
 	List<int> holdNotes, heldNoteCount;
 
 	// Start is called before the first frame update
@@ -36,24 +37,27 @@ public class NoteSpawning : MonoBehaviour
 			heldNoteCount.Add(-15);
 		}
 		songs = new List<Songholder>();
+
 		songs.Add(new HotCrossBuns());
 		songs.Add(new ATHousandMiles());
-        songs.Add(new ProfLaytonTheme());
-		beat = 0;
+        songs.Add(new SongOfStorms());
+        songs.Add(new LostWoods());
+
+		beat = 640;
 		timestamp = Time.time;
-		bpm = 120;
-		timesignature = 4;
-		beatTime = (60 / bpm) / 16;
+        bpm = songs[songSelect].GetBPM();
+		timesignature = songs[songSelect].GetTimeSignature();
+        beatTime = (60 / bpm) / 16f;
     }
 
     // Update is called once per frame
     void Update()
 	{
-		if (beat == 256 + 384)
-		{
-			beat = 0;
-		}
-		if (beat % 64 == 0 || beat == 0)
+        if (beat == songs[songSelect].GetMaxBeat())
+        {
+            beat = 0;
+        }
+        if (beat % (timesignature * 16) == 0 || beat == 0)
 		{
 			Instantiate(noteBar, transform.position, transform.rotation);
 		}
@@ -72,7 +76,7 @@ public class NoteSpawning : MonoBehaviour
 			}
 
 			//instantiates the note if it starts on this beat
-			foreach (NoteClass notes in songs[2].songNotes)
+			foreach (NoteClass notes in songs[songSelect].songNotes)
 			{
 				if (notes.GetStart() == beat)
 				{
@@ -115,34 +119,37 @@ public class NoteSpawning : MonoBehaviour
 				}					
 			}
 
-			beat++;
+
+
+            beat++;
 			timestamp = Time.time;
 		}
-		#endregion
-		#region Held NoteCreation
-		// Checks to see if the note is being held. If it is, then create a held note.
-		for (int c = 0; c <= holdNotes.Count - 1; c++)
-		{
-			if (c == 1 || c == 3 || c == 6 || c == 8 || c == 10 || c == 13 || c == 15 || c == 18 || c == 20 || c == 22
-				|| c == 25 || c == 27 || c == 30 || c == 32 || c == 34 || 37 == c || c == 39 || c == 42 || c == 44 || c == 46)
-			{
-				if (holdNotes[c] != 0)
-				{
-					GameObject instantiatedObject = Instantiate(heldBlackNote, keyBoardKeys[c].transform.position, keyBoardKeys[c].transform.rotation);
-					instantiatedObject.gameObject.GetComponent<SpriteRenderer>().sortingOrder = heldNoteCount[c];
-					heldNoteCount[c]++;
-				}
-			}
-			else
-			{
-				if (holdNotes[c] != 0)
-				{
-					GameObject instantiatedObject = Instantiate(heldNote, keyBoardKeys[c].transform.position, keyBoardKeys[c].transform.rotation);
-					instantiatedObject.gameObject.GetComponent<SpriteRenderer>().sortingOrder = heldNoteCount[c];
-					heldNoteCount[c]++;
-				}
-			}
-		}
-		#endregion
-	}
+        #endregion
+        #region Held NoteCreation
+        //Checks to see if the note is being held. If it is, then create a held note.
+
+        for (int c = 0; c <= holdNotes.Count - 1; c++)
+        {
+            if (c == 1 || c == 3 || c == 6 || c == 8 || c == 10 || c == 13 || c == 15 || c == 18 || c == 20 || c == 22
+                || c == 25 || c == 27 || c == 30 || c == 32 || c == 34 || 37 == c || c == 39 || c == 42 || c == 44 || c == 46)
+            {
+                if (holdNotes[c] != 0)
+                {
+                    GameObject instantiatedObject = Instantiate(heldBlackNote, keyBoardKeys[c].transform.position, keyBoardKeys[c].transform.rotation);
+                    instantiatedObject.gameObject.GetComponent<SpriteRenderer>().sortingOrder = heldNoteCount[c];
+                    heldNoteCount[c]++;
+                }
+            }
+            else
+            {
+                if (holdNotes[c] != 0)
+                {
+                    GameObject instantiatedObject = Instantiate(heldNote, keyBoardKeys[c].transform.position, keyBoardKeys[c].transform.rotation);
+                    instantiatedObject.gameObject.GetComponent<SpriteRenderer>().sortingOrder = heldNoteCount[c];
+                    heldNoteCount[c]++;
+                }
+            }
+        }
+        #endregion
+    }
 }

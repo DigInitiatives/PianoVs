@@ -30,6 +30,8 @@ public class TouchControlScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Index to track the touch index in Input.touches
+        int touchIndex = 0;
 
         //Loops through each instance of touch input
         foreach (Touch touch in Input.touches)
@@ -46,13 +48,13 @@ public class TouchControlScript : MonoBehaviour
 
                         //check if that touch index is currently pressing a note. 
                         // This is to prevent a very strange in which a touch index would began again without ending therefore its note would keep playing even if not touched
-                        if (hitObj[touch.fingerId].gameObject.GetComponent<IndividualKeyScript>() == null)
+                        if (hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>() == null)
                         {
                             //if the raycast hits a collider whose game object has the tag "Note"
                             if (hit.collider.gameObject.tag == "Key" && !hitObj.Contains(hit.collider.gameObject))
                             {
                                 //Add the object hit to the list, at the index of the touch
-                                hitObj[touch.fingerId] = hit.collider.gameObject;
+                                hitObj[touchIndex] = hit.collider.gameObject;
                                 //Debug.Log("Touch");
                                 //Call the PlayNote() method in this objects NoteObjScript
                                 hit.collider.gameObject.GetComponent<IndividualKeyScript>().PlayNote();
@@ -65,16 +67,16 @@ public class TouchControlScript : MonoBehaviour
                     //Raycast from the touch on the screen position to the world position
                     if (Physics.Raycast(ray, out hit))
                     {
-                        if (hit.collider.gameObject != hitObj[touch.fingerId].gameObject)
+                        if (hit.collider.gameObject != hitObj[touchIndex].gameObject)
                         {
-							if (hitObj[touch.fingerId].gameObject.GetComponent<IndividualKeyScript>() != null)
+							if (hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>() != null)
 							{
-								hitObj[touch.fingerId].gameObject.GetComponent<IndividualKeyScript>().StopNote();
-								hitObj[touch.fingerId] = hit.collider.gameObject;
+								hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote();
+								hitObj[touchIndex] = hit.collider.gameObject;
 
-								if (hitObj[touch.fingerId].gameObject.GetComponent<IndividualKeyScript>() != null)
+								if (hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>() != null)
 								{
-									hitObj[touch.fingerId].gameObject.GetComponent<IndividualKeyScript>().PlayNote();
+									hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().PlayNote();
 								}
 							}
                         }
@@ -85,12 +87,12 @@ public class TouchControlScript : MonoBehaviour
                 case TouchPhase.Ended:
                     if (Physics.Raycast(ray, out hit))
                     {
-                        if (hit.collider.gameObject != hitObj[touch.fingerId].gameObject)
+                        if (hit.collider.gameObject != hitObj[touchIndex].gameObject)
                         {
-							if (hitObj[touch.fingerId].gameObject.GetComponent<IndividualKeyScript>() != null)
+							if (hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>() != null)
 							{
-								hitObj[touch.fingerId].gameObject.GetComponent<IndividualKeyScript>().StopNote(); //error
-								hitObj[touch.fingerId] = new GameObject();
+								hitObj[touchIndex].gameObject.GetComponent<IndividualKeyScript>().StopNote(); //error
+								hitObj[touchIndex] = new GameObject();
 							}
                         }
                     }
@@ -98,6 +100,8 @@ public class TouchControlScript : MonoBehaviour
                 default:
                     break;
             }
+            //increments the touch index
+            touchIndex += 1;
         }
 
         if (Input.touches.Length <= 0)
