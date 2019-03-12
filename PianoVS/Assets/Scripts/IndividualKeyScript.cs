@@ -14,7 +14,10 @@ public class IndividualKeyScript : MonoBehaviour
 	float heldNotedistance = 0;
 	bool stamp;
 
-	public bool AI, player3or4;
+	[SerializeField]
+	int keyNum;
+
+	public bool AI, player3or4, songrecording;
 	int AITimer;
 
 	//keymodel is the visual component of this obj
@@ -45,6 +48,7 @@ public class IndividualKeyScript : MonoBehaviour
         holdingNote = false;
         holdingTimer = 1.0f;
 
+		songrecording = true;
         keyModel = transform.GetChild(0).gameObject;
         keyModelRenderer = keyModel.GetComponent<Renderer>();
 
@@ -181,7 +185,8 @@ public class IndividualKeyScript : MonoBehaviour
 							playerData.AddHoldingScore(0.3f);
 
 							holdingNote = true;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 						else
 						{
@@ -210,7 +215,8 @@ public class IndividualKeyScript : MonoBehaviour
 							playerData.AddHoldingScore(0.3f);
 
 							holdingNote = true;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 						else
 						{
@@ -242,7 +248,8 @@ public class IndividualKeyScript : MonoBehaviour
 							playerData.AddHoldingScore(0.3f);
 
 							holdingNote = true;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 						else
 						{
@@ -271,7 +278,8 @@ public class IndividualKeyScript : MonoBehaviour
 							playerData.AddHoldingScore(0.3f);
 
 							holdingNote = true;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 						else
 						{
@@ -325,7 +333,8 @@ public class IndividualKeyScript : MonoBehaviour
 
 							//Stores the distance hit in order to check forheld notes
 							heldNotedistance = hit.distance;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 						else if (hit.distance > .7f)//To far distance
 						{
@@ -333,7 +342,8 @@ public class IndividualKeyScript : MonoBehaviour
 							Debug.Log("Too far");
 							playerData.BreakMultiplier();//No score, break multiplier
 							heldNotedistance = hit.distance;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 						else//Not to far but not in sweet spot
 						{
@@ -341,7 +351,8 @@ public class IndividualKeyScript : MonoBehaviour
 							Debug.Log("Too close");
 							playerData.AddScore(50);//Too Close spot
 							heldNotedistance = hit.distance;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 					}
 				}
@@ -362,7 +373,8 @@ public class IndividualKeyScript : MonoBehaviour
 
 							//Stores the distance hit in order to check forheld notes
 							heldNotedistance = hit.distance;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 						else if (hit.distance > .7f)//To far distance
 						{
@@ -370,7 +382,8 @@ public class IndividualKeyScript : MonoBehaviour
 							Debug.Log("Too far");
 							playerData.BreakMultiplier();//No score, break multiplier
 							heldNotedistance = hit.distance;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 						else//Not to far but not in sweet spot
 						{
@@ -378,7 +391,8 @@ public class IndividualKeyScript : MonoBehaviour
 							Debug.Log("Too close");
 							playerData.AddScore(50);//Too Close spot
 							heldNotedistance = hit.distance;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 					}
 				}
@@ -403,7 +417,8 @@ public class IndividualKeyScript : MonoBehaviour
 
 							//Stores the distance hit in order to check forheld notes
 							heldNotedistance = hit.distance;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 						else if (hit.distance > .7f)//To far distance
 						{
@@ -411,7 +426,8 @@ public class IndividualKeyScript : MonoBehaviour
 							Debug.Log("Too far");
 							playerData.BreakMultiplier();//No score, break multiplier
 							heldNotedistance = hit.distance;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 						else//Not to far but not in sweet spot
 						{
@@ -419,7 +435,8 @@ public class IndividualKeyScript : MonoBehaviour
 							Debug.Log("Too close");
 							playerData.AddScore(50);//Too Close spot
 							heldNotedistance = hit.distance;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 					}
 				}
@@ -440,7 +457,8 @@ public class IndividualKeyScript : MonoBehaviour
 
 							//Stores the distance hit in order to check forheld notes
 							heldNotedistance = hit.distance;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 						else if (hit.distance > .7f)//To far distance
 						{
@@ -448,7 +466,8 @@ public class IndividualKeyScript : MonoBehaviour
 							Debug.Log("Too far");
 							playerData.BreakMultiplier();//No score, break multiplier
 							heldNotedistance = hit.distance;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 						else//Not to far but not in sweet spot
 						{
@@ -456,13 +475,17 @@ public class IndividualKeyScript : MonoBehaviour
 							Debug.Log("Too close");
 							playerData.AddScore(50);//Too Close spot
 							heldNotedistance = hit.distance;
-							Destroy(hit.collider.gameObject);
+							hit.transform.position = new Vector3(-1000, -1000, -1000);
+							hit.transform.gameObject.SetActive(false);
 						}
 					}
 				}
 			}
 		}
-
+		if(songrecording)
+		{
+			SongRecording.AddNote(keyNum);
+		}
 	}
 	//Stops the audio attatched to the key and sets its material to up
 	public void StopNote()

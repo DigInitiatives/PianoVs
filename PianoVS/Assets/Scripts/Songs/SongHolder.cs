@@ -5,7 +5,7 @@ using UnityEngine;
 public class Songholder : MonoBehaviour
 {
 	public List<NoteClass> songNotes;
-	public int bpm, timeSignature;
+	public int bpm, timeSignature, beat;
 
 	protected int c1 = 0,
 				cSharp1 = 1,
@@ -61,4 +61,37 @@ public class Songholder : MonoBehaviour
 
 				c5 = 48;
 
+	public void SetBPM(int newBpm)
+	{
+		bpm = newBpm;
+	}
+
+	public int GetBPM()
+	{
+		return bpm;
+	}
+
+	public void SetTimeSignature(int newTimeSignature)
+	{
+		timeSignature = newTimeSignature;
+	}
+
+	public int GetTimeSignature()
+	{
+		return timeSignature;
+	}
+
+	public void SetMaxBeat(int newBeat)
+	{
+		beat = newBeat;
+	}
+
+	public int GetMaxBeat()
+	{
+		return beat;
+	}
+	public void SetSong()
+	{
+		songNotes = SongRecording.recordednotes;
+	}
 }

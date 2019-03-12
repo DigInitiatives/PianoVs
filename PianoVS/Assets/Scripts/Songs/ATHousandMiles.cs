@@ -10,7 +10,10 @@ public class ATHousandMiles : Songholder
 {
 	public ATHousandMiles()
 	{
-		bpm = 120;
+		SetBPM(120);
+		SetTimeSignature(4);
+		SetMaxBeat(2352);
+		int barTime = 64;
 
 		//Right Hand
 		songNotes = new List<NoteClass>();

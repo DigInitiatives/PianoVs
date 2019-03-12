@@ -21,6 +21,7 @@ public class NoteSpawning : MonoBehaviour
 	public int beat;
 	List<Songholder> songs;
 	List<int> holdNotes, heldNoteCount;
+	int songSelect = 3;
 	List<GameObject> whiteNotes, blackNotes, whiteNotesHeld, blackNotesHeld;
 
 	int whiteNoteCounter = 3, blackNoteCounter = 3, whiteHeldNoteCounter = 3, blackHeldNoteCounter = 3;
@@ -44,13 +45,17 @@ public class NoteSpawning : MonoBehaviour
 			heldNoteCount.Add(-15);
 		}
 		songs = new List<Songholder>();
-		songs.Add(new HotCrossBuns());
+		songs.Add(new RecordedSong());
 		songs.Add(new ATHousandMiles());
+		songs.Add(new HotCrossBuns());
+		songs.Add(new SongOfStorms());
+		songs.Add(new YouGotAFriendInMe());
+
 		beat = 0;
 		timestamp = Time.time;
-		bpm = 120;
-		timesignature = 4;
-		beatTime = (60 / bpm) / 16;
+		bpm = songs[songSelect].GetBPM();
+		timesignature = songs[songSelect].GetTimeSignature();
+		beatTime = (60 / bpm) / 16f;
 
 		for (int c = 0; c < 500; c++)
 		{
@@ -64,10 +69,11 @@ public class NoteSpawning : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (beat == 256 + 384)
+		if (beat == songs[songSelect].GetMaxBeat())
 		{
 			beat = 0;
 		}
+
 		if (beat % 64 == 0 || beat == 0)
 		{
 			Instantiate(noteBar, transform.position, transform.rotation);
@@ -87,7 +93,7 @@ public class NoteSpawning : MonoBehaviour
 			}
 
 			//instantiates the note if it starts on this beat
-			foreach (NoteClass notes in songs[1].songNotes)
+			foreach (NoteClass notes in songs[songSelect].songNotes)
 			{
 				if (notes.GetStart() == beat)
 				{
@@ -98,24 +104,8 @@ public class NoteSpawning : MonoBehaviour
 						{
 							if (notes.GetKey() == c)
 							{
-								whiteNotes[whiteNoteCounter].transform.position = keyBoardKeys[c].transform.position;
-								if (notes.GetEnd() != notes.GetStart())
-								{
-									holdNotes[c] = notes.GetEnd();
-									heldNoteCount[c] = -15;
-								}
-								whiteNoteCounter++;
-								if (whiteNoteCounter > whiteNotes.Count)
-								{
-									whiteNoteCounter = 0;
-								}
-							}
-						}
-						else
-						{
-							if (notes.GetKey() == c)
-							{
 								blackNotes[blackNoteCounter].transform.position = keyBoardKeys[c].transform.position;
+								blackNotes[blackNoteCounter].transform.gameObject.SetActive(true);
 								if (notes.GetEnd() != notes.GetStart())
 								{
 									holdNotes[c] = notes.GetEnd();
@@ -127,6 +117,25 @@ public class NoteSpawning : MonoBehaviour
 									blackNoteCounter = 0;
 								}
 							}
+						}
+						else
+						{
+							if (notes.GetKey() == c)
+							{
+								whiteNotes[whiteNoteCounter].transform.position = keyBoardKeys[c].transform.position;
+								whiteNotes[whiteNoteCounter].transform.gameObject.SetActive(true);
+								if (notes.GetEnd() != notes.GetStart())
+								{
+									holdNotes[c] = notes.GetEnd();
+									heldNoteCount[c] = -15;
+								}
+								whiteNoteCounter++;
+								if (whiteNoteCounter > whiteNotes.Count)
+								{
+									whiteNoteCounter = 0;
+								}
+							}
+
 						}
 					}
 				}
@@ -145,22 +154,9 @@ public class NoteSpawning : MonoBehaviour
 			{
 				if (holdNotes[c] != 0)
 				{
-					whiteNotesHeld[whiteHeldNoteCounter].transform.position = keyBoardKeys[c].transform.position;
-					whiteNotesHeld[whiteHeldNoteCounter].gameObject.GetComponent<SpriteRenderer>().sortingOrder = heldNoteCount[c];
-					heldNoteCount[c]++;
-					whiteHeldNoteCounter++;
-					if (whiteHeldNoteCounter > whiteNotesHeld.Count)
-					{
-						whiteHeldNoteCounter = 0;
-					}
-				}
-			}
-			else
-			{
-				if (holdNotes[c] != 0)
-				{
-					blackNotesHeld[blackNoteCounter].transform.position = keyBoardKeys[c].transform.position;
-					blackNotesHeld[blackNoteCounter].gameObject.GetComponent<SpriteRenderer>().sortingOrder = heldNoteCount[c];
+					blackNotesHeld[blackHeldNoteCounter].transform.position = keyBoardKeys[c].transform.position;
+					blackNotesHeld[blackHeldNoteCounter].transform.gameObject.SetActive(true);
+					blackNotesHeld[blackHeldNoteCounter].gameObject.GetComponent<SpriteRenderer>().sortingOrder = heldNoteCount[c];
 					heldNoteCount[c]++;
 					blackHeldNoteCounter++;
 					if (blackHeldNoteCounter > blackNotesHeld.Count)
@@ -169,7 +165,44 @@ public class NoteSpawning : MonoBehaviour
 					}
 				}
 			}
+			else
+			{
+				if (holdNotes[c] != 0)
+				{
+					whiteNotesHeld[whiteHeldNoteCounter].transform.position = keyBoardKeys[c].transform.position;
+					whiteNotesHeld[whiteHeldNoteCounter].transform.gameObject.SetActive(true);
+					whiteNotesHeld[whiteHeldNoteCounter].gameObject.GetComponent<SpriteRenderer>().sortingOrder = heldNoteCount[c];
+					heldNoteCount[c]++;
+					whiteHeldNoteCounter++;
+					if (whiteHeldNoteCounter >= whiteNotesHeld.Count)
+					{
+						whiteHeldNoteCounter = 0;
+					}
+				}
+			}
 		}
 		#endregion
+	}
+
+	public void RecordSong()
+	{
+		songs[0].SetSong();
+		songSelect = 0;
+		beat = 0;
+		timestamp = Time.time;
+		bpm = songs[songSelect].GetBPM();
+		timesignature = songs[songSelect].GetTimeSignature();
+		beatTime = (60 / bpm) / 16f;
+	}
+
+
+	void PlayNewSong()
+	{
+
+		beat = 0;
+		timestamp = Time.time;
+		bpm = songs[songSelect].GetBPM();
+		timesignature = songs[songSelect].GetTimeSignature();
+		beatTime = (60 / bpm) / 16f;
 	}
 }

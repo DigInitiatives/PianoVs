@@ -10,6 +10,6 @@ public class NoteScript : MonoBehaviour
 {
     void Update()
     {
-		transform.Translate(new Vector3(0, -.15f, 0));
+		transform.Translate(new Vector3(0, -.1f, 0));
     }
 }

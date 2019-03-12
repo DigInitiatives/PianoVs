@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Note
   - HeldNote
+  - Key
+  - Spawner
   layers:
   - Default
   - TransparentFX
