@@ -99,4 +99,8 @@ public class Songholder : MonoBehaviour
     {
         return songName;
     }
+    public void SetSong()
+    {
+        songNotes = SongRecording.recordednotes;
+    }
 }

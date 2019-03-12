@@ -10,7 +10,9 @@ using UnityEngine.UI;
 
 public class PlayerDataManager : MonoBehaviour
 {
-    public bool isAI;//Bool that controls whether or not the AI is active
+    public bool isAI,
+                isPlayer3Or4,
+                isRecording;//Bool that controls whether or not the AI is active
 
     float playerScore, playerMultiplier;//Ints that hold the players score and multiplier
     float holdingScore;//Float that holds score from holding note so it can be rounded for the display
@@ -29,9 +31,31 @@ public class PlayerDataManager : MonoBehaviour
         multiplierCount = 0;
         playerMultiplier = 1;
 
-        isAI = true;
-
-        if(comboCount == 0)
+        if (isAI)
+        {
+            transform.GetComponentInChildren<IndividualKeyScript>().AI = true;
+        }
+        else
+        {
+            transform.GetComponentInChildren<IndividualKeyScript>().AI = false;
+        }
+        if (isPlayer3Or4)
+        {
+            transform.GetComponentInChildren<IndividualKeyScript>().player3or4 = true;
+        }
+        else
+        {
+            transform.GetComponentInChildren<IndividualKeyScript>().player3or4 = false;
+        }
+        if (isRecording)
+        {
+            transform.GetComponentInChildren<IndividualKeyScript>().songrecording = true;
+        }
+        else
+        {
+            transform.GetComponentInChildren<IndividualKeyScript>().songrecording = false;
+        }
+        if (comboCount == 0)
         {
             comboCount = 10;//Defaults to 10 good hits needed
         }
@@ -39,22 +63,20 @@ public class PlayerDataManager : MonoBehaviour
 
     void Update()
     {
-        try
-        {
+        //playerScoreDisplay.text = "Score " + Mathf.RoundToInt(playerScore + holdingScore) + "\n" + "Multiplier " + playerMultiplier;
 
-
-            playerScoreDisplay.text = "Score " + Mathf.RoundToInt(playerScore + holdingScore) + "\n" + "Multiplier " + playerMultiplier;
-        }
-        catch
+        if (isAI)
         {
-
+            transform.GetComponentInChildren<IndividualKeyScript>().AI = true;
         }
-        if(isAI)
+        else
         {
-            //Turn AI on? Maybe have a method that is called when the keyboard area is touched?
+            transform.GetComponentInChildren<IndividualKeyScript>().AI = false;
         }
-        
-        
+        if (isRecording)
+        {
+            SongRecording.SongPlaying();
+        }
     }
 
     public void AddScore(float scoreToAdd)//This method is called when a note is hit by the player and simply adds an amount decided by how timely they hit it

@@ -50,15 +50,15 @@ public class PlayerMenuHandler : MonoBehaviour
         if (doOnce)//Do once...clear dropdown, and for every song add that songs name to the dropdown list
         {
             dropdownMenu.GetComponent<Dropdown>().ClearOptions();
-            foreach (Songholder song in noteSpawner.GetComponent<NoteSpawning>().songs)
+   
+            for (int i = 0; i < noteSpawner.GetComponent<NoteSpawning>().songs.Count - 1; i++)
             {
-                //Debug.Log(song.GetSongName());
-                songNames.Add(song.GetSongName());
+                songNames.Add(noteSpawner.GetComponent<NoteSpawning>().songs[i].GetSongName());
             }
             dropdownMenu.GetComponent<Dropdown>().AddOptions(songNames);
             doOnce = false;
         }
-        
+
 
 
         menuPanel.SetActive(menuStatus);//Either enable or disable the menu

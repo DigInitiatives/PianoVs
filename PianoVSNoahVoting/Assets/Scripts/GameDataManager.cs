@@ -26,16 +26,16 @@ public class GameDataManager : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(voteInProgress);
-        Debug.Log(currentVote);
-        Debug.Log(currentSongID);
-        Debug.Log(newSongID);
+        //Debug.Log(voteInProgress);
+        //Debug.Log(currentVote);
+        //Debug.Log(currentSongID);
+        //Debug.Log(newSongID);
         if (currentVote == (4 - aiCount))//If everyone agrees, AI doesnt vote so lower needed score in case of AI activeness
         {
             //VOTE PASSED
             foreach(GameObject noteSpawner in noteSpawners)//For the 4 note spawners
             {
-                noteSpawner.GetComponent<NoteSpawning>().ChangeSong(newSongID);//Set the song choice, reset the beat, and set the bpm and time signature to the songs
+                noteSpawner.GetComponent<NoteSpawning>().PlayNewSong(newSongID);//Set the song choice, reset the beat, and set the bpm and time signature to the songs
                 noteSpawner.GetComponent<NoteSpawning>().ResetHoldNotes();
                 SetCurrentSongID(newSongID);
             }
