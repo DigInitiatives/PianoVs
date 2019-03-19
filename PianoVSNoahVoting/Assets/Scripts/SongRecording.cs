@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿///Author: Austin Bentley
+///Records notes played
+///Last Modified By: Austin Bentley
+///Last Modified Date: 19-Mar-2019
+///Dependencies: Note spawning needs to be done
+///
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,13 +32,13 @@ public static class SongRecording
 			{
 				key.GetComponent<IndividualKeyScript>().songrecording = false;
 			}
-			spawners = GameObject.FindGameObjectsWithTag("Spawner");
+			spawners = GameObject.FindGameObjectsWithTag("NoteSpawner");
 			foreach (GameObject spawner in spawners)
 			{
 				spawner.GetComponent<NoteSpawning>().RecordSong();
 			}
 		}
-		Debug.Log(recordednotes.Count);
+		//Debug.Log(recordednotes.Count);
 	}
 	public static void AddNote(int noteAdded)
 	{

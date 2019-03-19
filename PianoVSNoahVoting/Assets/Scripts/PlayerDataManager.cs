@@ -1,12 +1,13 @@
-﻿using System.Collections;
+﻿///Author: Noah Rittenhouse
+///This script will be attached to each of the keyboard prefabs and will handle any and all player data, score/AI bool, etc
+///Last Modified By: Noah Rittenhouse
+///Last Modified Date: Feb-19-2019
+///Dependencies: Score displays must be assigned in the editor
+///
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-///Author: Noah Rittenhouse
-///This script will be attached to each of the keyboard prefabs and will handle any and all player data, score/AI bool, etc
-///Last Modified By: Noah Rittenhouse
-///Last Modified Date: Feb-14-2019
-///Dependencies: Score displays must be assigned in the editor
 
 public class PlayerDataManager : MonoBehaviour
 {
@@ -59,6 +60,21 @@ public class PlayerDataManager : MonoBehaviour
         {
             comboCount = 10;//Defaults to 10 good hits needed
         }
+
+
+        #region Set KeyNumbers
+        int keyNum = 0;
+        foreach(GameObject key in GameObject.FindGameObjectsWithTag("Key"))
+        {
+            key.GetComponent<IndividualKeyScript>().keyNum = keyNum;
+            keyNum++;
+            if(keyNum == 49)
+            {
+                keyNum = 0;
+            }
+        }
+
+        #endregion
     }
 
     void Update()

@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿///Author: Austin Bentley
+///Stores note values for songs
+///Last Modified By: Austin Bentley
+///Last Modified Date: 7-Mar-2019
+///Dependencies: N/A
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

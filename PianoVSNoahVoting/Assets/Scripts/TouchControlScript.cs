@@ -1,17 +1,15 @@
-﻿using System.Collections;
+﻿///Author: Adam Warkentin
+///This script is attatched to the main camera of the scene. The purpose of this script is to take in touch input, and recognize if the touch was on a key (can be easily modified for other objects)
+///Last Modified By: Adam Warkentin
+///Last Modified Date: 19-Mar-2019
+///Dependencies: Keys need to have the tag "Key"
+///
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TouchControlScript : MonoBehaviour
 {
-    /*
-    * Summary:
-    * This script is attatched to the main camera of the scene. The purpose of this script is to take in touch input, and recognize if the touch was on a key (can be easily modified for other objects)
-    * Date: 31/01/2019
-    * Author: Adam Warkentin
-    * Dependencies: Keys need to have the tag "Key"
-    */
-
     //List to track what game object each touch index has touched
     [SerializeField]
     List<GameObject> hitObj;
@@ -19,8 +17,10 @@ public class TouchControlScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Input.simulateMouseWithTouches = false;
+
         hitObj = new List<GameObject>();
-        for (int i = 0; i < 80; i++)
+        for (int i = 0; i < 160; i++)
         {
             hitObj.Add(new GameObject());
         }

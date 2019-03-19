@@ -11,3 +11,6 @@ public class TimeScale : MonoBehaviour
         Time.timeScale = scaleFactor;
     }
 }
+
+
+///Hot garbage

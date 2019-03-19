@@ -1,17 +1,15 @@
-﻿using System.Collections;
+﻿///Author: Josh Sadoway
+///This is a debug script, allowing for use of the computer keyboard
+///Last Modified By: Josh Sadoway
+///Last Modified Date: 7-Mar-2019
+///Dependencies: Using the Individual Key Script(Adam), the user can use the keyboard instead of touch controls.
+///
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class KeyboardPlay : MonoBehaviour
 {
-	/*
-    * Summary:
-    * This script is attached to the piano prefab, with a list of all the notes.
-    * Date: 07/02/2019
-    * Author: Josh Ssadoway
-    * Dependencies: Using the Individual Key Script (Adam), the user can use the keyboard instead of touch controls.
-    */
-
 	// List of keys
 	public List<GameObject> pianoKeys = new List<GameObject>();
 

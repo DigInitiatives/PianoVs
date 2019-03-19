@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿///Author: Austin Bentley
+///Parent class that stores song data
+///Last Modified By: Austin Bentley
+///Last Modified Date: 7-Mar-2019
+///Dependencies: Note spawning
+///
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

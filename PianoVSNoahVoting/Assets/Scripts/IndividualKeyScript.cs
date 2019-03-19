@@ -1,9 +1,9 @@
 ﻿///Author: Adam Warkentin
 ///This script is attatched to a "Key" which only has a public method that plays the sound clip of the attatched audio source
 ///Last Modified By: Noah Rittenhouse
-///Last Modified Date: 5-Feb-2019
+///Last Modified Date: 19-Mar-2019
 ///Dependencies: Requires an audio source component.If the key is a white key, check the "whiteKey" bool in the editor
-
+///
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +16,7 @@ public class IndividualKeyScript : MonoBehaviour
 
 
     [SerializeField]
-    int keyNum;
+    public int keyNum;
 
     public bool AI, player3or4, songrecording;
 
@@ -56,18 +56,20 @@ public class IndividualKeyScript : MonoBehaviour
         //Gets the necessary material for the key from the Resources folder
         if (whiteKey)
         {
-            keyUp = Resources.Load("Key-Up") as Material;
-            keyDown = Resources.Load("Key-Down") as Material;
+            keyUp = Resources.Load("Images/KeyImages/Materials/Key-Up") as Material;
+            keyDown = Resources.Load("Images/KeyImages/Materials/Key-Down") as Material;
         }
         else
         {
-            keyUp = Resources.Load("KeySharp-Up") as Material;
-            keyDown = Resources.Load("KeySharp-Down") as Material;
+            keyUp = Resources.Load("Images/KeyImages/Materials/KeySharp-Up") as Material;
+            keyDown = Resources.Load("Images/KeyImages/Materials/KeySharp-Down") as Material;
         }
 
         keyModelRenderer.material = keyUp;
 
 		playerData = transform.parent.GetComponentInParent<PlayerDataManager>();//Set playerData variable to the keyboards script component
+
+        //keyNum = 
 	}
 
     public void Update()

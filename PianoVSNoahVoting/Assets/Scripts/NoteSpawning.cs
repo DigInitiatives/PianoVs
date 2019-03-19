@@ -1,17 +1,17 @@
-﻿using System.Collections;
+﻿///Author: Austin Bentley
+///This script is designed to spawn the notes according to the song chosen
+///Last Modified By: Noah Rittenhouse
+///Last Modified Date: 19-Mar-2019
+///
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/**Created By Austin Bentley
- * Last Edited on : Febuary 12th 2019
- * This script is designed to spawn the notes according to the song chosen
- * ChangeLog: Added Improved held note funtionallity to accomadate the score function
-**/
 public class NoteSpawning : MonoBehaviour
 {
     //Will call from reasource folder eventually
 
-    [SerializeField]
+    
     GameObject note, heldNote, blackNote, heldBlackNote, noteBar;
 
     public List<GameObject> keyBoardKeys;
@@ -29,6 +29,12 @@ public class NoteSpawning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        note = Resources.Load("Prefabs/WhiteNote") as GameObject;
+        heldNote = Resources.Load("Prefabs/WhiteNoteHeld") as GameObject;
+        blackNote = Resources.Load("Prefabs/BlackNote") as GameObject;
+        heldBlackNote = Resources.Load("Prefabs/BlackNoteHeld") as GameObject;
+        noteBar = Resources.Load("Prefabs/NoteBar") as GameObject;
+        
         whiteNotes = new List<GameObject>();
         blackNotes = new List<GameObject>();
         whiteNotesHeld = new List<GameObject>();
@@ -114,7 +120,7 @@ public class NoteSpawning : MonoBehaviour
                                     heldNoteCount[c] = -15;
                                 }
                                 blackNoteCounter++;
-                                if (blackNoteCounter > blackNotes.Count)
+                                if (blackNoteCounter >= blackNotes.Count)
                                 {
                                     blackNoteCounter = 0;
                                 }
@@ -132,7 +138,7 @@ public class NoteSpawning : MonoBehaviour
                                     heldNoteCount[c] = -15;
                                 }
                                 whiteNoteCounter++;
-                                if (whiteNoteCounter > whiteNotes.Count)
+                                if (whiteNoteCounter >= whiteNotes.Count)
                                 {
                                     whiteNoteCounter = 0;
                                 }
@@ -188,8 +194,8 @@ public class NoteSpawning : MonoBehaviour
 
     public void RecordSong()
     {
-        songs[0].SetSong();
-        songSelect = 0;
+        songs[songs.Count - 1].SetSong();
+        songSelect = songs.Count - 1;
         beat = 0;
         timestamp = Time.time;
         bpm = songs[songSelect].GetBPM();

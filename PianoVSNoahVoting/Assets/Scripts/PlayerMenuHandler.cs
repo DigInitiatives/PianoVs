@@ -2,7 +2,7 @@
 ///This script will handle all the menu button presses and what they do
 ///Last Modified By: Noah Rittenhouse
 ///Last Modified Date: 19-Mar-2019
-///Dependencies: 
+///Dependencies: Note spawners must be assigned in inspector
 ///
 using System.Collections;
 using System.Collections.Generic;

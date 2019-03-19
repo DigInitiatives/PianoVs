@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-///Author: Noah Rittenhouse
+﻿///Author: Noah Rittenhouse
 ///This script will handle data universal among the 4 players
 ///Last Modified By: Noah Rittenhouse
-///Last Modified Date: 7-Mar-2019
+///Last Modified Date: 19-Mar-2019
 ///Dependencies: The four notespawners MUST have the NoteSpawner tag to change their song output
 ///
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 public class GameDataManager : MonoBehaviour
 {
     public static GameDataManager gcInstance;
@@ -16,6 +17,7 @@ public class GameDataManager : MonoBehaviour
     int aiCount;//How many AI there are active
     int currentSongID, newSongID;
     GameObject[] noteSpawners;
+
     private void Awake()
     {
         if (gcInstance == null)
@@ -28,6 +30,7 @@ public class GameDataManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
     void Start()
     {
         voteInProgress = false;
@@ -39,10 +42,6 @@ public class GameDataManager : MonoBehaviour
     }
     void Update()
     {
-        //Debug.Log(voteInProgress);
-        //Debug.Log(currentVote);
-        //Debug.Log(currentSongID);
-        //Debug.Log(newSongID);
         if (currentVote == (4 - aiCount))//If everyone agrees, AI doesnt vote so lower needed score in case of AI activeness
         {
             //VOTE PASSED

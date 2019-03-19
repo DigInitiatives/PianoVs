@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿///Author: Austin Bentley
+///This script simply moves the attached object down
+///Last Modified By: Austin Bentley
+///Last Modified Date: 31-Jan-2019
+///
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/**Created By Austin Bentley
- * Last Edited on : January 31st 2019
- * This script is designed to send notes down the track
-**/
 public class NoteScript : MonoBehaviour
 {
     void Update()
