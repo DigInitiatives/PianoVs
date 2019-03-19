@@ -9,12 +9,25 @@ using UnityEngine;
 ///
 public class GameDataManager : MonoBehaviour
 {
-    public static bool voteInProgress;//Bool that tracks if vote is ongoing
-    static int currentVote, totalVotes;//Vote count, and total votes sent in
-    static int aiCount;//How many AI there are active
-    static int currentSongID, newSongID;
-    static GameObject[] noteSpawners;
+    public static GameDataManager gcInstance;
 
+    public bool voteInProgress;//Bool that tracks if vote is ongoing
+    int currentVote, totalVotes;//Vote count, and total votes sent in
+    int aiCount;//How many AI there are active
+    int currentSongID, newSongID;
+    GameObject[] noteSpawners;
+    private void Awake()
+    {
+        if (gcInstance == null)
+        {
+            gcInstance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
     void Start()
     {
         voteInProgress = false;
@@ -47,7 +60,7 @@ public class GameDataManager : MonoBehaviour
         }
     }
 
-    public static void IncrementVote(int vote)//Simply increments the vote based on the players vote choice
+    public void IncrementVote(int vote)//Simply increments the vote based on the players vote choice
     {
         //1 = yes
         //-1 = nos
@@ -55,21 +68,21 @@ public class GameDataManager : MonoBehaviour
         totalVotes++;
     }
 
-    public static void SetNewSongID(int songID)
+    public void SetNewSongID(int songID)
     {
         newSongID = songID;
     }
 
-    public static void SetCurrentSongID(int songID)
+    public void SetCurrentSongID(int songID)
     {
         currentSongID = songID;
     }
-    public static int GetCurrentSongID()
+    public int GetCurrentSongID()
     {
         return currentSongID;
     }
 
-    public static string GetSongName()
+    public string GetSongName()
     {
         return noteSpawners[0].GetComponent<NoteSpawning>().songs[newSongID].GetSongName();
     }

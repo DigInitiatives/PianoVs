@@ -1,7 +1,7 @@
 ﻿///Author: Noah Rittenhouse
 ///This script will handle all the menu button presses and what they do
 ///Last Modified By: Noah Rittenhouse
-///Last Modified Date: 5-Mar-2019
+///Last Modified Date: 19-Mar-2019
 ///Dependencies: 
 ///
 using System.Collections;
@@ -11,6 +11,8 @@ using UnityEngine.UI;
 
 public class PlayerMenuHandler : MonoBehaviour
 {
+    GameDataManager gcInstance;
+
     bool doOnce;//Bool just for a fake start method to only play once
     bool menuStatus, toggleTimerStatus, votingPanelStatus, waitingMessageStatus, voted;
     float toggleTimer;
@@ -22,17 +24,20 @@ public class PlayerMenuHandler : MonoBehaviour
     GameObject noteSpawner;
     string songName;
     List<string> songNames;
+
     void Start()
     {
+        gcInstance = GameDataManager.gcInstance;
+
         songName = "default";
         menuStatus = false;
         toggleTimerStatus = false;
         votingPanelStatus = false;
         waitingMessageStatus = false;
         voted = false;
-        toggleTimer = 0.5f;
+        toggleTimer = 0.0f;
         doOnce = true;
-        currentSongID = GameDataManager.GetCurrentSongID();
+
         songNames = new List<string>();
         //Find children assets
         menuPanel = transform.Find("MenuPanel").gameObject;
@@ -42,15 +47,14 @@ public class PlayerMenuHandler : MonoBehaviour
         votePanel = transform.Find("MenuPanel/VotingStuff/VotePanel").gameObject;
         waitingMessage = transform.Find("MenuPanel/VotingStuff/WaitingMessage").gameObject;
         //
-
+        menuToggleText.transform.localScale = new Vector3(menuToggleText.transform.localScale.x, 0);
     }
     void Update()
     {
-
         if (doOnce)//Do once...clear dropdown, and for every song add that songs name to the dropdown list
         {
             dropdownMenu.GetComponent<Dropdown>().ClearOptions();
-   
+
             for (int i = 0; i < noteSpawner.GetComponent<NoteSpawning>().songs.Count - 1; i++)
             {
                 songNames.Add(noteSpawner.GetComponent<NoteSpawning>().songs[i].GetSongName());
@@ -60,28 +64,32 @@ public class PlayerMenuHandler : MonoBehaviour
         }
 
 
-
+        currentSongID = gcInstance.GetCurrentSongID();
         menuPanel.SetActive(menuStatus);//Either enable or disable the menu
+        waitingMessage.SetActive(waitingMessageStatus);//Enable or disable the message that indicates the stage of the vote
+        votePanel.SetActive(votingPanelStatus);//Enable or disable the voting panel
+        dropdownMenu.GetComponent<Dropdown>().value = currentSongID;
 
-        waitingMessage.SetActive(waitingMessageStatus);
-        votePanel.SetActive(votingPanelStatus);//Close vote panel
 
-        if (toggleTimerStatus)//if they are holding the button decrement the timer variable
+        if (toggleTimerStatus && toggleTimer < 0.5f)//if they are holding the button decrement the timer variable
         {
-            toggleTimer -= Time.deltaTime;
+            toggleTimer += Time.deltaTime;
+            menuToggleText.transform.localScale = new Vector3(menuToggleText.transform.localScale.x, toggleTimer / 0.5f);
         }
-        menuToggleText.GetComponent<Text>().text = toggleTimer.ToString();//Just a display that shows how long they have pressed
+        if (toggleTimer >= 0.5f)
+        {
+            menuStatus = true;//Open menu
+            menuToggleText.transform.localScale = new Vector3(menuToggleText.transform.localScale.x, toggleTimer / 0.5f);
+        }
 
-        if (GameDataManager.voteInProgress && !voted)//If there is a vote occurring and you havent voted yet make sure the menu is on
+        if (gcInstance.voteInProgress && !voted)//If there is a vote occurring and you havent voted yet make sure the menu is on
         {
             VotingActive();
         }
-        else if (!GameDataManager.voteInProgress)//If there is no vote disable shit
+        else if (!gcInstance.voteInProgress)//If there is no vote disable shit
         {
             VotingInactive();
         }
-        currentSongID = GameDataManager.GetCurrentSongID();
-        dropdownMenu.GetComponent<Dropdown>().value = currentSongID;
     }
 
     #region Menu Activation
@@ -94,16 +102,18 @@ public class PlayerMenuHandler : MonoBehaviour
         else
         {
             menuStatus = false;//Close menu
+            menuToggleText.transform.localScale = new Vector3(menuToggleText.transform.localScale.x, toggleTimer / 0.5f);
         }
     }
     public void StoppedPressingMenuToggle()//Once the player lets go of the button, if they pressed it for over a second, turn the menu on
     {
         toggleTimerStatus = false;//Stop timer
-        if (toggleTimer <= 0)
+        if (toggleTimer >= 0.5f)
         {
             menuStatus = true;//Open menu
         }
-        toggleTimer = 0.5f;//Reset timer
+        toggleTimer = 0.0f;//Reset timer
+        menuToggleText.transform.localScale = new Vector3(menuToggleText.transform.localScale.x, toggleTimer / 0.5f);
     }
     #endregion
 
@@ -115,15 +125,14 @@ public class PlayerMenuHandler : MonoBehaviour
     #region Song Selection
     public void SelectSong()
     {
-        if (!GameDataManager.voteInProgress)//If there is not already a vote going on...
+        if (!gcInstance.voteInProgress)//If there is not already a vote going on...
         {
             //Debug.Log("Ooga");
             int songID = dropdownMenu.GetComponent<Dropdown>().value;//Set the players choice as the songID
             if (songID != currentSongID)//if the players choice is not already playing...
             {
-                currentSongID = songID;
-                GameDataManager.voteInProgress = true;//Let the game know there is now a vote active
-                GameDataManager.SetNewSongID(songID);//Let the game know the ID of the voted song
+                gcInstance.voteInProgress = true;//Let the game know there is now a vote active
+                gcInstance.SetNewSongID(songID);//Let the game know the ID of the voted song
                 VotingActive();
             }
         }
@@ -135,11 +144,11 @@ public class PlayerMenuHandler : MonoBehaviour
         //false = no
         if (vote)//Yes
         {
-            GameDataManager.IncrementVote(1);
+            gcInstance.IncrementVote(1);
         }
         else//No
         {
-            GameDataManager.IncrementVote(-1);
+            gcInstance.IncrementVote(-1);
         }
         menuStatus = false;//Close menu
         voted = true;//They have voted
@@ -149,15 +158,15 @@ public class PlayerMenuHandler : MonoBehaviour
 
     public void VotingActive()
     {
-        votingText.GetComponent<Text>().text = "Switch to " + GameDataManager.GetSongName();
+        votingText.GetComponent<Text>().text = "Switch to " + gcInstance.GetSongName();
         votingPanelStatus = true;
         dropdownMenu.GetComponent<Dropdown>().interactable = false;
     }
     public void VotingInactive()
     {
         dropdownMenu.GetComponent<Dropdown>().interactable = true;
+        waitingMessageStatus = false;//Closes message
         voted = false;
-        waitingMessageStatus = false;//Open message
     }
     #endregion
 }
