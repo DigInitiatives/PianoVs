@@ -20,7 +20,7 @@ public class NoteSpawning : MonoBehaviour
 	public float bpm, timesignature, beatTime, timestamp;
 	public int beat;
 	List<Songholder> songs;
-    int songSelect = 3;
+    int songSelect = 4;
 	List<int> holdNotes, heldNoteCount;
 
 	// Start is called before the first frame update
@@ -42,8 +42,9 @@ public class NoteSpawning : MonoBehaviour
 		songs.Add(new ATHousandMiles());
         songs.Add(new SongOfStorms());
         songs.Add(new LostWoods());
+        songs.Add(new MaryHadALittleLamb());
 
-		beat = 640;
+		beat = 0;
 		timestamp = Time.time;
         bpm = songs[songSelect].GetBPM();
 		timesignature = songs[songSelect].GetTimeSignature();
