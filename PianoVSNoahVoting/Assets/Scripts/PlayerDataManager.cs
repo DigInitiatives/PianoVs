@@ -11,9 +11,7 @@ using UnityEngine.UI;
 
 public class PlayerDataManager : MonoBehaviour
 {
-    public bool isAI,
-                isPlayer3Or4,
-                isRecording;//Bool that controls whether or not the AI is active
+    public bool isPlayer3Or4, isRecording, isAI;
 
     float playerScore, playerMultiplier;//Ints that hold the players score and multiplier
     float holdingScore;//Float that holds score from holding note so it can be rounded for the display
@@ -31,32 +29,25 @@ public class PlayerDataManager : MonoBehaviour
 
         multiplierCount = 0;
         playerMultiplier = 1;
-
-        if (isAI)
-        {
-            transform.GetComponentInChildren<IndividualKeyScript>().AI = true;
-        }
-        else
-        {
-            transform.GetComponentInChildren<IndividualKeyScript>().AI = false;
-        }
+        isAI = false;
+        ToggleAI();
+        isRecording = true;
+        ToggleRecording();
         if (isPlayer3Or4)
         {
-            transform.GetComponentInChildren<IndividualKeyScript>().player3or4 = true;
+            foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
+            {
+                keyScript.player3or4 = true;
+            }
         }
         else
         {
-            transform.GetComponentInChildren<IndividualKeyScript>().player3or4 = false;
+            foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
+            {
+                keyScript.player3or4 = false;
+            }
         }
-        if (isRecording)
-        {
-            transform.GetComponentInChildren<IndividualKeyScript>().songrecording = true;
-        }
-        else
-        {
-            transform.GetComponentInChildren<IndividualKeyScript>().songrecording = false;
-        }
-        if (comboCount == 0)
+        if (comboCount <= 0)
         {
             comboCount = 10;//Defaults to 10 good hits needed
         }
@@ -64,11 +55,11 @@ public class PlayerDataManager : MonoBehaviour
 
         #region Set KeyNumbers
         int keyNum = 0;
-        foreach(GameObject key in GameObject.FindGameObjectsWithTag("Key"))
+        foreach (GameObject key in GameObject.FindGameObjectsWithTag("Key"))
         {
             key.GetComponent<IndividualKeyScript>().keyNum = keyNum;
             keyNum++;
-            if(keyNum == 49)
+            if (keyNum == 49)
             {
                 keyNum = 0;
             }
@@ -79,15 +70,13 @@ public class PlayerDataManager : MonoBehaviour
 
     void Update()
     {
-        //playerScoreDisplay.text = "Score " + Mathf.RoundToInt(playerScore + holdingScore) + "\n" + "Multiplier " + playerMultiplier;
-
-        if (isAI)
+        try
         {
-            transform.GetComponentInChildren<IndividualKeyScript>().AI = true;
+            playerScoreDisplay.text = "Score " + Mathf.RoundToInt(playerScore + holdingScore) + "\n" + "Multiplier " + playerMultiplier;
         }
-        else
+        catch
         {
-            transform.GetComponentInChildren<IndividualKeyScript>().AI = false;
+
         }
         if (isRecording)
         {
@@ -119,5 +108,44 @@ public class PlayerDataManager : MonoBehaviour
     {
         multiplierCount = 0;
         playerMultiplier = 1;
+    }
+
+    public void ToggleAI()
+    {
+        isAI = !isAI;   
+        if (isAI)
+        {
+            foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
+            {
+                keyScript.AI = true;
+                keyScript.StopNote();
+            }
+        }
+        else
+        {
+            foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
+            {
+                keyScript.AI = false;
+                keyScript.StopNote();
+            }
+        }
+    }
+    public void ToggleRecording()
+    {
+        isRecording = !isRecording;
+        if (isRecording)
+        {
+            foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
+            {
+                keyScript.songrecording = true;
+            }
+        }
+        else
+        {
+            foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
+            {
+                keyScript.songrecording = false;
+            }
+        }
     }
 }

@@ -908,7 +908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -1665,7 +1665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -2039,7 +2039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -2199,7 +2199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -2359,7 +2359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -2519,7 +2519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -2679,7 +2679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -2839,7 +2839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -2999,7 +2999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -3236,7 +3236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -3396,7 +3396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -3556,7 +3556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -4465,7 +4465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -4809,7 +4809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -5183,7 +5183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -5450,7 +5450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -5610,7 +5610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -5800,7 +5800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -6259,7 +6259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -6419,7 +6419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -6900,7 +6900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -7274,7 +7274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -7494,7 +7494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -7731,7 +7731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -7921,7 +7921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -8235,7 +8235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -8562,7 +8562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -8829,7 +8829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -8989,7 +8989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -9226,7 +9226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -9416,7 +9416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -9576,7 +9576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -9873,7 +9873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -10033,7 +10033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -10354,7 +10354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -10514,7 +10514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -10901,7 +10901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -11061,7 +11061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -11221,7 +11221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -11488,7 +11488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -11904,7 +11904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -12663,7 +12663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -12913,7 +12913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -13103,7 +13103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -13263,7 +13263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -13607,7 +13607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 1
@@ -13809,7 +13809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
@@ -13969,7 +13969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
-  AI: 1
+  AI: 0
   player3or4: 0
   songrecording: 0
   whiteKey: 0
