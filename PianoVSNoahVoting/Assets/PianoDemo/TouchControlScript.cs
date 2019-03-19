@@ -19,6 +19,8 @@ public class TouchControlScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Input.simulateMouseWithTouches = false;
+
         hitObj = new List<GameObject>();
         for (int i = 0; i < 80; i++)
         {
