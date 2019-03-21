@@ -21,7 +21,7 @@ public class NoteSpawning : MonoBehaviour
     public int beat;
     public List<Songholder> songs;
     List<int> holdNotes, heldNoteCount;
-    int songSelect = 3;
+    int songSelect = 0;
     List<GameObject> whiteNotes, blackNotes, whiteNotesHeld, blackNotesHeld;
 
     int whiteNoteCounter = 3, blackNoteCounter = 3, whiteHeldNoteCounter = 3, blackHeldNoteCounter = 3;
