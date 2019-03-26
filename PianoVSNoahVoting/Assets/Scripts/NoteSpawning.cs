@@ -20,7 +20,7 @@ public class NoteSpawning : MonoBehaviour
 	public float bpm, timesignature, beatTime, timestamp;
 	public int beat;
 	public List<Songholder> songs;
-    int songSelect = 5;
+    int songSelect = 6;
 	List<int> holdNotes, heldNoteCount;
 
 	// Start is called before the first frame update
@@ -44,6 +44,7 @@ public class NoteSpawning : MonoBehaviour
         songs.Add(new LostWoods());
         songs.Add(new TwinkleTwinkleLittleStar());
         songs.Add(new TetrisThemeA());
+        songs.Add(new JingleBells());
 
 		beat = 0;
 		timestamp = Time.time;
