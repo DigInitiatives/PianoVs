@@ -8,6 +8,10 @@ TagManager:
   - HeldNote
   - Key
   - NoteSpawner
+  - KeyboardOne
+  - KeyboardTwo
+  - KeyboardThree
+  - KeyboardFour
   layers:
   - Default
   - TransparentFX

@@ -42,10 +42,10 @@ public class PlayerMenuHandler : MonoBehaviour
         //Find children assets
         menuPanel = transform.Find("MenuPanel").gameObject;
         menuToggleText = transform.Find("MenuToggle/Countdown").gameObject;
-        dropdownMenu = transform.Find("MenuPanel/Dropdown").gameObject;
-        votingText = transform.Find("MenuPanel/VotingStuff/VotePanel/VoteText").gameObject;
-        votePanel = transform.Find("MenuPanel/VotingStuff/VotePanel").gameObject;
-        waitingMessage = transform.Find("MenuPanel/VotingStuff/WaitingMessage").gameObject;
+        dropdownMenu = transform.Find("MenuPanel/SongVoting/Dropdown").gameObject;
+        votingText = transform.Find("MenuPanel/SongVoting/VotePanel/VoteText").gameObject;
+        votePanel = transform.Find("MenuPanel/SongVoting/VotePanel").gameObject;
+        waitingMessage = transform.Find("MenuPanel/SongVoting/WaitingMessage").gameObject;
         //
         menuToggleText.transform.localScale = new Vector3(menuToggleText.transform.localScale.x, 0);
     }
@@ -127,7 +127,6 @@ public class PlayerMenuHandler : MonoBehaviour
     {
         if (!gcInstance.voteInProgress)//If there is not already a vote going on...
         {
-            //Debug.Log("Ooga");
             int songID = dropdownMenu.GetComponent<Dropdown>().value;//Set the players choice as the songID
             if (songID != currentSongID)//if the players choice is not already playing...
             {

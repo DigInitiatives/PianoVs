@@ -92,13 +92,12 @@ public class IndividualKeyScript : MonoBehaviour
                 keyPos = transform.position + Vector3.up * 1.5f;
             }
         }
-        Debug.DrawRay(keyPos, transform.up);
         if (AI)
         {
             if (Physics.Raycast(keyPos, transform.up, out hit, .7f) && hit.collider.gameObject.tag == "Note")//Shoots raycast from the tip of note
             {
                 StopNote();
-                PlayNote();
+                PlayNote(true);
                 AITimer = 0;
             }
             else
@@ -143,8 +142,12 @@ public class IndividualKeyScript : MonoBehaviour
     }
 
     //Plays the audio attatched to the key and sets its material to down
-    public void PlayNote()
+    public void PlayNote(bool wasAI)
     {
+        if(!AI || !wasAI)//If the player presses the key
+        {
+            playerData.ResetSleepTime();
+        }
         StopCoroutine("SoundStop");
         GetComponent<AudioSource>().volume = 1;
         stamp = false;
@@ -159,10 +162,10 @@ public class IndividualKeyScript : MonoBehaviour
                 if (hit.distance <= .7f && hit.distance > .45f)//Sweet spot distance
                 {
                     holdingNote = true;
-                    Debug.Log("Sweet Spot");
+
 
                     playerData.AddScore(100);//Sweet spot
-                    playerData.IncreaseMultiplier(1);//Add to multiplier
+                    playerData.IncreaseMultiplier(.1f);//Add to multiplier
 
                     //Stores the distance hit in order to check forheld notes
                     heldNotedistance = hit.distance;
@@ -172,7 +175,7 @@ public class IndividualKeyScript : MonoBehaviour
                 else if (hit.distance > .7f)//To far distance
                 {
                     holdingNote = true;
-                    Debug.Log("Too far");
+
                     playerData.BreakMultiplier();//No score, break multiplier
                     heldNotedistance = hit.distance;
                     hit.transform.position = new Vector3(-1000, -1000, -1000);
@@ -181,7 +184,7 @@ public class IndividualKeyScript : MonoBehaviour
                 else//Not to far but not in sweet spot
                 {
                     holdingNote = true;
-                    Debug.Log("Not sweet spot");
+
                     playerData.AddScore(50);//Too Close spot
                     heldNotedistance = hit.distance;
                     hit.transform.position = new Vector3(-1000, -1000, -1000);

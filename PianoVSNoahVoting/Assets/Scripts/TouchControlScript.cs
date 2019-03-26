@@ -43,7 +43,7 @@ public class TouchControlScript : MonoBehaviour
                         if(hitObj[touch.fingerId].GetComponent<IndividualKeyScript>() == null && hit.collider.gameObject.tag == "Key" && !hitObj.Contains(hit.collider.gameObject))
                         {
                             hitObj[touch.fingerId] = hit.collider.gameObject;
-                            hitObj[touch.fingerId].GetComponent<IndividualKeyScript>().PlayNote();
+                            hitObj[touch.fingerId].GetComponent<IndividualKeyScript>().PlayNote(false);
                         }
                     }
                     break;
@@ -58,7 +58,7 @@ public class TouchControlScript : MonoBehaviour
                             }
 
                             hitObj[touch.fingerId] = hit.collider.gameObject;
-                            hitObj[touch.fingerId].GetComponent<IndividualKeyScript>().PlayNote();
+                            hitObj[touch.fingerId].GetComponent<IndividualKeyScript>().PlayNote(false);
                         }
                         else if(hit.collider.gameObject.GetComponent<IndividualKeyScript>() == null)
                         {

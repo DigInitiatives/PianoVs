@@ -1,7 +1,7 @@
 ﻿///Author: Noah Rittenhouse
 ///This script will be attached to each of the keyboard prefabs and will handle any and all player data, score/AI bool, etc
 ///Last Modified By: Noah Rittenhouse
-///Last Modified Date: Feb-19-2019
+///Last Modified Date: Mar-21-2019
 ///Dependencies: Score displays must be assigned in the editor
 ///
 using System.Collections;
@@ -15,24 +15,23 @@ public class PlayerDataManager : MonoBehaviour
 
     float playerScore, playerMultiplier;//Ints that hold the players score and multiplier
     float holdingScore;//Float that holds score from holding note so it can be rounded for the display
-    int multiplierCount;//Variable that keeps track of how many good hits the player has gotten so far
+    float sleepTimer;
+    float multiplierCount;//Variable that keeps track of how many good hits the player has gotten so far
     [SerializeField]
     int comboCount;//Variable that keeps track of how many good hits the player needs    
 
-    [SerializeField]
+    GameObject playerHud;
     Text playerScoreDisplay;
-
+    Image playerMultiplierBar;
     void Start()
     {
         playerScore = 0;
         holdingScore = 0;
-
+        sleepTimer = Time.time;//Seconds until AI takes over
         multiplierCount = 0;
         playerMultiplier = 1;
-        isAI = false;
-        ToggleAI();
-        isRecording = true;
-        ToggleRecording();
+        isAI = true;
+        isRecording = false;
         if (isPlayer3Or4)
         {
             foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
@@ -49,10 +48,8 @@ public class PlayerDataManager : MonoBehaviour
         }
         if (comboCount <= 0)
         {
-            comboCount = 10;//Defaults to 10 good hits needed
+            comboCount = 1;//Defaults to 10 good hits needed
         }
-
-
         #region Set KeyNumbers
         int keyNum = 0;
         foreach (GameObject key in GameObject.FindGameObjectsWithTag("Key"))
@@ -66,6 +63,13 @@ public class PlayerDataManager : MonoBehaviour
         }
 
         #endregion
+        try
+        {
+            playerHud = GameObject.FindGameObjectWithTag(name);
+            playerScoreDisplay = playerHud.transform.Find("ScoreText").GetComponent<Text>();
+            playerMultiplierBar = playerHud.transform.Find("ScoreText/StaticBar/DynamicBar").GetComponent<Image>();
+        }
+        catch { }
     }
 
     void Update()
@@ -73,17 +77,25 @@ public class PlayerDataManager : MonoBehaviour
         try
         {
             playerScoreDisplay.text = "Score " + Mathf.RoundToInt(playerScore + holdingScore) + "\n" + "Multiplier " + playerMultiplier;
+            playerMultiplierBar.fillAmount = multiplierCount;
+            if (playerMultiplier == 8)
+            {
+                playerMultiplierBar.fillAmount = 1;
+            }
         }
-        catch
-        {
-
-        }
+        catch { }
         if (isRecording)
         {
             SongRecording.SongPlaying();
         }
+        if (sleepTimer + 30 < Time.time)
+        {
+            ResetSleepTime();
+            SetAI(true);
+        }
     }
 
+    #region Score handling
     public void AddScore(float scoreToAdd)//This method is called when a note is hit by the player and simply adds an amount decided by how timely they hit it
     {
         playerScore += scoreToAdd * playerMultiplier;
@@ -92,15 +104,15 @@ public class PlayerDataManager : MonoBehaviour
     {
         holdingScore += scoreToAdd;
     }
-    public void IncreaseMultiplier(int amount)//Increases multiplier every time they get a good hit
+    public void IncreaseMultiplier(float amount)//Increases multiplier every time they get a good hit
     {
         if (playerMultiplier < 8)
         {
-            multiplierCount += amount;
-            if (multiplierCount >= comboCount)
+            multiplierCount += amount;//Add 'score' to multiplierCount
+            if (multiplierCount >= comboCount + 0.1f)//If the multiplierCount is more than the previously specified amount of 'score' needed to increase mulitplier
             {
-                multiplierCount = 0;
-                playerMultiplier++;
+                multiplierCount = 0;//Reset multiplierCount
+                playerMultiplier++;//Increase player multiplier
             }
         }
     }
@@ -109,27 +121,8 @@ public class PlayerDataManager : MonoBehaviour
         multiplierCount = 0;
         playerMultiplier = 1;
     }
-
-    public void ToggleAI()
-    {
-        isAI = !isAI;   
-        if (isAI)
-        {
-            foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
-            {
-                keyScript.AI = true;
-                keyScript.StopNote();
-            }
-        }
-        else
-        {
-            foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
-            {
-                keyScript.AI = false;
-                keyScript.StopNote();
-            }
-        }
-    }
+    #endregion
+    #region Recording
     public void ToggleRecording()
     {
         isRecording = !isRecording;
@@ -147,5 +140,36 @@ public class PlayerDataManager : MonoBehaviour
                 keyScript.songrecording = false;
             }
         }
+    }
+    #endregion
+
+
+    public void SetAI(bool on)//Set AI as on or off
+    {
+        if (on)
+        {
+            isAI = true;
+            foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
+            {
+                keyScript.AI = true;
+                keyScript.StopNote();
+                keyScript.gameObject.GetComponent<AudioSource>().volume = 0.5f;
+            }
+        }
+        else
+        {
+            isAI = false;
+            foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
+            {
+                keyScript.AI = false;
+                keyScript.StopNote();
+                keyScript.gameObject.GetComponent<AudioSource>().volume = 1f;
+            }
+        }
+    }
+    public void ResetSleepTime()
+    {
+        SetAI(false);//Turn off AI
+        sleepTimer = Time.time;//Reset sleep timer
     }
 }
