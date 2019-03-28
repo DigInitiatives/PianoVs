@@ -56,7 +56,9 @@ public class NoteSpawning : MonoBehaviour
         songs.Add(new HotCrossBuns());
         songs.Add(new SongOfStorms());
         songs.Add(new LostWoods());
-
+        songs.Add(new MaryHadALittleLamb());
+        songs.Add(new TetrisThemeA());
+        songs.Add(new TwinkleTwinkleLittleStar());
 
         songs.Add(new RecordedSong());
         beat = 0;

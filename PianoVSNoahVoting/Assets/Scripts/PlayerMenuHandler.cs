@@ -121,7 +121,10 @@ public class PlayerMenuHandler : MonoBehaviour
 
     #endregion
 
-
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     #region Song Selection
     public void SelectSong()
     {
