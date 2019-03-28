@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BattleMode.unity
     guid: 9ac8e4ae103e7784e95b3bd9aa47afbe
+  - enabled: 1
+    path: Assets/Scenes/KeyboardDemo.unity
+    guid: 28e72217556c0744a907c04cccddffb8
   m_configObjects: {}

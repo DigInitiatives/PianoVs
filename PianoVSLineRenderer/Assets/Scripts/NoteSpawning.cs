@@ -79,15 +79,15 @@ public class NoteSpawning : MonoBehaviour
             beat = 0;
         }
 
-        if (beat % 64 == 0 || beat == 0)
-        {
-            Instantiate(noteBar, transform.position, transform.rotation);
-        }
         //Debug.Log(keyBoardKeys.Count);
         #region Instatiate New Notes and Starts or Stops held notes
         //calculates the current beat number based on BPM and tracks beats
         if (Time.time - beatTime > timestamp || beat == 0)
         {
+            if (beat % 64 == 0 || beat == 0)
+            {
+                Instantiate(noteBar, transform.position, transform.rotation);
+            }
             //instantiates the note if it starts on this beat
             foreach (NoteClass notes in songs[songSelect].songNotes)
             {
@@ -147,7 +147,7 @@ public class NoteSpawning : MonoBehaviour
             {
                 for (int c = 0; c < holdNotes.Count - 1; c++)
                 {
-                    if (beat == holdNotes[c].z)
+                    if (beat >= holdNotes[c].z)
                     {
                         GameObject endTransform = Instantiate(endHeldNote, keyBoardKeys[Mathf.RoundToInt(holdNotes[c].x)].transform.position, keyBoardKeys[Mathf.RoundToInt(holdNotes[c].x)].transform.rotation);
 

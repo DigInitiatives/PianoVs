@@ -102,7 +102,7 @@ public class IndividualKeyScript : MonoBehaviour
             }
             else
             {
-                if (!Physics.Raycast(keyPos, transform.up, out hit, .6f) && AITimer > 5)//Shoots raycast from the tip of note
+                if (!Physics.Raycast(keyPos, transform.up, out hit, 1) && AITimer > 5)//Shoots raycast from the tip of note
                 {
                     StopNote();
                 }
@@ -161,22 +161,35 @@ public class IndividualKeyScript : MonoBehaviour
             {
                 if (hit.distance <= .7f && hit.distance > .45f)//Sweet spot distance
                 {
-                    playerData.AddScore(100);//Sweet spot
-                    playerData.IncreaseMultiplier(.1f);//Add to multiplier
-                }
-                else if (hit.distance > .7f)//To far distance
-                {
-                    playerData.BreakMultiplier();//No score, break multiplier
-                }
-                else//Not to far but not in sweet spot
-                {
-                    playerData.AddScore(50);//Too Close spot
-                }
                     holdingNote = true;
 
+
+                    playerData.AddScore(100);//Sweet spot
+                    playerData.IncreaseMultiplier(.1f);//Add to multiplier
+
+                    //Stores the distance hit in order to check forheld notes
                     heldNotedistance = hit.distance;
                     hit.transform.position = new Vector3(-1000, -1000, -1000);
                     hit.transform.gameObject.SetActive(false);
+                }
+                else if (hit.distance > .7f)//To far distance
+                {
+                    holdingNote = true;
+
+                    playerData.BreakMultiplier();//No score, break multiplier
+                    heldNotedistance = hit.distance;
+                    hit.transform.position = new Vector3(-1000, -1000, -1000);
+                    hit.transform.gameObject.SetActive(false);
+                }
+                else//Not to far but not in sweet spot
+                {
+                    holdingNote = true;
+
+                    playerData.AddScore(50);//Too Close spot
+                    heldNotedistance = hit.distance;
+                    hit.transform.position = new Vector3(-1000, -1000, -1000);
+                    hit.transform.gameObject.SetActive(false);
+                }
             }
         }
         if (songrecording)

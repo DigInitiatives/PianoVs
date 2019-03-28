@@ -35,7 +35,7 @@ public class GameDataManager : MonoBehaviour
     {
         voteInProgress = false;
         currentVote = 0;
-        aiCount = 2;
+        aiCount = 3;
         currentSongID = 0;
         newSongID = -1;
         noteSpawners = GameObject.FindGameObjectsWithTag("NoteSpawner");

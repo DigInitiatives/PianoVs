@@ -21,8 +21,8 @@ public class PlayerDataManager : MonoBehaviour
     int comboCount;//Variable that keeps track of how many good hits the player needs    
 
     GameObject playerHud;
-    Text playerScoreDisplay;
-    Image playerMultiplierBar;
+    public Text playerScoreDisplay;
+    public Image playerMultiplierBar;
     void Start()
     {
         playerScore = 0;
@@ -66,8 +66,6 @@ public class PlayerDataManager : MonoBehaviour
         try
         {
             playerHud = GameObject.FindGameObjectWithTag(name);
-            playerScoreDisplay = playerHud.transform.Find("ScoreText").GetComponent<Text>();
-            playerMultiplierBar = playerHud.transform.Find("ScoreText/StaticBar/DynamicBar").GetComponent<Image>();
         }
         catch { }
     }
@@ -76,7 +74,7 @@ public class PlayerDataManager : MonoBehaviour
     {
         try
         {
-            playerScoreDisplay.text = "Score " + Mathf.RoundToInt(playerScore + holdingScore) + "\n" + "Multiplier " + playerMultiplier;
+            playerScoreDisplay.text = "Score:\n" + Mathf.RoundToInt(playerScore + holdingScore) + "\n" + "Multiplier:\n" + playerMultiplier;
             playerMultiplierBar.fillAmount = multiplierCount;
             if (playerMultiplier == 8)
             {
