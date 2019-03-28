@@ -21,7 +21,7 @@ public class NoteSpawning : MonoBehaviour
     public int beat;
     public List<Songholder> songs;
     List<int> heldNoteCount;
-    List<Vector3> holdNotes;
+    public List<Vector3> holdNotes;
     int songSelect = 4;
     List<GameObject> whiteNotes, blackNotes, whiteNotesHeld, blackNotesHeld;
 
@@ -149,18 +149,18 @@ public class NoteSpawning : MonoBehaviour
                 {
                     if (beat >= holdNotes[c].z)
                     {
-                        GameObject endTransform = Instantiate(endHeldNote, keyBoardKeys[Mathf.RoundToInt(holdNotes[c].x)].transform.position, keyBoardKeys[Mathf.RoundToInt(holdNotes[c].x)].transform.rotation);
+                        //GameObject endTransform = Instantiate(endHeldNote, keyBoardKeys[Mathf.RoundToInt(holdNotes[c].x)].transform.position, keyBoardKeys[Mathf.RoundToInt(holdNotes[c].x)].transform.rotation);
 
                         if (holdNotes[c].x == 1 || holdNotes[c].x == 3 || holdNotes[c].x == 6 || holdNotes[c].x == 8 || holdNotes[c].x == 10 || holdNotes[c].x == 13 || holdNotes[c].x == 15 || holdNotes[c].x == 18 || holdNotes[c].x == 20 || holdNotes[c].x == 22
                             || holdNotes[c].x == 25 || holdNotes[c].x == 27 || holdNotes[c].x == 30 || holdNotes[c].x == 32 || holdNotes[c].x == 34 || 37 == holdNotes[c].x || holdNotes[c].x == 39 || holdNotes[c].x == 42 || holdNotes[c].x == 44 || holdNotes[c].x == 46)
                         {
-                            blackNotes[Mathf.RoundToInt(holdNotes[c].y)].GetComponent<LineRenderer>().SetPosition(1, new Vector3(0, endTransform.transform.position.y, 0));
-                            holdNotes.RemoveAt(c);
+                            blackNotes[Mathf.RoundToInt(holdNotes[c].y)].GetComponent<LineRenderer>().SetPosition(1, new Vector3(0, keyBoardKeys[Mathf.RoundToInt(holdNotes[c].x)].transform.position.y, 0));
+                            //holdNotes.RemoveAt(c);
                         }
                         else
                         {
-                            whiteNotes[Mathf.RoundToInt(holdNotes[c].y)].GetComponent<LineRenderer>().SetPosition(1, new Vector3(0, endTransform.transform.position.y, 0));
-                            holdNotes.RemoveAt(c);
+                            whiteNotes[Mathf.RoundToInt(holdNotes[c].y)].GetComponent<LineRenderer>().SetPosition(1, new Vector3(0, keyBoardKeys[Mathf.RoundToInt(holdNotes[c].x)].transform.position.y, 0));
+                            //holdNotes.RemoveAt(c);
                         }
                     }
                 }

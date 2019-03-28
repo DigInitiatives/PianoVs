@@ -14,6 +14,8 @@ public class IndividualKeyScript : MonoBehaviour
     float heldNotedistance = 0;
     bool stamp;
 
+    public NoteSpawning noteSpawner;
+
     public int keyNum;
 
     public bool AI, player3or4, songrecording;
@@ -96,9 +98,10 @@ public class IndividualKeyScript : MonoBehaviour
         {
             if (Physics.Raycast(keyPos, transform.up, out hit, .7f) && hit.collider.gameObject.tag == "Note")//Shoots raycast from the tip of note
             {
-                StopNote();
+                //StopNote();
                 PlayNote(true);
                 AITimer = 0;
+                Debug.Log(hit.distance);
             }
             else
             {
@@ -117,26 +120,27 @@ public class IndividualKeyScript : MonoBehaviour
         {
             TimeStamp();
         }
-        if (holdingNote)//If the holding note has been hit
+        if (holdingNote && noteSpawner.holdNotes.Count > 0)//If the holding note has been hit
         {
-            if (Physics.Raycast(keyPos, transform.up, out hit, heldNotedistance + 1f))//Shoots raycast from the tip of note
+            foreach (Vector3 note in noteSpawner.holdNotes)
             {
-                if (hit.collider.tag == "HeldNote")//If the raycast hits a note that must be held...
+                if (noteSpawner.beat < note.z + 38)
                 {
                     playerData.AddHoldingScore(0.3f);
-
-                    holdingNote = true;
-                    hit.transform.position = new Vector3(-1000, -1000, -1000);
-                    hit.transform.gameObject.SetActive(false);
                 }
                 else
                 {
+                    note.Set(0, 0, 0);
                     holdingNote = false;
                 }
             }
-            else
+
+            for (int c = 0; c < noteSpawner.holdNotes.Count; c++)
             {
-                holdingNote = false;
+                if (noteSpawner.holdNotes[c] == Vector3.zero)
+                {
+                    noteSpawner.holdNotes.RemoveAt(c);
+                }
             }
         }
     }
@@ -161,35 +165,20 @@ public class IndividualKeyScript : MonoBehaviour
             {
                 if (hit.distance <= .7f && hit.distance > .45f)//Sweet spot distance
                 {
-                    holdingNote = true;
-
-
                     playerData.AddScore(100);//Sweet spot
                     playerData.IncreaseMultiplier(.1f);//Add to multiplier
-
-                    //Stores the distance hit in order to check forheld notes
-                    heldNotedistance = hit.distance;
-                    hit.transform.position = new Vector3(-1000, -1000, -1000);
-                    hit.transform.gameObject.SetActive(false);
                 }
                 else if (hit.distance > .7f)//To far distance
                 {
-                    holdingNote = true;
-
                     playerData.BreakMultiplier();//No score, break multiplier
-                    heldNotedistance = hit.distance;
-                    hit.transform.position = new Vector3(-1000, -1000, -1000);
-                    hit.transform.gameObject.SetActive(false);
                 }
                 else//Not to far but not in sweet spot
                 {
-                    holdingNote = true;
-
                     playerData.AddScore(50);//Too Close spot
-                    heldNotedistance = hit.distance;
-                    hit.transform.position = new Vector3(-1000, -1000, -1000);
-                    hit.transform.gameObject.SetActive(false);
                 }
+
+                holdingNote = true;
+                heldNotedistance = hit.distance;
             }
         }
         if (songrecording)
