@@ -35,27 +35,30 @@ public class GameDataManager : MonoBehaviour
     {
         voteInProgress = false;
         currentVote = 0;
-        aiCount = 3;
+        aiCount = 4;
         currentSongID = 0;
         newSongID = -1;
         noteSpawners = GameObject.FindGameObjectsWithTag("NoteSpawner");
     }
     void Update()
     {
-        if (currentVote == (4 - aiCount))//If everyone agrees, AI doesnt vote so lower needed score in case of AI activeness
+        if (aiCount != 4)//If there is at least one real player available to vote
         {
-            //VOTE PASSED
-            foreach(GameObject noteSpawner in noteSpawners)//For the 4 note spawners
+            if (currentVote == (4 - aiCount))//If everyone agrees, AI doesnt vote so lower needed score in case of AI activeness
             {
-                noteSpawner.GetComponent<NoteSpawning>().PlayNewSong(newSongID);//Set the song choice, reset the beat, and set the bpm and time signature to the songs
-                noteSpawner.GetComponent<NoteSpawning>().ResetHoldNotes();
-                SetCurrentSongID(newSongID);
+                //VOTE PASSED
+                foreach (GameObject noteSpawner in noteSpawners)//For the 4 note spawners
+                {
+                    noteSpawner.GetComponent<NoteSpawning>().PlayNewSong(newSongID);//Set the song choice, reset the beat, and set the bpm and time signature to the songs
+                    noteSpawner.GetComponent<NoteSpawning>().ResetHoldNotes();
+                    SetCurrentSongID(newSongID);
+                }
+                ResetVote();
             }
-            ResetVote();
-        }
-        else if(totalVotes == (4 - aiCount))//If all players have voted and failed, reset
-        {
-            ResetVote();
+            else if (totalVotes == (4 - aiCount))//If all players have voted and failed, reset
+            {
+                ResetVote();
+            }
         }
     }
 
@@ -92,5 +95,11 @@ public class GameDataManager : MonoBehaviour
         currentVote = 0;
         totalVotes = 0;
         newSongID = currentSongID;
+    }
+    public void SetAICount(int aiCounter)
+    {
+        //1 = ai on
+        //-1 = ai off
+        aiCount += aiCounter;
     }
 }

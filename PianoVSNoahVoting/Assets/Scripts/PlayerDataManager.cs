@@ -11,6 +11,7 @@ using UnityEngine.UI;
 
 public class PlayerDataManager : MonoBehaviour
 {
+    GameDataManager gcInstance;
     public bool isPlayer3Or4, isRecording, isAI;
 
     float playerScore, playerMultiplier;//Ints that hold the players score and multiplier
@@ -25,6 +26,7 @@ public class PlayerDataManager : MonoBehaviour
     public Image playerMultiplierBar;
     void Start()
     {
+        gcInstance = GameDataManager.gcInstance;
         playerScore = 0;
         holdingScore = 0;
         sleepTimer = Time.time;//Seconds until AI takes over
@@ -144,9 +146,10 @@ public class PlayerDataManager : MonoBehaviour
 
     public void SetAI(bool on)//Set AI as on or off
     {
-        if (on)
+        if (on && isAI == false)
         {
             isAI = true;
+            gcInstance.SetAICount(1);
             foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
             {
                 keyScript.AI = true;
@@ -154,9 +157,10 @@ public class PlayerDataManager : MonoBehaviour
                 keyScript.gameObject.GetComponent<AudioSource>().volume = 0.5f;
             }
         }
-        else
+        else if (!on && isAI == true)
         {
             isAI = false;
+            gcInstance.SetAICount(-1);
             foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
             {
                 keyScript.AI = false;

@@ -96,13 +96,12 @@ public class IndividualKeyScript : MonoBehaviour
         {
             if (Physics.Raycast(keyPos, transform.up, out hit, .7f) && hit.collider.gameObject.tag == "Note")//Shoots raycast from the tip of note
             {
-                StopNote();
                 PlayNote(true);
                 AITimer = 0;
             }
             else
             {
-                if (!Physics.Raycast(keyPos, transform.up, out hit, .6f) && AITimer > 5)//Shoots raycast from the tip of note
+                if (!Physics.Raycast(keyPos, transform.up, out hit, 1) && AITimer > 5)//Shoots raycast from the tip of note
                 {
                     StopNote();
                 }
@@ -203,6 +202,7 @@ public class IndividualKeyScript : MonoBehaviour
         StartCoroutine("SoundStop");
         stamp = true;
         keyModelRenderer.material = keyUp;
+
         StopHolding();
     }
 

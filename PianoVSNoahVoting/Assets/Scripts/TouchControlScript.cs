@@ -40,7 +40,7 @@ public class TouchControlScript : MonoBehaviour
                 case TouchPhase.Began:
                     if(Physics.Raycast(ray, out hit))
                     {
-                        if(hitObj[touch.fingerId].GetComponent<IndividualKeyScript>() == null && hit.collider.gameObject.tag == "Key" && !hitObj.Contains(hit.collider.gameObject))
+                        if (hitObj[touch.fingerId].GetComponent<IndividualKeyScript>() != null && hit.collider.gameObject.tag == "Key" && !hitObj.Contains(hit.collider.gameObject))
                         {
                             hitObj[touch.fingerId] = hit.collider.gameObject;
                             hitObj[touch.fingerId].GetComponent<IndividualKeyScript>().PlayNote(false);

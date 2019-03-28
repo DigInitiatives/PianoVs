@@ -10,7 +10,7 @@ public class ATHousandMiles : Songholder
 {
 	public ATHousandMiles()
 	{
-        SetBPM(120);
+        SetBPM(94);
         SetTimeSignature(4);
         SetSongName("A Thousand Miles");
 
