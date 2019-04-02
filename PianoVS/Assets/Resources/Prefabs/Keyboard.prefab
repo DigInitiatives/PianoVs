@@ -876,7 +876,7 @@ Transform:
   m_GameObject: {fileID: 2397406472124616472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.6, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473130512988}
   m_Father: {fileID: 2397406472925262826}
@@ -907,7 +907,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472124616478
 AudioSource:
@@ -1293,7 +1296,7 @@ Transform:
   m_GameObject: {fileID: 2397406472201920129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.55, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473980535330}
   m_Father: {fileID: 2397406473815310802}
@@ -1324,7 +1327,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406472201920135
 AudioSource:
@@ -1634,7 +1640,7 @@ Transform:
   m_GameObject: {fileID: 2397406472248906170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.2, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472319269020}
   m_Father: {fileID: 2397406473633279215}
@@ -1665,7 +1671,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472248906168
 AudioSource:
@@ -2005,7 +2014,7 @@ Transform:
   m_GameObject: {fileID: 2397406472332792789}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.85, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473352096284}
   m_Father: {fileID: 2397406473633279215}
@@ -2036,7 +2045,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406472332792363
 AudioSource:
@@ -2162,7 +2174,7 @@ Transform:
   m_GameObject: {fileID: 2397406472335515715}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.4, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472202530709}
   m_Father: {fileID: 2397406472925262826}
@@ -2193,7 +2205,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472335515713
 AudioSource:
@@ -2319,7 +2334,7 @@ Transform:
   m_GameObject: {fileID: 2397406472337296818}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.55, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472207872574}
   m_Father: {fileID: 2397406474206296198}
@@ -2350,7 +2365,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406472337296816
 AudioSource:
@@ -2476,7 +2494,7 @@ Transform:
   m_GameObject: {fileID: 2397406472337540823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406474193804280}
   m_Father: {fileID: 2397406473815310802}
@@ -2507,7 +2525,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472337540821
 AudioSource:
@@ -2633,7 +2654,7 @@ Transform:
   m_GameObject: {fileID: 2397406472340348436}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.2, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472149416938}
   m_Father: {fileID: 2397406472925262826}
@@ -2664,7 +2685,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472340348522
 AudioSource:
@@ -2790,7 +2814,7 @@ Transform:
   m_GameObject: {fileID: 2397406472359532684}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.95, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472435947035}
   m_Father: {fileID: 2397406473633279215}
@@ -2821,7 +2845,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406472359532674
 AudioSource:
@@ -2947,7 +2974,7 @@ Transform:
   m_GameObject: {fileID: 2397406472370738807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.05, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473291971873}
   m_Father: {fileID: 2397406472925262826}
@@ -2978,7 +3005,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406472370738805
 AudioSource:
@@ -3181,7 +3211,7 @@ Transform:
   m_GameObject: {fileID: 2397406472381114025}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.6, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472684877519}
   m_Father: {fileID: 2397406473633279215}
@@ -3212,7 +3242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472381114031
 AudioSource:
@@ -3338,7 +3371,7 @@ Transform:
   m_GameObject: {fileID: 2397406472393273603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.7, y: 0, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472287289268}
   m_Father: {fileID: 2397406473633279215}
@@ -3369,7 +3402,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472393273601
 AudioSource:
@@ -3495,7 +3531,7 @@ Transform:
   m_GameObject: {fileID: 2397406472393706055}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473653882062}
   m_Father: {fileID: 2397406473633279215}
@@ -3526,7 +3562,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472393706053
 AudioSource:
@@ -4401,7 +4440,7 @@ Transform:
   m_GameObject: {fileID: 2397406472632466155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473605206802}
   m_Father: {fileID: 2397406474206296198}
@@ -4432,7 +4471,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472632466153
 AudioSource:
@@ -4742,7 +4784,7 @@ Transform:
   m_GameObject: {fileID: 2397406472678354250}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.6, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472979500745}
   m_Father: {fileID: 2397406473815310802}
@@ -4773,7 +4815,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472678354248
 AudioSource:
@@ -5113,7 +5158,7 @@ Transform:
   m_GameObject: {fileID: 2397406472753516759}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.4, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472619968898}
   m_Father: {fileID: 2397406473815310802}
@@ -5144,7 +5189,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472753516757
 AudioSource:
@@ -5377,7 +5425,7 @@ Transform:
   m_GameObject: {fileID: 2397406472819808324}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.85, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406474180478548}
   m_Father: {fileID: 2397406472925262826}
@@ -5408,7 +5456,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406472819808346
 AudioSource:
@@ -5534,7 +5585,7 @@ Transform:
   m_GameObject: {fileID: 2397406472821929537}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472959847465}
   m_Father: {fileID: 2397406472925262826}
@@ -5565,7 +5616,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472821929543
 AudioSource:
@@ -5721,7 +5775,7 @@ Transform:
   m_GameObject: {fileID: 2397406472834532209}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.6, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472109392829}
   m_Father: {fileID: 2397406474206296198}
@@ -5752,7 +5806,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472834532215
 AudioSource:
@@ -6177,7 +6234,7 @@ Transform:
   m_GameObject: {fileID: 2397406472973772463}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472988452403}
   m_Father: {fileID: 2397406474206296198}
@@ -6208,7 +6265,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472973772461
 AudioSource:
@@ -6334,7 +6394,7 @@ Transform:
   m_GameObject: {fileID: 2397406472975642769}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473839283414}
   m_Father: {fileID: 2397406473633279215}
@@ -6365,7 +6425,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406472975642775
 AudioSource:
@@ -6812,7 +6875,7 @@ Transform:
   m_GameObject: {fileID: 2397406473124301081}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.7, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472378572559}
   m_Father: {fileID: 2397406473815310802}
@@ -6843,7 +6906,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406473124301087
 AudioSource:
@@ -7183,7 +7249,7 @@ Transform:
   m_GameObject: {fileID: 2397406473183685653}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473950353316}
   m_Father: {fileID: 2397406473815310802}
@@ -7214,7 +7280,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473183685739
 AudioSource:
@@ -7400,7 +7469,7 @@ Transform:
   m_GameObject: {fileID: 2397406473240300476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472658372623}
   m_Father: {fileID: 2397406473815310802}
@@ -7431,7 +7500,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473240300466
 AudioSource:
@@ -7634,7 +7706,7 @@ Transform:
   m_GameObject: {fileID: 2397406473259326511}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473373408802}
   m_Father: {fileID: 2397406472925262826}
@@ -7665,7 +7737,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473259326509
 AudioSource:
@@ -7821,7 +7896,7 @@ Transform:
   m_GameObject: {fileID: 2397406473265991967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.55, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472507213215}
   m_Father: {fileID: 2397406473633279215}
@@ -7852,7 +7927,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406473265991965
 AudioSource:
@@ -8132,7 +8210,7 @@ Transform:
   m_GameObject: {fileID: 2397406473305434340}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473738535117}
   m_Father: {fileID: 2397406473815310802}
@@ -8163,7 +8241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473305434362
 AudioSource:
@@ -8456,7 +8537,7 @@ Transform:
   m_GameObject: {fileID: 2397406473350222553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.7, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472649935310}
   m_Father: {fileID: 2397406472925262826}
@@ -8487,7 +8568,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406473350222559
 AudioSource:
@@ -8720,7 +8804,7 @@ Transform:
   m_GameObject: {fileID: 2397406473363892107}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.05, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473640668769}
   m_Father: {fileID: 2397406473633279215}
@@ -8751,7 +8835,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406473363892105
 AudioSource:
@@ -8877,7 +8964,7 @@ Transform:
   m_GameObject: {fileID: 2397406473371456322}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.4, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473883328610}
   m_Father: {fileID: 2397406474206296198}
@@ -8908,7 +8995,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473371456320
 AudioSource:
@@ -9111,7 +9201,7 @@ Transform:
   m_GameObject: {fileID: 2397406473381612588}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472782606359}
   m_Father: {fileID: 2397406474206296198}
@@ -9142,7 +9232,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473381612578
 AudioSource:
@@ -9298,7 +9391,7 @@ Transform:
   m_GameObject: {fileID: 2397406473452058788}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.4, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472113372921}
   m_Father: {fileID: 2397406473633279215}
@@ -9329,7 +9422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473452058810
 AudioSource:
@@ -9455,7 +9551,7 @@ Transform:
   m_GameObject: {fileID: 2397406473476076436}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473252105301}
   m_Father: {fileID: 2397406472925262826}
@@ -9486,7 +9582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473476076522
 AudioSource:
@@ -9749,7 +9848,7 @@ Transform:
   m_GameObject: {fileID: 2397406473515356564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473901447862}
   m_Father: {fileID: 2397406474206296198}
@@ -9780,7 +9879,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473515356650
 AudioSource:
@@ -9906,7 +10008,7 @@ Transform:
   m_GameObject: {fileID: 2397406473539218239}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473918130174}
   m_Father: {fileID: 2397406472925262826}
@@ -9937,7 +10039,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473539218237
 AudioSource:
@@ -10084,6 +10189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7ef12ca57604f4f860af26008afb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAI: 0
+  isPlayer3Or4: 0
+  isRecording: 0
   comboCount: 0
   playerScoreDisplay: {fileID: 0}
 --- !u!1 &2397406473605206813
@@ -10221,7 +10329,7 @@ Transform:
   m_GameObject: {fileID: 2397406473619854371}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.95, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473823708539}
   m_Father: {fileID: 2397406472925262826}
@@ -10252,7 +10360,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406473619854369
 AudioSource:
@@ -10378,7 +10489,7 @@ Transform:
   m_GameObject: {fileID: 2397406473630183841}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.7, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473812827128}
   m_Father: {fileID: 2397406473633279215}
@@ -10409,7 +10520,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406473630183847
 AudioSource:
@@ -10762,7 +10876,7 @@ Transform:
   m_GameObject: {fileID: 2397406473676464183}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.2, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473322915649}
   m_Father: {fileID: 2397406473815310802}
@@ -10793,7 +10907,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473676464181
 AudioSource:
@@ -10919,7 +11036,7 @@ Transform:
   m_GameObject: {fileID: 2397406473689816040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.05, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472161611093}
   m_Father: {fileID: 2397406473815310802}
@@ -10950,7 +11067,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406473689816046
 AudioSource:
@@ -11076,7 +11196,7 @@ Transform:
   m_GameObject: {fileID: 2397406473700050111}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473941873283}
   m_Father: {fileID: 2397406473633279215}
@@ -11107,7 +11227,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473700050109
 AudioSource:
@@ -11340,7 +11463,7 @@ Transform:
   m_GameObject: {fileID: 2397406473756641369}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.05, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473515189250}
   m_Father: {fileID: 2397406474206296198}
@@ -11371,7 +11494,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406473756641375
 AudioSource:
@@ -11753,7 +11879,7 @@ Transform:
   m_GameObject: {fileID: 2397406473827156677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.2, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472586706903}
   m_Father: {fileID: 2397406474206296198}
@@ -11784,7 +11910,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406473827156699
 AudioSource:
@@ -12509,7 +12638,7 @@ Transform:
   m_GameObject: {fileID: 2397406474053969651}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.55, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472551879672}
   m_Father: {fileID: 2397406472925262826}
@@ -12540,7 +12669,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406474053969649
 AudioSource:
@@ -12756,7 +12888,7 @@ Transform:
   m_GameObject: {fileID: 2397406474106147120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.95, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473026795681}
   m_Father: {fileID: 2397406474206296198}
@@ -12787,7 +12919,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406474106147126
 AudioSource:
@@ -12943,7 +13078,7 @@ Transform:
   m_GameObject: {fileID: 2397406474131384627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.95, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472557128786}
   m_Father: {fileID: 2397406473815310802}
@@ -12974,7 +13109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406474131384625
 AudioSource:
@@ -13100,7 +13238,7 @@ Transform:
   m_GameObject: {fileID: 2397406474143336996}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.85, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472519766661}
   m_Father: {fileID: 2397406474206296198}
@@ -13131,7 +13269,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406474143337018
 AudioSource:
@@ -13441,7 +13582,7 @@ Transform:
   m_GameObject: {fileID: 2397406474202952201}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473126759302}
   m_Father: {fileID: 2397406473633279215}
@@ -13472,7 +13613,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 1
 --- !u!82 &2397406474202952207
 AudioSource:
@@ -13640,7 +13784,7 @@ Transform:
   m_GameObject: {fileID: 2397406474207123513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.7, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406473292670294}
   m_Father: {fileID: 2397406474206296198}
@@ -13671,7 +13815,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406474207123519
 AudioSource:
@@ -13797,7 +13944,7 @@ Transform:
   m_GameObject: {fileID: 2397406474249293199}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.85, y: 1.001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.07, y: 1, z: 1}
   m_Children:
   - {fileID: 2397406472701557225}
   m_Father: {fileID: 2397406473815310802}
@@ -13828,7 +13975,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa65741d13a0564c85ad06d54fc0474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   AI: 1
+  player3or4: 0
+  songrecording: 0
   whiteKey: 0
 --- !u!82 &2397406474249293197
 AudioSource:

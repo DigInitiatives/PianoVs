@@ -355,12 +355,12 @@ PrefabInstance:
     - target: {fileID: 3238842348964900756, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: isAI
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3238842348964900756, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: isRecording
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472197117168, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
@@ -370,246 +370,491 @@ PrefabInstance:
     - target: {fileID: 2397406472124616479, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472124616479, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472201920132, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472201920132, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472248906169, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472248906169, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472332792360, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472332792360, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472335515718, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472335515718, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472337296817, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472337296817, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472337539370, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472337539370, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472340348523, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472340348523, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472359532675, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472359532675, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472370738762, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472370738762, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472381114028, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472381114028, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472393273606, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472393273606, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472393706074, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472393706074, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472632466158, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472632466158, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472678354249, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472678354249, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472753517354, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472753517354, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472819808347, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472819808347, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472821929540, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472821929540, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472834532212, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472834532212, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472973772450, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472973772450, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406472975642772, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406472975642772, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473124301084, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473124301084, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473183685736, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473183685736, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473240300467, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473240300467, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473259326498, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473259326498, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473265991954, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473265991954, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473305434363, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473305434363, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473350222556, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473350222556, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473363892110, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473363892110, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473371456321, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473371456321, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473381612579, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473381612579, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473452058811, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473452058811, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473476076523, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473476076523, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473515356651, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473515356651, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473539218226, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473539218226, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473619854374, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473619854374, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473630183844, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473630183844, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473676464138, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473676464138, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473689816047, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473689816047, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473700050098, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473700050098, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473756641372, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473756641372, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406473827156696, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406473827156696, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406474053969654, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406474053969654, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406474106147127, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406474106147127, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406474131384630, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406474131384630, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406474143337019, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406474143337019, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406474202952204, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406474202952204, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406474207123516, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406474207123516, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2397406474249293186, guid: 516b496acba08324496d1882f4133d9c,
         type: 3}
       propertyPath: AI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397406474249293186, guid: 516b496acba08324496d1882f4133d9c,
+        type: 3}
+      propertyPath: songrecording
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8396059711052507597, guid: 516b496acba08324496d1882f4133d9c,

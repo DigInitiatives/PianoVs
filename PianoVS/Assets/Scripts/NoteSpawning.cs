@@ -21,7 +21,7 @@ public class NoteSpawning : MonoBehaviour
 	public int beat;
 	List<Songholder> songs;
 	List<int> holdNotes, heldNoteCount;
-	int songSelect = 3;
+	int songSelect = 6;
 	List<GameObject> whiteNotes, blackNotes, whiteNotesHeld, blackNotesHeld;
 
 	int whiteNoteCounter = 3, blackNoteCounter = 3, whiteHeldNoteCounter = 3, blackHeldNoteCounter = 3;
@@ -50,6 +50,8 @@ public class NoteSpawning : MonoBehaviour
 		songs.Add(new HotCrossBuns());
 		songs.Add(new SongOfStorms());
 		songs.Add(new YouGotAFriendInMe());
+		songs.Add(new PerfectAdvanced());
+		songs.Add(new OhCanada());
 
 		beat = 0;
 		timestamp = Time.time;
@@ -112,7 +114,7 @@ public class NoteSpawning : MonoBehaviour
 									heldNoteCount[c] = -15;
 								}
 								blackNoteCounter++;
-								if (blackNoteCounter > blackNotes.Count)
+								if (blackNoteCounter >= blackNotes.Count)
 								{
 									blackNoteCounter = 0;
 								}
@@ -130,7 +132,7 @@ public class NoteSpawning : MonoBehaviour
 									heldNoteCount[c] = -15;
 								}
 								whiteNoteCounter++;
-								if (whiteNoteCounter > whiteNotes.Count)
+								if (whiteNoteCounter >= whiteNotes.Count)
 								{
 									whiteNoteCounter = 0;
 								}
@@ -159,7 +161,7 @@ public class NoteSpawning : MonoBehaviour
 					blackNotesHeld[blackHeldNoteCounter].gameObject.GetComponent<SpriteRenderer>().sortingOrder = heldNoteCount[c];
 					heldNoteCount[c]++;
 					blackHeldNoteCounter++;
-					if (blackHeldNoteCounter > blackNotesHeld.Count)
+					if (blackHeldNoteCounter >= blackNotesHeld.Count)
 					{
 						blackHeldNoteCounter = 0;
 					}

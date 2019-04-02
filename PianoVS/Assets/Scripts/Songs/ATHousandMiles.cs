@@ -12,7 +12,7 @@ public class ATHousandMiles : Songholder
 	{
 		SetBPM(120);
 		SetTimeSignature(4);
-		SetMaxBeat(2352);
+		SetMaxBeat(64 + 448 + 16);
 		int barTime = 64;
 
 		//Right Hand
