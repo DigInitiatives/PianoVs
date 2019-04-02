@@ -16,11 +16,14 @@ public class IndividualKeyScript : MonoBehaviour
 
     public NoteSpawning noteSpawner;
 
+    private GameObject currentNote;
+
     public int keyNum;
 
     public bool AI, player3or4, songrecording;
 
     int AITimer;
+    Vector3 currentHeldNote;
 
     //keymodel is the visual component of this obj
     GameObject keyModel;
@@ -50,6 +53,10 @@ public class IndividualKeyScript : MonoBehaviour
         songrecording = true;
         keyModel = transform.GetChild(0).gameObject;
         keyModelRenderer = keyModel.GetComponent<Renderer>();
+
+        currentNote = new GameObject();
+
+        currentHeldNote = Vector3.zero;
 
         //Gets the necessary material for the key from the Resources folder
         if (whiteKey)
@@ -96,59 +103,60 @@ public class IndividualKeyScript : MonoBehaviour
         }
         if (AI)
         {
-            if (Physics.Raycast(keyPos, transform.up, out hit, .7f) && hit.collider.gameObject.tag == "Note")//Shoots raycast from the tip of note
+            if (!holdingNote)
             {
-                //StopNote();
-                PlayNote(true);
-                AITimer = 0;
-                Debug.Log(hit.distance);
+                if (Physics.Raycast(keyPos, transform.up, out hit, .7f))//Shoots raycast from the tip of note
+                {
+                    if (hit.collider.gameObject.tag == "Note" && (currentNote != hit.transform.gameObject || currentNote.transform.root != hit.transform.gameObject))
+                    {
+                        PlayNote(true);
+                        AITimer = 0;
+                    }
+                    else
+                    {
+                        StopNote();
+                    }
+                }
+            }
+
+        }
+        if (holdingNote)//If the holding note has been hit
+        {
+            if (currentHeldNote == Vector3.zero)
+            {
+                foreach (Vector3 note in noteSpawner.holdNotes)
+                {
+                    if (note.x == keyNum)
+                    {
+                        currentHeldNote = note;
+                    }
+                }
             }
             else
             {
-                if (!Physics.Raycast(keyPos, transform.up, out hit, 1) && AITimer > 5)//Shoots raycast from the tip of note
+                if (noteSpawner.beat <= currentHeldNote.z + 38)
                 {
-                    StopNote();
-                }
-                else
-                {
-                    holdingNote = true;
-                }
-            }
-            AITimer++;
-        }
-        if (stamp)
-        {
-            TimeStamp();
-        }
-        if (holdingNote && noteSpawner.holdNotes.Count > 0)//If the holding note has been hit
-        {
-            foreach (Vector3 note in noteSpawner.holdNotes)
-            {
-                if (noteSpawner.beat < note.z + 38)
-                {
+                    
                     playerData.AddHoldingScore(0.3f);
                 }
                 else
                 {
-                    note.Set(0, 0, 0);
-                    holdingNote = false;
+                    StopNote();
                 }
             }
+        }
 
-            for (int c = 0; c < noteSpawner.holdNotes.Count; c++)
-            {
-                if (noteSpawner.holdNotes[c] == Vector3.zero)
-                {
-                    noteSpawner.holdNotes.RemoveAt(c);
-                }
-            }
+        if (stamp)
+        {
+            TimeStamp();
         }
     }
 
     //Plays the audio attatched to the key and sets its material to down
+
     public void PlayNote(bool wasAI)
     {
-        if(!AI || !wasAI)//If the player presses the key
+        if (!AI || !wasAI)//If the player presses the key
         {
             playerData.ResetSleepTime();
         }
@@ -161,7 +169,7 @@ public class IndividualKeyScript : MonoBehaviour
         heldNotedistance = 0;
         if (Physics.Raycast(keyPos, transform.up, out hit, 1))//Shoots raycast from the tip of note
         {
-            if (hit.collider.tag == "Note" || hit.collider.tag == "SharpNote")//If the raycast hits a regular or sharp note...
+            if (hit.collider.tag == "Note" && (currentNote != hit.transform.gameObject || currentNote.transform.root != hit.transform.gameObject))//If the raycast hits a regular or sharp note...
             {
                 if (hit.distance <= .7f && hit.distance > .45f)//Sweet spot distance
                 {
@@ -177,8 +185,27 @@ public class IndividualKeyScript : MonoBehaviour
                     playerData.AddScore(50);//Too Close spot
                 }
 
-                holdingNote = true;
-                heldNotedistance = hit.distance;
+                if (wasAI)
+                {
+                    if (currentNote != null)
+                    {
+                        //StopNote();
+                    }
+
+                    currentNote = hit.transform.gameObject;
+
+                    if (currentNote.transform.root.GetComponent<LineRenderer>().enabled == true)
+                    {
+                        holdingNote = true;
+                        heldNotedistance = hit.distance;
+                    }
+                    else
+                    {
+                        holdingNote = false;
+                        currentNote.transform.position = new Vector3(-1000, -1000, -1000);
+                        currentNote.transform.root.gameObject.SetActive(false);
+                    }
+                }
             }
         }
         if (songrecording)
@@ -199,7 +226,11 @@ public class IndividualKeyScript : MonoBehaviour
     {
         if (holdingNote)//If they were holding a note, destroy the note, stop looping in update, and reset timer
         {
+            noteSpawner.holdNotes.Remove(currentHeldNote);
+            currentHeldNote = Vector3.zero;
             holdingNote = false;
+            currentNote.transform.position = new Vector3(-1000, -1000, -1000);
+            currentNote.transform.root.gameObject.SetActive(false);
         }
     }
     public void TimeStamp()
