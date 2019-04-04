@@ -32,7 +32,7 @@ public class IndividualKeyScript : MonoBehaviour
 
     //Variable that is set in the editor to determine if the key which this script is attatched to is a whitekey or a black key
     public bool whiteKey;
-
+	public float startingVolume;
 
     RaycastHit hit;//The raycast collision data
     Vector3 keyPos;//The position of the key, just short form for the transform.position because I am lazy
@@ -146,9 +146,8 @@ public class IndividualKeyScript : MonoBehaviour
         if(!AI || !wasAI)//If the player presses the key
         {
             playerData.ResetSleepTime();
-        }
+		}
         StopCoroutine("SoundStop");
-        GetComponent<AudioSource>().volume = 1;
         stamp = false;
         GetComponent<AudioSource>().Play();
         keyModelRenderer.material = keyDown;
@@ -223,7 +222,7 @@ public class IndividualKeyScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         GetComponent<AudioSource>().Stop();
-        GetComponent<AudioSource>().volume = 1;
+        GetComponent<AudioSource>().volume = startingVolume;
         stamp = false;
     }
 }

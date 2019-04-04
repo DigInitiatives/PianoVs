@@ -155,7 +155,8 @@ public class PlayerDataManager : MonoBehaviour
                 keyScript.AI = true;
                 keyScript.StopNote();
                 keyScript.gameObject.GetComponent<AudioSource>().volume = 0.5f;
-            }
+				keyScript.startingVolume = 0.5f;
+			}
         }
         else if (!on && isAI == true)
         {
@@ -166,7 +167,9 @@ public class PlayerDataManager : MonoBehaviour
                 keyScript.AI = false;
                 keyScript.StopNote();
                 keyScript.gameObject.GetComponent<AudioSource>().volume = 1f;
-            }
+				keyScript.startingVolume = 1f;
+
+			}
         }
     }
     public void ResetSleepTime()

@@ -9,6 +9,7 @@ public class MaryHadALittleLamb : Songholder
         songNotes = new List<NoteClass>();
         SetSongName("Mary Had A Little Lamb");
         SetBPM(120);
+        SetMaxBeat(1000);
         SetTimeSignature(4);
         //SetMaxBeat((timeSignature * 16));
         int barTime = timeSignature * 16;

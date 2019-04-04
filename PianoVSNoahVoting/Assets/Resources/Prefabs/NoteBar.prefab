@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3924290421706701583}
   - component: {fileID: 4638135090591660100}
   - component: {fileID: 7465606862223734237}
+  - component: {fileID: 594189374759434829}
   m_Layer: 0
   m_Name: NoteBar
-  m_TagString: Untagged
+  m_TagString: NoteBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,3 +93,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c28a6fcff9a2f14bb9f44b8a11f8e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &594189374759434829
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497764366887872908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.0099998, y: 0.11, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0}

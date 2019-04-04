@@ -13,9 +13,9 @@ public class ATHousandMiles : Songholder
         SetBPM(94);
         SetTimeSignature(4);
         SetSongName("A Thousand Miles");
-
-		//Right Hand
-		songNotes = new List<NoteClass>();
+        SetMaxBeat(1000);
+        //Right Hand
+        songNotes = new List<NoteClass>();
 		songNotes.Add(new NoteClass(47, 0, 4, 1));
 		songNotes.Add(new NoteClass(35, 4, 8, 1));
 		songNotes.Add(new NoteClass(47, 8, 12, 1));

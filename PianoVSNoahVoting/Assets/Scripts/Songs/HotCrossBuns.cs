@@ -12,7 +12,7 @@ public class HotCrossBuns : Songholder
     {
         SetBPM(120);
         SetSongName("Hot Cross Buns");
-
+        SetMaxBeat(1000);
         songNotes = new List<NoteClass>();
 		songNotes.Add(new NoteClass(28, 0 * 16, 0 * 16, 1));
 		songNotes.Add(new NoteClass(26, 2 * 16, 2 * 16, 1));

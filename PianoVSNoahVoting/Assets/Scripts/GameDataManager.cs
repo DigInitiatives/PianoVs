@@ -13,8 +13,8 @@ public class GameDataManager : MonoBehaviour
     public static GameDataManager gcInstance;
 
     public bool voteInProgress;//Bool that tracks if vote is ongoing
-    int currentVote, totalVotes;//Vote count, and total votes sent in
-    int aiCount;//How many AI there are active
+    public int currentVote, totalVotes;//Vote count, and total votes sent in
+    public int aiCount;//How many AI there are active
     int currentSongID, newSongID;
     GameObject[] noteSpawners;
 

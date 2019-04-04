@@ -19,7 +19,7 @@ public class PlayerMenuHandler : MonoBehaviour
     int currentSongID;
 
     [SerializeField]
-    GameObject menuPanel, menuToggleText, dropdownMenu, votingText, votePanel, waitingMessage;
+    GameObject menuPanel, menuToggleText, dropdownMenu, votingText, votePanel, waitingMessage, playersKeyboard;
     [SerializeField]
     GameObject noteSpawner;
     string songName;
@@ -97,6 +97,7 @@ public class PlayerMenuHandler : MonoBehaviour
     {
         if (!menuStatus)
         {
+            playersKeyboard.GetComponent<PlayerDataManager>().ResetSleepTime();
             toggleTimerStatus = true;//Start timer
         }
         else
