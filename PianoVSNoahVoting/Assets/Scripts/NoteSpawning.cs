@@ -20,7 +20,7 @@ public class NoteSpawning : MonoBehaviour
 	public float bpm, timesignature, beatTime, timestamp;
 	public int beat;
 	public List<Songholder> songs;
-    int songSelect = 9;
+    int songSelect = 6;
 	List<int> holdNotes, heldNoteCount;
 
 	// Start is called before the first frame update
