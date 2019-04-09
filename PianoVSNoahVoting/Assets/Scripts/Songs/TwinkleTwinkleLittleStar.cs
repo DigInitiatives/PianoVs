@@ -7,6 +7,7 @@ public class TwinkleTwinkleLittleStar : Songholder
     public TwinkleTwinkleLittleStar()
     {
         SetBPM(120);
+        SetMaxBeat(850);
         SetSongName("Twinkle Twinkle Little Star");
 
         songNotes = new List<NoteClass>();

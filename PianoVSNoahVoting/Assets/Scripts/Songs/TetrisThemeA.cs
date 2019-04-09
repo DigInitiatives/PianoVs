@@ -8,6 +8,7 @@ public class TetrisThemeA : Songholder
     {
         SetBPM(120);
         SetSongName("Tetris Theme A");
+        SetMaxBeat(1920);
 
         songNotes = new List<NoteClass>();
         songNotes.Add(new NoteClass(40, 0, 14, 1));

@@ -8,6 +8,7 @@ public class HappyBirthday : Songholder
     {
         SetBPM(110);
         SetSongName("Happy Birthday");
+        SetMaxBeat(312);
         songNotes = new List<NoteClass>();
 
         songNotes.Add(new NoteClass(31, 0, 6, 1));

@@ -8,6 +8,7 @@ public class OdeToJoy : Songholder
     {
         SetBPM(100);
         SetSongName("Ode To Joy");
+        SetMaxBeat(660);
         songNotes = new List<NoteClass>();
 
         songNotes.Add(new NoteClass(28, 0, 8, 1));
