@@ -130,12 +130,12 @@ public class IndividualKeyScript : MonoBehaviour
                 }
                 else
                 {
-                    holdingNote = false;
+                    //holdingNote = false;
                 }
             }
             else
             {
-                holdingNote = false;
+                //holdingNote = false;
             }
         }
     }

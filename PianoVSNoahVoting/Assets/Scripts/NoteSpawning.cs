@@ -11,7 +11,7 @@ public class NoteSpawning : MonoBehaviour
 {
     //Will call from reasource folder eventually
 
-    
+    GameDataManager gcInstance;
     GameObject note, heldNote, blackNote, heldBlackNote, noteBar;
 
     public List<GameObject> keyBoardKeys;
@@ -29,6 +29,7 @@ public class NoteSpawning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gcInstance = GameDataManager.gcInstance;
         playingSong = false;
         note = Resources.Load("Prefabs/WhiteNote") as GameObject;
         heldNote = Resources.Load("Prefabs/WhiteNoteHeld") as GameObject;
@@ -53,13 +54,19 @@ public class NoteSpawning : MonoBehaviour
         }
         songs = new List<Songholder>();
 
-        songs.Add(new ATHousandMiles());
+        songs.Add(new Freeplay());
+
         songs.Add(new HotCrossBuns());
         songs.Add(new SongOfStorms());
         songs.Add(new LostWoods());
         songs.Add(new MaryHadALittleLamb());
         songs.Add(new TetrisThemeA());
         songs.Add(new TwinkleTwinkleLittleStar());
+        songs.Add(new HappyBirthday());
+        songs.Add(new OdeToJoy());
+        songs.Add(new JingleBells());
+        songs.Add(new OhCanada());
+        songs.Add(new RowYourBoat());
 
         songs.Add(new RecordedSong());
 
@@ -84,6 +91,8 @@ public class NoteSpawning : MonoBehaviour
         if (beat >= songs[songSelect].GetMaxBeat())//If the song is over set to false so nothing instantiates
         {
             playingSong = false;
+            gcInstance.SetCurrentSongID(0);
+            songSelect = 0;
         }
         if (playingSong)
         {

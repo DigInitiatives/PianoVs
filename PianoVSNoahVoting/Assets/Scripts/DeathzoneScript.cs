@@ -14,7 +14,7 @@ public class DeathzoneScript : MonoBehaviour
 
         if (collision.gameObject.tag == "NoteBar")
         {
-            Destroy(collision);
+            Destroy(collision.gameObject);
         }
     }
 }

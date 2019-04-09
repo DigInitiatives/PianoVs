@@ -11,6 +11,7 @@ public class MaryHadALittleLamb : Songholder
         SetBPM(120);
         SetMaxBeat(1000);
         SetTimeSignature(4);
+        SetDifficulty(1);
         //SetMaxBeat((timeSignature * 16));
         int barTime = timeSignature * 16;
         int rightBarCount = 0;

@@ -7,8 +7,10 @@ public class TwinkleTwinkleLittleStar : Songholder
     public TwinkleTwinkleLittleStar()
     {
         SetBPM(120);
+        SetMaxBeat(850);
         SetSongName("Twinkle Twinkle Little Star");
-        SetMaxBeat(1000);
+        SetDifficulty(2);
+
         songNotes = new List<NoteClass>();
         songNotes.Add(new NoteClass(28, 0, 16, 1));
         songNotes.Add(new NoteClass(28, 18, 34, 1));
