@@ -11,7 +11,7 @@ using UnityEngine;
 public class Songholder : MonoBehaviour
 {
 	public List<NoteClass> songNotes;
-    public int bpm, timeSignature, beat;
+    public int bpm, timeSignature, beat, difficulty;
     public string songName;
 
 	protected int c1 = 0,
@@ -96,6 +96,14 @@ public class Songholder : MonoBehaviour
         return beat;
     }
 
+    public void SetDifficulty(int newDifficulty)
+    {
+        difficulty = newDifficulty;
+    }
+    public int GetDifficulty()
+    {
+        return difficulty;
+    }
 
     public void SetSongName(string newName)
     {

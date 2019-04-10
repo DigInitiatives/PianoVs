@@ -11,6 +11,7 @@ using UnityEngine.UI;
 
 public class PlayerDataManager : MonoBehaviour
 {
+    GameDataManager gcInstance;
     public bool isPlayer3Or4, isRecording, isAI;
 
     float playerScore, playerMultiplier;//Ints that hold the players score and multiplier
@@ -21,10 +22,11 @@ public class PlayerDataManager : MonoBehaviour
     int comboCount;//Variable that keeps track of how many good hits the player needs    
 
     GameObject playerHud;
-    Text playerScoreDisplay;
-    Image playerMultiplierBar;
+    public Text playerScoreDisplay;
+    public Image playerMultiplierBar;
     void Start()
     {
+        gcInstance = GameDataManager.gcInstance;
         playerScore = 0;
         holdingScore = 0;
         sleepTimer = Time.time;//Seconds until AI takes over
@@ -66,8 +68,6 @@ public class PlayerDataManager : MonoBehaviour
         try
         {
             playerHud = GameObject.FindGameObjectWithTag(name);
-            playerScoreDisplay = playerHud.transform.Find("ScoreText").GetComponent<Text>();
-            playerMultiplierBar = playerHud.transform.Find("ScoreText/StaticBar/DynamicBar").GetComponent<Image>();
         }
         catch { }
     }
@@ -76,7 +76,7 @@ public class PlayerDataManager : MonoBehaviour
     {
         try
         {
-            playerScoreDisplay.text = "Score " + Mathf.RoundToInt(playerScore + holdingScore) + "\n" + "Multiplier " + playerMultiplier;
+            playerScoreDisplay.text = "Score:\n" + Mathf.RoundToInt(playerScore + holdingScore) + "\n" + "Multiplier:\n" + playerMultiplier;
             playerMultiplierBar.fillAmount = multiplierCount;
             if (playerMultiplier == 8)
             {
@@ -146,25 +146,30 @@ public class PlayerDataManager : MonoBehaviour
 
     public void SetAI(bool on)//Set AI as on or off
     {
-        if (on)
+        if (on && isAI == false)
         {
             isAI = true;
+            gcInstance.SetAICount(1);
             foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
             {
                 keyScript.AI = true;
                 keyScript.StopNote();
                 keyScript.gameObject.GetComponent<AudioSource>().volume = 0.5f;
-            }
+				keyScript.startingVolume = 0.5f;
+			}
         }
-        else
+        else if (!on && isAI == true)
         {
             isAI = false;
+            gcInstance.SetAICount(-1);
             foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
             {
                 keyScript.AI = false;
                 keyScript.StopNote();
                 keyScript.gameObject.GetComponent<AudioSource>().volume = 1f;
-            }
+				keyScript.startingVolume = 1f;
+
+			}
         }
     }
     public void ResetSleepTime()

@@ -32,7 +32,7 @@ public class IndividualKeyScript : MonoBehaviour
 
     //Variable that is set in the editor to determine if the key which this script is attatched to is a whitekey or a black key
     public bool whiteKey;
-
+	public float startingVolume;
 
     RaycastHit hit;//The raycast collision data
     Vector3 keyPos;//The position of the key, just short form for the transform.position because I am lazy
@@ -96,13 +96,12 @@ public class IndividualKeyScript : MonoBehaviour
         {
             if (Physics.Raycast(keyPos, transform.up, out hit, .7f) && hit.collider.gameObject.tag == "Note")//Shoots raycast from the tip of note
             {
-                StopNote();
                 PlayNote(true);
                 AITimer = 0;
             }
             else
             {
-                if (!Physics.Raycast(keyPos, transform.up, out hit, .6f) && AITimer > 5)//Shoots raycast from the tip of note
+                if (!Physics.Raycast(keyPos, transform.up, out hit, 1) && AITimer > 5)//Shoots raycast from the tip of note
                 {
                     StopNote();
                 }
@@ -131,12 +130,12 @@ public class IndividualKeyScript : MonoBehaviour
                 }
                 else
                 {
-                    holdingNote = false;
+                    //holdingNote = false;
                 }
             }
             else
             {
-                holdingNote = false;
+                //holdingNote = false;
             }
         }
     }
@@ -147,9 +146,8 @@ public class IndividualKeyScript : MonoBehaviour
         if(!AI || !wasAI)//If the player presses the key
         {
             playerData.ResetSleepTime();
-        }
+		}
         StopCoroutine("SoundStop");
-        GetComponent<AudioSource>().volume = 1;
         stamp = false;
         GetComponent<AudioSource>().Play();
         keyModelRenderer.material = keyDown;
@@ -203,6 +201,7 @@ public class IndividualKeyScript : MonoBehaviour
         StartCoroutine("SoundStop");
         stamp = true;
         keyModelRenderer.material = keyUp;
+
         StopHolding();
     }
 
@@ -223,7 +222,7 @@ public class IndividualKeyScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         GetComponent<AudioSource>().Stop();
-        GetComponent<AudioSource>().volume = 1;
+        GetComponent<AudioSource>().volume = startingVolume;
         stamp = false;
     }
 }

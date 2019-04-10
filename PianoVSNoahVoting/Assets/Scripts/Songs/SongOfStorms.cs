@@ -11,6 +11,7 @@ public class SongOfStorms : Songholder
 	public SongOfStorms()
 	{
         songNotes = new List<NoteClass>();
+        SetDifficulty(3);
         SetBPM(200);
         SetTimeSignature(3);
         SetMaxBeat(2352);

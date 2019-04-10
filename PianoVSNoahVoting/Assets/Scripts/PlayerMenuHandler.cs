@@ -18,8 +18,8 @@ public class PlayerMenuHandler : MonoBehaviour
     float toggleTimer;
     int currentSongID;
 
-    GameObject menuPanel, menuToggleText;
-    GameObject dropdownMenu, votingText, votePanel, waitingMessage;
+    [SerializeField]
+    GameObject menuPanel, menuToggleText, dropdownMenu, votingText, votePanel, waitingMessage, playersKeyboard, freeplayDisplay;
     [SerializeField]
     GameObject noteSpawner;
     string songName;
@@ -39,14 +39,7 @@ public class PlayerMenuHandler : MonoBehaviour
         doOnce = true;
 
         songNames = new List<string>();
-        //Find children assets
-        menuPanel = transform.Find("MenuPanel").gameObject;
-        menuToggleText = transform.Find("MenuToggle/Countdown").gameObject;
-        dropdownMenu = transform.Find("MenuPanel/SongVoting/Dropdown").gameObject;
-        votingText = transform.Find("MenuPanel/SongVoting/VotePanel/VoteText").gameObject;
-        votePanel = transform.Find("MenuPanel/SongVoting/VotePanel").gameObject;
-        waitingMessage = transform.Find("MenuPanel/SongVoting/WaitingMessage").gameObject;
-        //
+
         menuToggleText.transform.localScale = new Vector3(menuToggleText.transform.localScale.x, 0);
     }
     void Update()
@@ -62,15 +55,20 @@ public class PlayerMenuHandler : MonoBehaviour
             dropdownMenu.GetComponent<Dropdown>().AddOptions(songNames);
             doOnce = false;
         }
-
-
         currentSongID = gcInstance.GetCurrentSongID();
         menuPanel.SetActive(menuStatus);//Either enable or disable the menu
         waitingMessage.SetActive(waitingMessageStatus);//Enable or disable the message that indicates the stage of the vote
         votePanel.SetActive(votingPanelStatus);//Enable or disable the voting panel
         dropdownMenu.GetComponent<Dropdown>().value = currentSongID;
 
-
+        if(currentSongID == 0)
+        {
+            freeplayDisplay.SetActive(true);
+        }
+        else
+        {
+            freeplayDisplay.SetActive(false);
+        }
         if (toggleTimerStatus && toggleTimer < 0.5f)//if they are holding the button decrement the timer variable
         {
             toggleTimer += Time.deltaTime;
@@ -97,6 +95,7 @@ public class PlayerMenuHandler : MonoBehaviour
     {
         if (!menuStatus)
         {
+            playersKeyboard.GetComponent<PlayerDataManager>().ResetSleepTime();
             toggleTimerStatus = true;//Start timer
         }
         else
@@ -121,7 +120,10 @@ public class PlayerMenuHandler : MonoBehaviour
 
     #endregion
 
-
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     #region Song Selection
     public void SelectSong()
     {

@@ -12,6 +12,7 @@ TagManager:
   - KeyboardTwo
   - KeyboardThree
   - KeyboardFour
+  - NoteBar
   layers:
   - Default
   - TransparentFX
