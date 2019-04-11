@@ -33,6 +33,7 @@ public class GameDataManager : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 30;
         voteInProgress = false;
         currentVote = 0;
         aiCount = 4;

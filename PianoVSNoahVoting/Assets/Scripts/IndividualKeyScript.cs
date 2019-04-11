@@ -43,9 +43,10 @@ public class IndividualKeyScript : MonoBehaviour
 
     void Start()
     {
+        AI = true;
         keyPos = transform.position;//Initialize transform.position of the object with this script
         holdingNote = false;
-        songrecording = true;
+        songrecording = false;
         keyModel = transform.GetChild(0).gameObject;
         keyModelRenderer = keyModel.GetComponent<Renderer>();
 

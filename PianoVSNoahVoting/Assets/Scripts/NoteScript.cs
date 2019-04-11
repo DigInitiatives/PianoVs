@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class NoteScript : MonoBehaviour
 {
-    void Update()
+    void FixedUpdate()
     {
 		transform.Translate(new Vector3(0, -0.1f, 0));
     }

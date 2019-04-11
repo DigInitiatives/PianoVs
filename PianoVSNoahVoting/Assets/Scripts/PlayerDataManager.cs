@@ -148,6 +148,7 @@ public class PlayerDataManager : MonoBehaviour
     {
         if (on && isAI == false)
         {
+            Debug.Log("On");
             isAI = true;
             gcInstance.SetAICount(1);
             foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
@@ -160,6 +161,7 @@ public class PlayerDataManager : MonoBehaviour
         }
         else if (!on && isAI == true)
         {
+            Debug.Log("Off");
             isAI = false;
             gcInstance.SetAICount(-1);
             foreach (IndividualKeyScript keyScript in transform.GetComponentsInChildren<IndividualKeyScript>())
@@ -174,6 +176,7 @@ public class PlayerDataManager : MonoBehaviour
     }
     public void ResetSleepTime()
     {
+        Debug.Log("Resetting");
         SetAI(false);//Turn off AI
         sleepTimer = Time.time;//Reset sleep timer
     }
