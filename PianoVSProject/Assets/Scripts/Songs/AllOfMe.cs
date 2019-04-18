@@ -10,7 +10,7 @@ public class AllOfMe : Songholder
 
         SetBPM(140);
         SetTimeSignature(4);
-        SetMaxBeat(3264);
+        SetMaxBeat(3400);
         SetSongName("All Of Me");
         int barTime = timeSignature * 16;
         int rightBarCount = 0, leftBarCount = 0;

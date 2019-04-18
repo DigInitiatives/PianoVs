@@ -18,7 +18,7 @@ public class PerfectAdvanced : Songholder
         SetBPM(100);
         SetTimeSignature(3);
         SetSongName("Perfect (Advanced)");
-        SetMaxBeat(2640);
+        SetMaxBeat(2720);
         SetDifficulty(2);
 
         barTime = (GetTimeSignature() * 16);

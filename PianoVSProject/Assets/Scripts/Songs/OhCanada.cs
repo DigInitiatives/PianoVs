@@ -9,7 +9,7 @@ public class OhCanada : Songholder
 	{
 		SetBPM(120);
 		SetTimeSignature(4);
-		SetMaxBeat(28*64);
+		SetMaxBeat((timeSignature * 16) *  30);
         SetSongName("Oh Canada");
 		int barTime = timeSignature * 16;
         SetDifficulty(4);

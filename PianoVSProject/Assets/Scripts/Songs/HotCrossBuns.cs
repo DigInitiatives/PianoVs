@@ -12,7 +12,7 @@ public class HotCrossBuns : Songholder
     {
         SetBPM(120);
         SetSongName("Hot Cross Buns");
-        SetMaxBeat(624);
+        SetMaxBeat(648);
         SetDifficulty(1);
 
         songNotes = new List<NoteClass>();

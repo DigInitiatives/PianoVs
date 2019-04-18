@@ -8,7 +8,7 @@ public class RowYourBoat : Songholder
     {
         SetBPM(100);
         SetSongName("Row Row Row Your Boat");
-        SetMaxBeat(212);
+        SetMaxBeat(250);
         SetDifficulty(1);
         songNotes = new List<NoteClass>();
 

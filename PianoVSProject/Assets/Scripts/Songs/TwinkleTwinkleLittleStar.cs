@@ -7,7 +7,7 @@ public class TwinkleTwinkleLittleStar : Songholder
     public TwinkleTwinkleLittleStar()
     {
         SetBPM(120);
-        SetMaxBeat(850);
+        SetMaxBeat(900);
         SetSongName("Twinkle Twinkle Little Star");
         SetDifficulty(2);
 

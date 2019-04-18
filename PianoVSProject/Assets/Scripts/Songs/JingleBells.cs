@@ -7,7 +7,7 @@ public class JingleBells : Songholder
     public JingleBells()
     {
         SetBPM(120);
-        SetMaxBeat(760);
+        SetMaxBeat(860);
         SetSongName("Jingle Bells");
         SetDifficulty(2);
         songNotes = new List<NoteClass>();

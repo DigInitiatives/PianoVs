@@ -106,7 +106,7 @@ public class IndividualKeyScript : MonoBehaviour
             }
             else
             {
-                if (!Physics.Raycast(keyPos, transform.up, out hit, 1) && AITimer > 5)//Shoots raycast from the tip of note
+                if (!Physics.Raycast(keyPos, transform.up, out hit, 1) && AITimer > 9)//Shoots raycast from the tip of note
                 {
                     StopNote();
                 }

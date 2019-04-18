@@ -8,7 +8,7 @@ public class OdeToJoy : Songholder
     {
         SetBPM(100);
         SetSongName("Ode To Joy");
-        SetMaxBeat(660);
+        SetMaxBeat(700);
         songNotes = new List<NoteClass>();
         SetDifficulty(1);
 

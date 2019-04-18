@@ -8,7 +8,7 @@ public class TetrisThemeA : Songholder
     {
         SetBPM(140);
         SetSongName("Tetris Theme A");
-        SetMaxBeat(1920);
+        SetMaxBeat(2000);
         SetDifficulty(3);
 
         songNotes = new List<NoteClass>();

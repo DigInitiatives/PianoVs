@@ -1,7 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+///Author: Noah Rittenhouse
+///This script will be attached to each of the deathzones below the keyboards, any note or note bar will be destroyed or moved
+///Last Modified By: Noah Rittenhouse
+///Last Modified Date: Apr-06-2019
+///Dependencies: Attached to deathzones
+///
 public class DeathzoneScript : MonoBehaviour
 {
     void OnTriggerEnter(Collider collision)

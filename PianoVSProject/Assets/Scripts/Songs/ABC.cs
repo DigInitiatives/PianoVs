@@ -9,7 +9,7 @@ public class ABC : Songholder
         songNotes = new List<NoteClass>();
         SetSongName("ABC");
         SetBPM(120);
-        SetMaxBeat(1000);
+        SetMaxBeat(860);
         SetTimeSignature(4);
 
         songNotes = new List<NoteClass>();

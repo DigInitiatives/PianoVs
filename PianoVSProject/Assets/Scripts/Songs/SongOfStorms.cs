@@ -8,13 +8,13 @@ using UnityEngine;
 **/
 public class SongOfStorms : Songholder
 {
-	public SongOfStorms()
-	{
+    public SongOfStorms()
+    {
         songNotes = new List<NoteClass>();
         SetDifficulty(3);
         SetBPM(200);
         SetTimeSignature(3);
-        SetMaxBeat(2352);
+        SetMaxBeat((timeSignature * 16) * 52);
         SetSongName("Song of Storms");
         int barTime = timeSignature * 16;
 
