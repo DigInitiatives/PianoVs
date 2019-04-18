@@ -15,6 +15,9 @@ public class SongTemplate : Songholder
         // Sets the name of the song
         SetSongName("SongTemplate");
 
+        // Sets the song difficulty
+        SetDifficulty(1);//1-4
+
         // Sets the beats per minute of a song
         SetBPM(120);
 
