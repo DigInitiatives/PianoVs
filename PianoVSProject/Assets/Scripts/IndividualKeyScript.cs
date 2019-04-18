@@ -70,7 +70,7 @@ public class IndividualKeyScript : MonoBehaviour
         //keyNum = 
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (player3or4)
         {

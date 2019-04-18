@@ -38,7 +38,7 @@ public class SongTemplate : Songholder
         // Example: songNotes.Add(new NoteClass((what note), (starting beat), (ending beat), (left, right, or no hand)));
 
         // Bar 1
-        songNotes.Add(new NoteClass(0, 0 + (barTime * rightBarCount), 0 + (barTime * rightBarCount, 1)));
+        songNotes.Add(new NoteClass(0, 0 + (barTime * rightBarCount), 0 + (barTime * rightBarCount), 1));
 
         rightBarCount++;
 

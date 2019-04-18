@@ -20,7 +20,7 @@ public class LogoScript : MonoBehaviour
     void Start()
     {
         currentIndex = 0;
-        fadeSpeed = 0.0075f;
+        fadeSpeed = 0.01f;
 
         logos = new List<GameObject>();
         for (int i = transform.childCount - 1; i >= 0; i--)//For every child

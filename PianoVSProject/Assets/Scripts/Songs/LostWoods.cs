@@ -14,7 +14,7 @@ public class LostWoods : Songholder
         SetBPM(140);
         SetTimeSignature(2);
         SetSongName("Lost Woods");
-        SetMaxBeat((timeSignature * 16) * 36);
+        SetMaxBeat((timeSignature * 16) * 44);
         int barTime = timeSignature * 16;
         int leftBarCount = 0, rightBarCount = 0;
 
