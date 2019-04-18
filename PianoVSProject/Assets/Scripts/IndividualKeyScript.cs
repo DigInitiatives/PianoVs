@@ -72,6 +72,7 @@ public class IndividualKeyScript : MonoBehaviour
 
     public void FixedUpdate()
     {
+        //These if else statements simply put the tip of the key at the proper position based on if they are upside down or not
         if (player3or4)
         {
             if (whiteKey)
@@ -94,6 +95,8 @@ public class IndividualKeyScript : MonoBehaviour
                 keyPos = transform.position + Vector3.up * 1.5f;
             }
         }
+
+        //If the ai is on for this key shoot a raycast up, if it hits a note within a certain range then play the key
         if (AI)
         {
             if (Physics.Raycast(keyPos, transform.up, out hit, .7f) && hit.collider.gameObject.tag == "Note")//Shoots raycast from the tip of note
@@ -166,30 +169,23 @@ public class IndividualKeyScript : MonoBehaviour
 
                     playerData.AddScore(100);//Sweet spot
                     playerData.IncreaseMultiplier(.1f);//Add to multiplier
-
-                    //Stores the distance hit in order to check forheld notes
-                    heldNotedistance = hit.distance;
-                    hit.transform.position = new Vector3(-1000, -1000, -1000);
-                    hit.transform.gameObject.SetActive(false);
                 }
                 else if (hit.distance > .7f)//To far distance
                 {
                     holdingNote = true;
 
                     playerData.BreakMultiplier();//No score, break multiplier
-                    heldNotedistance = hit.distance;
-                    hit.transform.position = new Vector3(-1000, -1000, -1000);
-                    hit.transform.gameObject.SetActive(false);
                 }
                 else//Not to far but not in sweet spot
                 {
                     holdingNote = true;
 
                     playerData.AddScore(50);//Too Close spot
-                    heldNotedistance = hit.distance;
-                    hit.transform.position = new Vector3(-1000, -1000, -1000);
-                    hit.transform.gameObject.SetActive(false);
                 }
+                //Stores the distance hit in order to check forheld notes
+                heldNotedistance = hit.distance;
+                hit.transform.position = new Vector3(-1000, -1000, -1000);
+                hit.transform.gameObject.SetActive(false);
             }
         }
         if (songrecording)

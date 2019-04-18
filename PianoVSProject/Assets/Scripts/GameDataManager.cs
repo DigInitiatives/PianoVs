@@ -16,8 +16,10 @@ public class GameDataManager : MonoBehaviour
     public int currentVote, totalVotes;//Vote count, and total votes sent in
     public int aiCount;//How many AI there are active
     int currentSongID, newSongID;
-    GameObject[] noteSpawners;
+    GameObject[] noteSpawners;//The 4 note spawners
 
+
+    //This awake method ensures only one game manager is active at one time, if there is a second the original stays
     private void Awake()
     {
         if (gcInstance == null)
@@ -33,7 +35,7 @@ public class GameDataManager : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 30;//Max framerate is 30 to prevent weird issues with notes
         voteInProgress = false;
         currentVote = 0;
         aiCount = 4;
@@ -43,6 +45,7 @@ public class GameDataManager : MonoBehaviour
     }
     void Update()
     {
+        
         if (aiCount != 4)//If there is at least one real player available to vote
         {
             if (currentVote == (4 - aiCount))//If everyone agrees, AI doesnt vote so lower needed score in case of AI activeness
@@ -97,6 +100,8 @@ public class GameDataManager : MonoBehaviour
         totalVotes = 0;
         newSongID = currentSongID;
     }
+
+    //This tracks the AI count, it is not very clean however
     public void SetAICount(int aiCounter)
     {
         //1 = ai on
